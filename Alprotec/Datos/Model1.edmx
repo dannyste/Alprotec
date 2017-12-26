@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AlprotecdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alojamiento">
+          <Key>
+            <PropertyRef Name="idAlojamiento" />
+          </Key>
+          <Property Name="idAlojamiento" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lecturaEntradaTapaFrontal" Type="float" />
+          <Property Name="lecturaEntradaTapaPosterior" Type="float" />
+        </EntityType>
+        <EntityType Name="Bobinado">
+          <Key>
+            <PropertyRef Name="idBobinado" />
+          </Key>
+          <Property Name="idBobinado" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Catalogo">
+          <Key>
+            <PropertyRef Name="idCatalogo" />
+          </Key>
+          <Property Name="idCatalogo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="valor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPadre" Type="bigint" />
+          <Property Name="idTipoCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroDocumento" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idClienteCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="idDocumentoCatalog" Type="bigint" Nullable="false" />
+          <Property Name="idCiudadCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="idContacto" />
+          </Key>
+          <Property Name="idContacto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cargo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="movil" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="correoElectronico" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="observaciones" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idCliente" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contrato">
+          <Key>
+            <PropertyRef Name="idContrato" />
+          </Key>
+          <Property Name="idContrato" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="alcance" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="vigencia" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCliente" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Eje">
+          <Key>
+            <PropertyRef Name="idEje" />
+          </Key>
+          <Property Name="idEje" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lecturaEntradaEjeFrontal" Type="float" />
+          <Property Name="lecturaEntradaEjePosterior" Type="float" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoInterno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="claseMaquina" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroSerie" Type="nvarchar" MaxLength="50" />
+          <Property Name="rpm" Type="int" Nullable="false" />
+          <Property Name="amp" Type="float" />
+          <Property Name="numeroInventarioCliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="potenciaHP" Type="float" Nullable="false" />
+          <Property Name="potenciakW" Type="float" />
+          <Property Name="claseAislamiento" Type="nvarchar" MaxLength="50" />
+          <Property Name="designacionNema" Type="nvarchar" MaxLength="50" />
+          <Property Name="frame" Type="nvarchar" MaxLength="50" />
+          <Property Name="voltaje" Type="int" />
+          <Property Name="factorServicio" Type="nvarchar" MaxLength="50" />
+          <Property Name="idModeloCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Formulario">
+          <Key>
+            <PropertyRef Name="idFormulario" />
+          </Key>
+          <Property Name="idFormulario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="aprobo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroEdicion" Type="int" Nullable="false" />
+          <Property Name="secuencia" Type="int" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InspeccionMedicion">
+          <Key>
+            <PropertyRef Name="idInspeccionMedicion" />
+          </Key>
+          <Property Name="idInspeccionMedicion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="observaciones" Type="nvarchar" MaxLength="200" />
+          <Property Name="idRodamiento" Type="bigint" />
+          <Property Name="idEje" Type="bigint" />
+          <Property Name="idAlojamiento" Type="bigint" />
+          <Property Name="idTrabajador" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Proceso">
+          <Key>
+            <PropertyRef Name="idProceso" />
+          </Key>
+          <Property Name="idProceso" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="requiere" Type="bit" />
+        </EntityType>
+        <EntityType Name="PruebaElectricaFinal">
+          <Key>
+            <PropertyRef Name="idPruebaElectricaFinal" />
+          </Key>
+          <Property Name="idPruebaElectricaFinal" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PruebaElectricaInicial">
+          <Key>
+            <PropertyRef Name="idPruebaElectricaInicial" />
+          </Key>
+          <Property Name="idPruebaElectricaInicial" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inspeccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="resistenciaAislamiento" Type="float" />
+          <Property Name="voltajePrueba" Type="int" />
+          <Property Name="indicePolaridad" Type="float" />
+          <Property Name="continuidadLineas" Type="bit" />
+          <Property Name="idTrabajador" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Recepcion">
+          <Key>
+            <PropertyRef Name="idRecepcion" />
+          </Key>
+          <Property Name="idRecepcion" Type="bigint" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="reparadoAntes" Type="bit" Nullable="false" />
+          <Property Name="existeEstator" Type="int" Nullable="false" />
+          <Property Name="estadoEstator" Type="int" Nullable="false" />
+          <Property Name="existeRotor" Type="int" Nullable="false" />
+          <Property Name="estadoRotor" Type="int" Nullable="false" />
+          <Property Name="posicionCajaConexion" Type="int" Nullable="false" />
+          <Property Name="existeCajaConexion" Type="int" Nullable="false" />
+          <Property Name="estadoCajaConexion" Type="int" Nullable="false" />
+          <Property Name="existeBaseCajaConexion" Type="int" Nullable="false" />
+          <Property Name="estadoBaseCajaConexion" Type="int" Nullable="false" />
+          <Property Name="existeVentilador" Type="int" Nullable="false" />
+          <Property Name="estadoVentilador" Type="int" Nullable="false" />
+          <Property Name="existeTapaVentilador" Type="int" Nullable="false" />
+          <Property Name="estadoTapaVentilador" Type="int" Nullable="false" />
+          <Property Name="existeTapaDelantera" Type="int" Nullable="false" />
+          <Property Name="estadoTapaDelantera" Type="int" Nullable="false" />
+          <Property Name="existePolea" Type="int" Nullable="false" />
+          <Property Name="estadoPolea" Type="int" Nullable="false" />
+          <Property Name="existeAcople" Type="int" Nullable="false" />
+          <Property Name="estadoAcople" Type="int" Nullable="false" />
+          <Property Name="existeBaseMotor" Type="int" Nullable="false" />
+          <Property Name="estadoBaseMotor" Type="int" Nullable="false" />
+          <Property Name="observacionesCliente" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="diagnosticoFallas" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="nombreEntrega" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cargoEntrega" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreRecibe" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cargoRecibe" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="observaciones" Type="nvarchar" MaxLength="500" />
+          <Property Name="nombreInterventor" Type="nvarchar" MaxLength="100" />
+          <Property Name="idCliente" Type="bigint" Nullable="false" />
+          <Property Name="idEquipo" Type="bigint" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rodamiento">
+          <Key>
+            <PropertyRef Name="idRodamiento" />
+          </Key>
+          <Property Name="idRodamiento" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="referenciaFrontal" Type="nvarchar" MaxLength="100" />
+          <Property Name="referenciaPosterior" Type="nvarchar" MaxLength="100" />
+          <Property Name="fabricanteFrontal" Type="nvarchar" MaxLength="100" />
+          <Property Name="fabricantePosterior" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TipoCatalogo">
+          <Key>
+            <PropertyRef Name="idTipoCatalogo" />
+          </Key>
+          <Property Name="idTipoCatalogo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trabajador">
+          <Key>
+            <PropertyRef Name="idTrabajador" />
+          </Key>
+          <Property Name="idTrabajador" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cedulaIdentidad" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cargo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="movil" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="creadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="modificadoPor" Type="bigint" Nullable="false" />
+          <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Catalogo_Catalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="0..1" />
+          <End Role="Catalogo1" Type="Self.Catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Catalogo1">
+              <PropertyRef Name="idPadre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Catalogo_TipoCatalogo">
+          <End Role="TipoCatalogo" Type="Self.TipoCatalogo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCatalogo">
+              <PropertyRef Name="idTipoCatalogo" />
+            </Principal>
+            <Dependent Role="Catalogo">
+              <PropertyRef Name="idTipoCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_CiudadCatalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCiudadCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_ClienteCatalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idClienteCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_DocumentoCatalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idDocumentoCatalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacto_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contacto" Type="Self.Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlprotecdbModelStoreContainer">
+          <EntitySet Name="Alojamiento" EntityType="Self.Alojamiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bobinado" EntityType="Self.Bobinado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalogo" EntityType="Self.Catalogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eje" EntityType="Self.Eje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipo" EntityType="Self.Equipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Formulario" EntityType="Self.Formulario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InspeccionMedicion" EntityType="Self.InspeccionMedicion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proceso" EntityType="Self.Proceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PruebaElectricaFinal" EntityType="Self.PruebaElectricaFinal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PruebaElectricaInicial" EntityType="Self.PruebaElectricaInicial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recepcion" EntityType="Self.Recepcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rodamiento" EntityType="Self.Rodamiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoCatalogo" EntityType="Self.TipoCatalogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trabajador" EntityType="Self.Trabajador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Catalogo_Catalogo" Association="Self.FK_Catalogo_Catalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Catalogo1" EntitySet="Catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Catalogo_TipoCatalogo" Association="Self.FK_Catalogo_TipoCatalogo">
+            <End Role="TipoCatalogo" EntitySet="TipoCatalogo" />
+            <End Role="Catalogo" EntitySet="Catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_CiudadCatalogo" Association="Self.FK_Cliente_CiudadCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_ClienteCatalogo" Association="Self.FK_Cliente_ClienteCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="Self.FK_Cliente_DocumentoCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacto_Cliente" Association="Self.FK_Contacto_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlprotecdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AlprotecdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alojamiento" EntityType="AlprotecdbModel.Alojamiento" />
+          <EntitySet Name="Bobinado" EntityType="AlprotecdbModel.Bobinado" />
+          <EntitySet Name="Catalogo" EntityType="AlprotecdbModel.Catalogo" />
+          <EntitySet Name="Cliente" EntityType="AlprotecdbModel.Cliente" />
+          <EntitySet Name="Contacto" EntityType="AlprotecdbModel.Contacto" />
+          <EntitySet Name="Contrato" EntityType="AlprotecdbModel.Contrato" />
+          <EntitySet Name="Eje" EntityType="AlprotecdbModel.Eje" />
+          <EntitySet Name="Equipo" EntityType="AlprotecdbModel.Equipo" />
+          <EntitySet Name="Formulario" EntityType="AlprotecdbModel.Formulario" />
+          <EntitySet Name="InspeccionMedicion" EntityType="AlprotecdbModel.InspeccionMedicion" />
+          <EntitySet Name="Proceso" EntityType="AlprotecdbModel.Proceso" />
+          <EntitySet Name="PruebaElectricaFinal" EntityType="AlprotecdbModel.PruebaElectricaFinal" />
+          <EntitySet Name="PruebaElectricaInicial" EntityType="AlprotecdbModel.PruebaElectricaInicial" />
+          <EntitySet Name="Recepcion" EntityType="AlprotecdbModel.Recepcion" />
+          <EntitySet Name="Rodamiento" EntityType="AlprotecdbModel.Rodamiento" />
+          <EntitySet Name="TipoCatalogo" EntityType="AlprotecdbModel.TipoCatalogo" />
+          <EntitySet Name="Trabajador" EntityType="AlprotecdbModel.Trabajador" />
+          <EntitySet Name="Usuario" EntityType="AlprotecdbModel.Usuario" />
+          <AssociationSet Name="FK_Catalogo_Catalogo" Association="AlprotecdbModel.FK_Catalogo_Catalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Catalogo1" EntitySet="Catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Catalogo_TipoCatalogo" Association="AlprotecdbModel.FK_Catalogo_TipoCatalogo">
+            <End Role="TipoCatalogo" EntitySet="TipoCatalogo" />
+            <End Role="Catalogo" EntitySet="Catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_CiudadCatalogo" Association="AlprotecdbModel.FK_Cliente_CiudadCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_ClienteCatalogo" Association="AlprotecdbModel.FK_Cliente_ClienteCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="AlprotecdbModel.FK_Cliente_DocumentoCatalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacto_Cliente" Association="AlprotecdbModel.FK_Contacto_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Alojamiento">
+          <Key>
+            <PropertyRef Name="idAlojamiento" />
+          </Key>
+          <Property Name="idAlojamiento" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lecturaEntradaTapaFrontal" Type="Double" />
+          <Property Name="lecturaEntradaTapaPosterior" Type="Double" />
+        </EntityType>
+        <EntityType Name="Bobinado">
+          <Key>
+            <PropertyRef Name="idBobinado" />
+          </Key>
+          <Property Name="idBobinado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Catalogo">
+          <Key>
+            <PropertyRef Name="idCatalogo" />
+          </Key>
+          <Property Name="idCatalogo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idPadre" Type="Int64" />
+          <Property Name="idTipoCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Catalogo1" Relationship="AlprotecdbModel.FK_Catalogo_Catalogo" FromRole="Catalogo" ToRole="Catalogo1" />
+          <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Catalogo_Catalogo" FromRole="Catalogo1" ToRole="Catalogo" />
+          <NavigationProperty Name="TipoCatalogo" Relationship="AlprotecdbModel.FK_Catalogo_TipoCatalogo" FromRole="Catalogo" ToRole="TipoCatalogo" />
+          <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_Cliente_CiudadCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numeroDocumento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idClienteCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="idDocumentoCatalog" Type="Int64" Nullable="false" />
+          <Property Name="idCiudadCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Catalogo" Relationship="AlprotecdbModel.FK_Cliente_CiudadCatalogo" FromRole="Cliente" ToRole="Catalogo" />
+          <NavigationProperty Name="Catalogo1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Cliente" ToRole="Catalogo" />
+          <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Cliente" ToRole="Catalogo" />
+          <NavigationProperty Name="Contacto" Relationship="AlprotecdbModel.FK_Contacto_Cliente" FromRole="Cliente" ToRole="Contacto" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="idContacto" />
+          </Key>
+          <Property Name="idContacto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cargo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="movil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="observaciones" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idCliente" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_Contacto_Cliente" FromRole="Contacto" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Contrato">
+          <Key>
+            <PropertyRef Name="idContrato" />
+          </Key>
+          <Property Name="idContrato" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="alcance" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vigencia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCliente" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Eje">
+          <Key>
+            <PropertyRef Name="idEje" />
+          </Key>
+          <Property Name="idEje" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lecturaEntradaEjeFrontal" Type="Double" />
+          <Property Name="lecturaEntradaEjePosterior" Type="Double" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoInterno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="claseMaquina" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numeroSerie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rpm" Type="Int32" Nullable="false" />
+          <Property Name="amp" Type="Double" />
+          <Property Name="numeroInventarioCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="potenciaHP" Type="Double" Nullable="false" />
+          <Property Name="potenciakW" Type="Double" />
+          <Property Name="claseAislamiento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="designacionNema" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="frame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="voltaje" Type="Int32" />
+          <Property Name="factorServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idModeloCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Formulario">
+          <Key>
+            <PropertyRef Name="idFormulario" />
+          </Key>
+          <Property Name="idFormulario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="aprobo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numeroEdicion" Type="Int32" Nullable="false" />
+          <Property Name="secuencia" Type="Int32" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="InspeccionMedicion">
+          <Key>
+            <PropertyRef Name="idInspeccionMedicion" />
+          </Key>
+          <Property Name="idInspeccionMedicion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="idRodamiento" Type="Int64" />
+          <Property Name="idEje" Type="Int64" />
+          <Property Name="idAlojamiento" Type="Int64" />
+          <Property Name="idTrabajador" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Proceso">
+          <Key>
+            <PropertyRef Name="idProceso" />
+          </Key>
+          <Property Name="idProceso" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="requiere" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PruebaElectricaFinal">
+          <Key>
+            <PropertyRef Name="idPruebaElectricaFinal" />
+          </Key>
+          <Property Name="idPruebaElectricaFinal" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="PruebaElectricaInicial">
+          <Key>
+            <PropertyRef Name="idPruebaElectricaInicial" />
+          </Key>
+          <Property Name="idPruebaElectricaInicial" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inspeccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="resistenciaAislamiento" Type="Double" />
+          <Property Name="voltajePrueba" Type="Int32" />
+          <Property Name="indicePolaridad" Type="Double" />
+          <Property Name="continuidadLineas" Type="Boolean" />
+          <Property Name="idTrabajador" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Recepcion">
+          <Key>
+            <PropertyRef Name="idRecepcion" />
+          </Key>
+          <Property Name="idRecepcion" Type="Int64" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="reparadoAntes" Type="Boolean" Nullable="false" />
+          <Property Name="existeEstator" Type="Int32" Nullable="false" />
+          <Property Name="estadoEstator" Type="Int32" Nullable="false" />
+          <Property Name="existeRotor" Type="Int32" Nullable="false" />
+          <Property Name="estadoRotor" Type="Int32" Nullable="false" />
+          <Property Name="posicionCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="existeCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="estadoCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="existeBaseCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="estadoBaseCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="existeVentilador" Type="Int32" Nullable="false" />
+          <Property Name="estadoVentilador" Type="Int32" Nullable="false" />
+          <Property Name="existeTapaVentilador" Type="Int32" Nullable="false" />
+          <Property Name="estadoTapaVentilador" Type="Int32" Nullable="false" />
+          <Property Name="existeTapaDelantera" Type="Int32" Nullable="false" />
+          <Property Name="estadoTapaDelantera" Type="Int32" Nullable="false" />
+          <Property Name="existePolea" Type="Int32" Nullable="false" />
+          <Property Name="estadoPolea" Type="Int32" Nullable="false" />
+          <Property Name="existeAcople" Type="Int32" Nullable="false" />
+          <Property Name="estadoAcople" Type="Int32" Nullable="false" />
+          <Property Name="existeBaseMotor" Type="Int32" Nullable="false" />
+          <Property Name="estadoBaseMotor" Type="Int32" Nullable="false" />
+          <Property Name="observacionesCliente" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="diagnosticoFallas" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nombreEntrega" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cargoEntrega" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nombreRecibe" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cargoRecibe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nombreInterventor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idCliente" Type="Int64" Nullable="false" />
+          <Property Name="idEquipo" Type="Int64" Nullable="false" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Rodamiento">
+          <Key>
+            <PropertyRef Name="idRodamiento" />
+          </Key>
+          <Property Name="idRodamiento" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="referenciaFrontal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="referenciaPosterior" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fabricanteFrontal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fabricantePosterior" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TipoCatalogo">
+          <Key>
+            <PropertyRef Name="idTipoCatalogo" />
+          </Key>
+          <Property Name="idTipoCatalogo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Catalogo" Relationship="AlprotecdbModel.FK_Catalogo_TipoCatalogo" FromRole="TipoCatalogo" ToRole="Catalogo" />
+        </EntityType>
+        <EntityType Name="Trabajador">
+          <Key>
+            <PropertyRef Name="idTrabajador" />
+          </Key>
+          <Property Name="idTrabajador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cedulaIdentidad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cargo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="movil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contraseña" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="creadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modificadoPor" Type="Int64" Nullable="false" />
+          <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Catalogo_Catalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="0..1" />
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Catalogo1">
+              <PropertyRef Name="idPadre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Catalogo_TipoCatalogo">
+          <End Type="AlprotecdbModel.TipoCatalogo" Role="TipoCatalogo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCatalogo">
+              <PropertyRef Name="idTipoCatalogo" />
+            </Principal>
+            <Dependent Role="Catalogo">
+              <PropertyRef Name="idTipoCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_CiudadCatalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCiudadCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_ClienteCatalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idClienteCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_DocumentoCatalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idDocumentoCatalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacto_Cliente">
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlprotecdbModel.Contacto" Role="Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlprotecdbModelStoreContainer" CdmEntityContainer="AlprotecdbEntities">
+          <EntitySetMapping Name="Alojamiento">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Alojamiento">
+              <MappingFragment StoreEntitySet="Alojamiento">
+                <ScalarProperty Name="lecturaEntradaTapaPosterior" ColumnName="lecturaEntradaTapaPosterior" />
+                <ScalarProperty Name="lecturaEntradaTapaFrontal" ColumnName="lecturaEntradaTapaFrontal" />
+                <ScalarProperty Name="idAlojamiento" ColumnName="idAlojamiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bobinado">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Bobinado">
+              <MappingFragment StoreEntitySet="Bobinado">
+                <ScalarProperty Name="idBobinado" ColumnName="idBobinado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalogo">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Catalogo">
+              <MappingFragment StoreEntitySet="Catalogo">
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idTipoCatalogo" ColumnName="idTipoCatalogo" />
+                <ScalarProperty Name="idPadre" ColumnName="idPadre" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="idCatalogo" ColumnName="idCatalogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idCiudadCatalogo" ColumnName="idCiudadCatalogo" />
+                <ScalarProperty Name="idDocumentoCatalog" ColumnName="idDocumentoCatalog" />
+                <ScalarProperty Name="idClienteCatalogo" ColumnName="idClienteCatalogo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacto">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+                <ScalarProperty Name="movil" ColumnName="movil" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idContacto" ColumnName="idContacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contrato">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Contrato">
+              <MappingFragment StoreEntitySet="Contrato">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="vigencia" ColumnName="vigencia" />
+                <ScalarProperty Name="alcance" ColumnName="alcance" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="idContrato" ColumnName="idContrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eje">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Eje">
+              <MappingFragment StoreEntitySet="Eje">
+                <ScalarProperty Name="lecturaEntradaEjePosterior" ColumnName="lecturaEntradaEjePosterior" />
+                <ScalarProperty Name="lecturaEntradaEjeFrontal" ColumnName="lecturaEntradaEjeFrontal" />
+                <ScalarProperty Name="idEje" ColumnName="idEje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipo">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Equipo">
+              <MappingFragment StoreEntitySet="Equipo">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idModeloCatalogo" ColumnName="idModeloCatalogo" />
+                <ScalarProperty Name="factorServicio" ColumnName="factorServicio" />
+                <ScalarProperty Name="voltaje" ColumnName="voltaje" />
+                <ScalarProperty Name="frame" ColumnName="frame" />
+                <ScalarProperty Name="designacionNema" ColumnName="designacionNema" />
+                <ScalarProperty Name="claseAislamiento" ColumnName="claseAislamiento" />
+                <ScalarProperty Name="potenciakW" ColumnName="potenciakW" />
+                <ScalarProperty Name="potenciaHP" ColumnName="potenciaHP" />
+                <ScalarProperty Name="numeroInventarioCliente" ColumnName="numeroInventarioCliente" />
+                <ScalarProperty Name="amp" ColumnName="amp" />
+                <ScalarProperty Name="rpm" ColumnName="rpm" />
+                <ScalarProperty Name="numeroSerie" ColumnName="numeroSerie" />
+                <ScalarProperty Name="claseMaquina" ColumnName="claseMaquina" />
+                <ScalarProperty Name="codigoInterno" ColumnName="codigoInterno" />
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formulario">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Formulario">
+              <MappingFragment StoreEntitySet="Formulario">
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+                <ScalarProperty Name="numeroEdicion" ColumnName="numeroEdicion" />
+                <ScalarProperty Name="aprobo" ColumnName="aprobo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idFormulario" ColumnName="idFormulario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InspeccionMedicion">
+            <EntityTypeMapping TypeName="AlprotecdbModel.InspeccionMedicion">
+              <MappingFragment StoreEntitySet="InspeccionMedicion">
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="idAlojamiento" ColumnName="idAlojamiento" />
+                <ScalarProperty Name="idEje" ColumnName="idEje" />
+                <ScalarProperty Name="idRodamiento" ColumnName="idRodamiento" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="idInspeccionMedicion" ColumnName="idInspeccionMedicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proceso">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Proceso">
+              <MappingFragment StoreEntitySet="Proceso">
+                <ScalarProperty Name="requiere" ColumnName="requiere" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idProceso" ColumnName="idProceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PruebaElectricaFinal">
+            <EntityTypeMapping TypeName="AlprotecdbModel.PruebaElectricaFinal">
+              <MappingFragment StoreEntitySet="PruebaElectricaFinal">
+                <ScalarProperty Name="idPruebaElectricaFinal" ColumnName="idPruebaElectricaFinal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PruebaElectricaInicial">
+            <EntityTypeMapping TypeName="AlprotecdbModel.PruebaElectricaInicial">
+              <MappingFragment StoreEntitySet="PruebaElectricaInicial">
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="continuidadLineas" ColumnName="continuidadLineas" />
+                <ScalarProperty Name="indicePolaridad" ColumnName="indicePolaridad" />
+                <ScalarProperty Name="voltajePrueba" ColumnName="voltajePrueba" />
+                <ScalarProperty Name="resistenciaAislamiento" ColumnName="resistenciaAislamiento" />
+                <ScalarProperty Name="inspeccion" ColumnName="inspeccion" />
+                <ScalarProperty Name="idPruebaElectricaInicial" ColumnName="idPruebaElectricaInicial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recepcion">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Recepcion">
+              <MappingFragment StoreEntitySet="Recepcion">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="nombreInterventor" ColumnName="nombreInterventor" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="cargoRecibe" ColumnName="cargoRecibe" />
+                <ScalarProperty Name="nombreRecibe" ColumnName="nombreRecibe" />
+                <ScalarProperty Name="cargoEntrega" ColumnName="cargoEntrega" />
+                <ScalarProperty Name="nombreEntrega" ColumnName="nombreEntrega" />
+                <ScalarProperty Name="diagnosticoFallas" ColumnName="diagnosticoFallas" />
+                <ScalarProperty Name="observacionesCliente" ColumnName="observacionesCliente" />
+                <ScalarProperty Name="estadoBaseMotor" ColumnName="estadoBaseMotor" />
+                <ScalarProperty Name="existeBaseMotor" ColumnName="existeBaseMotor" />
+                <ScalarProperty Name="estadoAcople" ColumnName="estadoAcople" />
+                <ScalarProperty Name="existeAcople" ColumnName="existeAcople" />
+                <ScalarProperty Name="estadoPolea" ColumnName="estadoPolea" />
+                <ScalarProperty Name="existePolea" ColumnName="existePolea" />
+                <ScalarProperty Name="estadoTapaDelantera" ColumnName="estadoTapaDelantera" />
+                <ScalarProperty Name="existeTapaDelantera" ColumnName="existeTapaDelantera" />
+                <ScalarProperty Name="estadoTapaVentilador" ColumnName="estadoTapaVentilador" />
+                <ScalarProperty Name="existeTapaVentilador" ColumnName="existeTapaVentilador" />
+                <ScalarProperty Name="estadoVentilador" ColumnName="estadoVentilador" />
+                <ScalarProperty Name="existeVentilador" ColumnName="existeVentilador" />
+                <ScalarProperty Name="estadoBaseCajaConexion" ColumnName="estadoBaseCajaConexion" />
+                <ScalarProperty Name="existeBaseCajaConexion" ColumnName="existeBaseCajaConexion" />
+                <ScalarProperty Name="estadoCajaConexion" ColumnName="estadoCajaConexion" />
+                <ScalarProperty Name="existeCajaConexion" ColumnName="existeCajaConexion" />
+                <ScalarProperty Name="posicionCajaConexion" ColumnName="posicionCajaConexion" />
+                <ScalarProperty Name="estadoRotor" ColumnName="estadoRotor" />
+                <ScalarProperty Name="existeRotor" ColumnName="existeRotor" />
+                <ScalarProperty Name="estadoEstator" ColumnName="estadoEstator" />
+                <ScalarProperty Name="existeEstator" ColumnName="existeEstator" />
+                <ScalarProperty Name="reparadoAntes" ColumnName="reparadoAntes" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="idRecepcion" ColumnName="idRecepcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rodamiento">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Rodamiento">
+              <MappingFragment StoreEntitySet="Rodamiento">
+                <ScalarProperty Name="fabricantePosterior" ColumnName="fabricantePosterior" />
+                <ScalarProperty Name="fabricanteFrontal" ColumnName="fabricanteFrontal" />
+                <ScalarProperty Name="referenciaPosterior" ColumnName="referenciaPosterior" />
+                <ScalarProperty Name="referenciaFrontal" ColumnName="referenciaFrontal" />
+                <ScalarProperty Name="idRodamiento" ColumnName="idRodamiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCatalogo">
+            <EntityTypeMapping TypeName="AlprotecdbModel.TipoCatalogo">
+              <MappingFragment StoreEntitySet="TipoCatalogo">
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="idTipoCatalogo" ColumnName="idTipoCatalogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trabajador">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Trabajador">
+              <MappingFragment StoreEntitySet="Trabajador">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="movil" ColumnName="movil" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="AlprotecdbModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+                <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

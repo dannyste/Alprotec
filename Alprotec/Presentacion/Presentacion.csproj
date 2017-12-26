@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{701E17E3-A840-404C-821A-856F02E815D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlprotecDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlprotecDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CRClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRTrabajadores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTrabajadores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEquipos.Designer.cs">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIniciarSesion.Designer.cs">
+      <DependentUpon>FrmIniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMarcas.Designer.cs">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModelos.Designer.cs">
+      <DependentUpon>FrmModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevaModificarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaModificarMarca.Designer.cs">
+      <DependentUpon>FrmNuevaModificarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarCliente.Designer.cs">
+      <DependentUpon>FrmNuevoModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarContacto.Designer.cs">
+      <DependentUpon>FrmNuevoModificarContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarEquipo.Designer.cs">
+      <DependentUpon>FrmNuevoModificarEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarModelo.Designer.cs">
+      <DependentUpon>FrmNuevoModificarModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevaModificarRecepcionEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaModificarRecepcionEquipo.Designer.cs">
+      <DependentUpon>FrmNuevaModificarRecepcionEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarTrabajador.Designer.cs">
+      <DependentUpon>FrmNuevoModificarTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRecepcionEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecepcionEquipos.Designer.cs">
+      <DependentUpon>FrmRecepcionEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrabajadores.Designer.cs">
+      <DependentUpon>FrmTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CRClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTrabajadores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTrabajadores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEquipos.resx">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIniciarSesion.resx">
+      <DependentUpon>FrmIniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModelos.resx">
+      <DependentUpon>FrmModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevaModificarMarca.resx">
+      <DependentUpon>FrmNuevaModificarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarCliente.resx">
+      <DependentUpon>FrmNuevoModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarContacto.resx">
+      <DependentUpon>FrmNuevoModificarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarEquipo.resx">
+      <DependentUpon>FrmNuevoModificarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarModelo.resx">
+      <DependentUpon>FrmNuevoModificarModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevaModificarRecepcionEquipo.resx">
+      <DependentUpon>FrmNuevaModificarRecepcionEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarTrabajador.resx">
+      <DependentUpon>FrmNuevoModificarTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecepcionEquipos.resx">
+      <DependentUpon>FrmRecepcionEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrabajadores.resx">
+      <DependentUpon>FrmTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AlprotecDS.xsc">
+      <DependentUpon>AlprotecDS.xsd</DependentUpon>
+    </None>
+    <None Include="AlprotecDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlprotecDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AlprotecDS.xss">
+      <DependentUpon>AlprotecDS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{ce628eb8-2585-4372-af9e-ebc0ad322e0b}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{2bebf55b-9f1a-43ea-b5bb-5c041cdae717}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{7c232d11-a3b5-446c-ad5d-48844a3cff6a}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilidades\Utilidades.csproj">
+      <Project>{95cbedcc-8fa8-4d16-b1aa-d695c9e232f5}</Project>
+      <Name>Utilidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciarsesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remover.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
