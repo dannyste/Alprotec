@@ -38,7 +38,7 @@ namespace Entidad
         public virtual DbSet<Proceso> Proceso { get; set; }
         public virtual DbSet<PruebaElectricaFinal> PruebaElectricaFinal { get; set; }
         public virtual DbSet<PruebaElectricaInicial> PruebaElectricaInicial { get; set; }
-        public virtual DbSet<Recepcion> Recepcion { get; set; }
+        public virtual DbSet<RecepcionEquipo> RecepcionEquipo { get; set; }
         public virtual DbSet<Rodamiento> Rodamiento { get; set; }
         public virtual DbSet<TipoCatalogo> TipoCatalogo { get; set; }
         public virtual DbSet<Trabajador> Trabajador { get; set; }

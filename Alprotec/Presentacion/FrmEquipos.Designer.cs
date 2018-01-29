@@ -32,11 +32,9 @@
             this.lbBuscar = new System.Windows.Forms.Label();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
-            this.rbNoInventario = new System.Windows.Forms.RadioButton();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.lbCliente = new System.Windows.Forms.Label();
-            this.rbNoSerie = new System.Windows.Forms.RadioButton();
-            this.rbCodigoInterno = new System.Windows.Forms.RadioButton();
+            this.rbPotencia = new System.Windows.Forms.RadioButton();
+            this.rbMarca = new System.Windows.Forms.RadioButton();
+            this.rbCliente = new System.Windows.Forms.RadioButton();
             this.pAcciones = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -50,7 +48,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtBuscar.Location = new System.Drawing.Point(33, 98);
+            this.txtBuscar.Location = new System.Drawing.Point(33, 60);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(355, 23);
@@ -60,7 +58,7 @@
             // 
             this.lbBuscar.AutoSize = true;
             this.lbBuscar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbBuscar.Location = new System.Drawing.Point(31, 80);
+            this.lbBuscar.Location = new System.Drawing.Point(31, 42);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(50, 16);
             this.lbBuscar.TabIndex = 22;
@@ -73,83 +71,61 @@
             this.dgvEquipos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipos.Location = new System.Drawing.Point(22, 131);
+            this.dgvEquipos.Location = new System.Drawing.Point(22, 92);
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.ReadOnly = true;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquipos.Size = new System.Drawing.Size(420, 161);
+            this.dgvEquipos.Size = new System.Drawing.Size(420, 200);
             this.dgvEquipos.TabIndex = 30;
             // 
             // gbCriteriosBusqueda
             // 
-            this.gbCriteriosBusqueda.Controls.Add(this.rbNoInventario);
-            this.gbCriteriosBusqueda.Controls.Add(this.cbCliente);
-            this.gbCriteriosBusqueda.Controls.Add(this.lbCliente);
-            this.gbCriteriosBusqueda.Controls.Add(this.rbNoSerie);
-            this.gbCriteriosBusqueda.Controls.Add(this.rbCodigoInterno);
+            this.gbCriteriosBusqueda.Controls.Add(this.rbPotencia);
+            this.gbCriteriosBusqueda.Controls.Add(this.rbMarca);
+            this.gbCriteriosBusqueda.Controls.Add(this.rbCliente);
             this.gbCriteriosBusqueda.Controls.Add(this.txtBuscar);
             this.gbCriteriosBusqueda.Controls.Add(this.lbBuscar);
             this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 3);
             this.gbCriteriosBusqueda.Name = "gbCriteriosBusqueda";
-            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 126);
+            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 88);
             this.gbCriteriosBusqueda.TabIndex = 31;
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
             // 
-            // rbNoInventario
+            // rbPotencia
             // 
-            this.rbNoInventario.AutoSize = true;
-            this.rbNoInventario.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbNoInventario.Location = new System.Drawing.Point(177, 17);
-            this.rbNoInventario.Name = "rbNoInventario";
-            this.rbNoInventario.Size = new System.Drawing.Size(113, 20);
-            this.rbNoInventario.TabIndex = 31;
-            this.rbNoInventario.Text = "No. Inventario";
-            this.rbNoInventario.UseVisualStyleBackColor = true;
+            this.rbPotencia.AutoSize = true;
+            this.rbPotencia.Font = new System.Drawing.Font("Cambria", 10F);
+            this.rbPotencia.Location = new System.Drawing.Point(186, 17);
+            this.rbPotencia.Name = "rbPotencia";
+            this.rbPotencia.Size = new System.Drawing.Size(78, 20);
+            this.rbPotencia.TabIndex = 31;
+            this.rbPotencia.Text = "Potencia";
+            this.rbPotencia.UseVisualStyleBackColor = true;
             // 
-            // cbCliente
+            // rbMarca
             // 
-            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(33, 55);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(155, 23);
-            this.cbCliente.TabIndex = 29;
+            this.rbMarca.AutoSize = true;
+            this.rbMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.rbMarca.Location = new System.Drawing.Point(325, 17);
+            this.rbMarca.Name = "rbMarca";
+            this.rbMarca.Size = new System.Drawing.Size(63, 20);
+            this.rbMarca.TabIndex = 25;
+            this.rbMarca.Text = "Marca";
+            this.rbMarca.UseVisualStyleBackColor = true;
             // 
-            // lbCliente
+            // rbCliente
             // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbCliente.Location = new System.Drawing.Point(31, 37);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(35, 16);
-            this.lbCliente.TabIndex = 30;
-            this.lbCliente.Text = "Tipo";
-            // 
-            // rbNoSerie
-            // 
-            this.rbNoSerie.AutoSize = true;
-            this.rbNoSerie.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbNoSerie.Location = new System.Drawing.Point(312, 17);
-            this.rbNoSerie.Name = "rbNoSerie";
-            this.rbNoSerie.Size = new System.Drawing.Size(80, 20);
-            this.rbNoSerie.TabIndex = 25;
-            this.rbNoSerie.Text = "No. Serie";
-            this.rbNoSerie.UseVisualStyleBackColor = true;
-            // 
-            // rbCodigoInterno
-            // 
-            this.rbCodigoInterno.AutoSize = true;
-            this.rbCodigoInterno.Checked = true;
-            this.rbCodigoInterno.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbCodigoInterno.Location = new System.Drawing.Point(33, 17);
-            this.rbCodigoInterno.Name = "rbCodigoInterno";
-            this.rbCodigoInterno.Size = new System.Drawing.Size(115, 20);
-            this.rbCodigoInterno.TabIndex = 24;
-            this.rbCodigoInterno.TabStop = true;
-            this.rbCodigoInterno.Text = "Código interno";
-            this.rbCodigoInterno.UseVisualStyleBackColor = true;
+            this.rbCliente.AutoSize = true;
+            this.rbCliente.Checked = true;
+            this.rbCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.rbCliente.Location = new System.Drawing.Point(33, 17);
+            this.rbCliente.Name = "rbCliente";
+            this.rbCliente.Size = new System.Drawing.Size(69, 20);
+            this.rbCliente.TabIndex = 24;
+            this.rbCliente.TabStop = true;
+            this.rbCliente.Text = "Cliente";
+            this.rbCliente.UseVisualStyleBackColor = true;
             // 
             // pAcciones
             // 
@@ -232,11 +208,9 @@
         private System.Windows.Forms.Label lbBuscar;
         private System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
-        private System.Windows.Forms.RadioButton rbNoInventario;
-        private System.Windows.Forms.ComboBox cbCliente;
-        private System.Windows.Forms.Label lbCliente;
-        private System.Windows.Forms.RadioButton rbNoSerie;
-        private System.Windows.Forms.RadioButton rbCodigoInterno;
+        private System.Windows.Forms.RadioButton rbPotencia;
+        private System.Windows.Forms.RadioButton rbMarca;
+        private System.Windows.Forms.RadioButton rbCliente;
         public System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;

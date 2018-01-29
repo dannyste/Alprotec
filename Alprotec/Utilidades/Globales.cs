@@ -9,6 +9,6 @@ namespace Utilidades
 {
     public static class Globales
     {
-        public static Usuario UsuarioGlobal { get; set; }
+        public static Usuario UsuarioGlobal { get; set; } 
     }
 }

@@ -50,7 +50,26 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (dgvEquipos.Rows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Desea eliminar este equipo?", "Alprotec", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ClienteBL.eliminarCliente(Convert.ToInt64(dgvEquipos.Rows[dgvEquipos.CurrentCell.RowIndex].Cells["Id"].Value), ref error, ref mensaje);
+                    if (!error)
+                    {
+                        MessageBox.Show(mensaje, "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No tiene ningún equipo.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -65,7 +84,7 @@ namespace Presentacion
 
         public void actualizarDgvEquipos()
         {
-            IEnumerable dataSource = ClienteBL.filtrarClientes(opcion, Convert.ToInt64(cbCliente.SelectedValue), txtBuscar.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = EquipoBL.filtrarEquipos(opcion, txtBuscar.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvEquipos.DataSource = dataSource;

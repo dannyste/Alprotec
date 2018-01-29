@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Entidad;
+using Utilidades;
 
 namespace Presentacion
 {
@@ -192,7 +193,7 @@ namespace Presentacion
 
         private void llenarCbCliente()
         {
-            List<Catalogo> clientes = CatalogoBL.obtenerTipoCatalogo(4L, ref error, ref mensaje);
+            List<Catalogo> clientes = CatalogoBL.obtenerTipoCatalogo((long)Constantes.Catalogo.TipoCliente, ref error, ref mensaje);
             if (!error)
             {
                 Catalogo catalogo = new Catalogo();

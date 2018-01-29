@@ -167,7 +167,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Debe agregar al menos un contacto.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe agregar al menos un contacto.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

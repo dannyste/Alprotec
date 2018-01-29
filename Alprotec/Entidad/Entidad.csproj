@@ -84,7 +84,7 @@
     <Compile Include="PruebaElectricaInicial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Recepcion.cs">
+    <Compile Include="RecepcionEquipo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Rodamiento.cs">

@@ -45,7 +45,7 @@
     <Compile Include="EquipoBL.cs" />
     <Compile Include="FormularioBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecepcionBL.cs" />
+    <Compile Include="RecepcionEquipoBL.cs" />
     <Compile Include="TrabajadorBL.cs" />
     <Compile Include="UsuarioBL.cs" />
   </ItemGroup>

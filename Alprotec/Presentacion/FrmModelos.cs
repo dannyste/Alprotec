@@ -15,6 +15,12 @@ namespace Presentacion
 {
     public partial class FrmModelos : Form
     {
+        private FrmNuevoModificarEquipo frmNuevoModificarEquipo;
+
+        private bool busqueda = false;
+
+        private long idMarca;
+
         private bool error = false;
 
         private String mensaje = String.Empty;
@@ -24,8 +30,17 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        public FrmModelos(FrmNuevoModificarEquipo frmNuevoModificarEquipo, bool busqueda, long idMarca)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarEquipo = frmNuevoModificarEquipo;
+            this.busqueda = busqueda;
+            this.idMarca = idMarca;
+        }
+
         private void FrmModelos_Load(object sender, EventArgs e)
         {
+            llenarCbMarca();
             actualizarDgvModelos();
         }
 
@@ -47,10 +62,29 @@ namespace Presentacion
                 Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
                 if (!error)
                 {
-                    FrmNuevoModificarModelo frmNuevoModificarModelo = new FrmNuevoModificarModelo(this, "M");
-                    frmNuevoModificarModelo.llenarCbMarca();
-                    frmNuevoModificarModelo.modificarModelo(catalogo);
-                    frmNuevoModificarModelo.ShowDialog();
+                    if (!busqueda)
+                    {
+                        FrmNuevoModificarModelo frmNuevoModificarModelo = new FrmNuevoModificarModelo(this, "M");
+                        frmNuevoModificarModelo.llenarCbMarca();
+                        frmNuevoModificarModelo.modificarModelo(catalogo);
+                        frmNuevoModificarModelo.ShowDialog();
+                    }
+                    else
+                    {
+                        Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(cbMarca.SelectedValue), ref error, ref mensaje);
+                        if (!error)
+                        {
+                            frmNuevoModificarEquipo.establecerMarca = marca;
+                            frmNuevoModificarEquipo.llenarTxtMarca();
+                            frmNuevoModificarEquipo.establecerModelo = catalogo;
+                            frmNuevoModificarEquipo.llenarTxtModelo();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
                 else
                 {
@@ -101,7 +135,7 @@ namespace Presentacion
 
         public void llenarCbMarca()
         {
-            List<Catalogo> marcas = CatalogoBL.obtenerTipoCatalogo(5L, ref error, ref mensaje);
+            List<Catalogo> marcas = CatalogoBL.obtenerTipoCatalogo(6L, ref error, ref mensaje);
             if (!error)
             {
                 Catalogo catalogo = new Catalogo();
@@ -111,6 +145,7 @@ namespace Presentacion
                 cbMarca.DataSource = marcas;
                 cbMarca.DisplayMember = "valor";
                 cbMarca.ValueMember = "idCatalogo";
+                cbMarca.SelectedValue = idMarca;
             }
             else
             {

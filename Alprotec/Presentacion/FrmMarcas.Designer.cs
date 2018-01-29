@@ -169,7 +169,7 @@
         private System.Windows.Forms.GroupBox gbCriterioBusqueda;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Panel pAcciones;
+        public System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnEliminar;

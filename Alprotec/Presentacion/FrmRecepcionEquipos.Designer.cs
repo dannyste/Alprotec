@@ -30,7 +30,7 @@
         {
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lbNombreCliente = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvRecepcionEquipos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.lbFechaFinal = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcionEquipos)).BeginInit();
             this.gbCriteriosBusqueda.SuspendLayout();
             this.pAcciones.SuspendLayout();
             this.SuspendLayout();
@@ -65,19 +65,19 @@
             this.lbNombreCliente.TabIndex = 22;
             this.lbNombreCliente.Text = "Nombre del cliente";
             // 
-            // dgvClientes
+            // dgvRecepcionEquipos
             // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(22, 110);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(420, 180);
-            this.dgvClientes.TabIndex = 30;
+            this.dgvRecepcionEquipos.AllowUserToAddRows = false;
+            this.dgvRecepcionEquipos.AllowUserToDeleteRows = false;
+            this.dgvRecepcionEquipos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvRecepcionEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvRecepcionEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecepcionEquipos.Location = new System.Drawing.Point(22, 110);
+            this.dgvRecepcionEquipos.Name = "dgvRecepcionEquipos";
+            this.dgvRecepcionEquipos.ReadOnly = true;
+            this.dgvRecepcionEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRecepcionEquipos.Size = new System.Drawing.Size(420, 180);
+            this.dgvRecepcionEquipos.TabIndex = 30;
             // 
             // gbCriteriosBusqueda
             // 
@@ -190,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 294);
             this.Controls.Add(this.pAcciones);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvRecepcionEquipos);
             this.Controls.Add(this.gbCriteriosBusqueda);
             this.Font = new System.Drawing.Font("Cambria", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -199,7 +199,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recepción de Equipos";
             this.Load += new System.EventHandler(this.FrmRecepcionEquipos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcionEquipos)).EndInit();
             this.gbCriteriosBusqueda.ResumeLayout(false);
             this.gbCriteriosBusqueda.PerformLayout();
             this.pAcciones.ResumeLayout(false);
@@ -211,7 +211,7 @@
 
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lbNombreCliente;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvRecepcionEquipos;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label lbFechaFinal;

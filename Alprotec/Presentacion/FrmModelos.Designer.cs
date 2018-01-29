@@ -196,7 +196,7 @@
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label lbMarca;
-        private System.Windows.Forms.Panel pAcciones;
+        public System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnEliminar;

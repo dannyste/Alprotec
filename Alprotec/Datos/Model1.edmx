@@ -163,42 +163,46 @@
           <Property Name="continuidadLineas" Type="bit" />
           <Property Name="idTrabajador" Type="bigint" />
         </EntityType>
-        <EntityType Name="Recepcion">
+        <EntityType Name="RecepcionEquipo">
           <Key>
-            <PropertyRef Name="idRecepcion" />
+            <PropertyRef Name="idRecepcionEquipo" />
           </Key>
-          <Property Name="idRecepcion" Type="bigint" Nullable="false" />
+          <Property Name="idRecepcionEquipo" Type="bigint" Nullable="false" />
           <Property Name="numero" Type="int" Nullable="false" />
           <Property Name="reparadoAntes" Type="bit" Nullable="false" />
-          <Property Name="existeEstator" Type="int" Nullable="false" />
+          <Property Name="existeEstator" Type="bit" Nullable="false" />
           <Property Name="estadoEstator" Type="int" Nullable="false" />
-          <Property Name="existeRotor" Type="int" Nullable="false" />
+          <Property Name="existeRotor" Type="bit" Nullable="false" />
           <Property Name="estadoRotor" Type="int" Nullable="false" />
           <Property Name="posicionCajaConexion" Type="int" Nullable="false" />
-          <Property Name="existeCajaConexion" Type="int" Nullable="false" />
+          <Property Name="existeCajaConexion" Type="bit" Nullable="false" />
           <Property Name="estadoCajaConexion" Type="int" Nullable="false" />
-          <Property Name="existeBaseCajaConexion" Type="int" Nullable="false" />
+          <Property Name="existeBaseCajaConexion" Type="bit" Nullable="false" />
           <Property Name="estadoBaseCajaConexion" Type="int" Nullable="false" />
-          <Property Name="existeVentilador" Type="int" Nullable="false" />
+          <Property Name="existeVentilador" Type="bit" Nullable="false" />
           <Property Name="estadoVentilador" Type="int" Nullable="false" />
-          <Property Name="existeTapaVentilador" Type="int" Nullable="false" />
+          <Property Name="existeTapaVentilador" Type="bit" Nullable="false" />
           <Property Name="estadoTapaVentilador" Type="int" Nullable="false" />
-          <Property Name="existeTapaDelantera" Type="int" Nullable="false" />
-          <Property Name="estadoTapaDelantera" Type="int" Nullable="false" />
-          <Property Name="existePolea" Type="int" Nullable="false" />
+          <Property Name="existeTapaFrontal" Type="bit" Nullable="false" />
+          <Property Name="estadoTapaFrontal" Type="int" Nullable="false" />
+          <Property Name="existeTapaPosterior" Type="bit" Nullable="false" />
+          <Property Name="estadoTapaPosterior" Type="int" Nullable="false" />
+          <Property Name="existePolea" Type="bit" Nullable="false" />
           <Property Name="estadoPolea" Type="int" Nullable="false" />
-          <Property Name="existeAcople" Type="int" Nullable="false" />
+          <Property Name="existeAcople" Type="bit" Nullable="false" />
           <Property Name="estadoAcople" Type="int" Nullable="false" />
-          <Property Name="existeBaseMotor" Type="int" Nullable="false" />
+          <Property Name="existeBaseMotor" Type="bit" Nullable="false" />
           <Property Name="estadoBaseMotor" Type="int" Nullable="false" />
+          <Property Name="existeCapacitorArranque" Type="bit" Nullable="false" />
+          <Property Name="estadoCapacitorArranque" Type="int" Nullable="false" />
+          <Property Name="existeCapacitorPermanente" Type="bit" Nullable="false" />
+          <Property Name="estadoCapacitorPermanente" Type="int" Nullable="false" />
+          <Property Name="existeCentrifugo" Type="bit" Nullable="false" />
+          <Property Name="estadoCentrifugo" Type="int" Nullable="false" />
+          <Property Name="existePlatinera" Type="bit" Nullable="false" />
+          <Property Name="estadoPlatinera" Type="int" Nullable="false" />
           <Property Name="observacionesCliente" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="diagnosticoFallas" Type="nvarchar" MaxLength="500" Nullable="false" />
-          <Property Name="nombreEntrega" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="cargoEntrega" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="nombreRecibe" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="cargoRecibe" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="observaciones" Type="nvarchar" MaxLength="500" />
-          <Property Name="nombreInterventor" Type="nvarchar" MaxLength="100" />
           <Property Name="idCliente" Type="bigint" Nullable="false" />
           <Property Name="idEquipo" Type="bigint" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
@@ -343,7 +347,7 @@
           <EntitySet Name="Proceso" EntityType="Self.Proceso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PruebaElectricaFinal" EntityType="Self.PruebaElectricaFinal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PruebaElectricaInicial" EntityType="Self.PruebaElectricaInicial" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Recepcion" EntityType="Self.Recepcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecepcionEquipo" EntityType="Self.RecepcionEquipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rodamiento" EntityType="Self.Rodamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoCatalogo" EntityType="Self.TipoCatalogo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trabajador" EntityType="Self.Trabajador" Schema="dbo" store:Type="Tables" />
@@ -391,7 +395,7 @@
           <EntitySet Name="Proceso" EntityType="AlprotecdbModel.Proceso" />
           <EntitySet Name="PruebaElectricaFinal" EntityType="AlprotecdbModel.PruebaElectricaFinal" />
           <EntitySet Name="PruebaElectricaInicial" EntityType="AlprotecdbModel.PruebaElectricaInicial" />
-          <EntitySet Name="Recepcion" EntityType="AlprotecdbModel.Recepcion" />
+          <EntitySet Name="RecepcionEquipo" EntityType="AlprotecdbModel.RecepcionEquipo" />
           <EntitySet Name="Rodamiento" EntityType="AlprotecdbModel.Rodamiento" />
           <EntitySet Name="TipoCatalogo" EntityType="AlprotecdbModel.TipoCatalogo" />
           <EntitySet Name="Trabajador" EntityType="AlprotecdbModel.Trabajador" />
@@ -590,42 +594,46 @@
           <Property Name="continuidadLineas" Type="Boolean" />
           <Property Name="idTrabajador" Type="Int64" />
         </EntityType>
-        <EntityType Name="Recepcion">
+        <EntityType Name="RecepcionEquipo">
           <Key>
-            <PropertyRef Name="idRecepcion" />
+            <PropertyRef Name="idRecepcionEquipo" />
           </Key>
-          <Property Name="idRecepcion" Type="Int64" Nullable="false" />
+          <Property Name="idRecepcionEquipo" Type="Int64" Nullable="false" />
           <Property Name="numero" Type="Int32" Nullable="false" />
           <Property Name="reparadoAntes" Type="Boolean" Nullable="false" />
-          <Property Name="existeEstator" Type="Int32" Nullable="false" />
+          <Property Name="existeEstator" Type="Boolean" Nullable="false" />
           <Property Name="estadoEstator" Type="Int32" Nullable="false" />
-          <Property Name="existeRotor" Type="Int32" Nullable="false" />
+          <Property Name="existeRotor" Type="Boolean" Nullable="false" />
           <Property Name="estadoRotor" Type="Int32" Nullable="false" />
           <Property Name="posicionCajaConexion" Type="Int32" Nullable="false" />
-          <Property Name="existeCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="existeCajaConexion" Type="Boolean" Nullable="false" />
           <Property Name="estadoCajaConexion" Type="Int32" Nullable="false" />
-          <Property Name="existeBaseCajaConexion" Type="Int32" Nullable="false" />
+          <Property Name="existeBaseCajaConexion" Type="Boolean" Nullable="false" />
           <Property Name="estadoBaseCajaConexion" Type="Int32" Nullable="false" />
-          <Property Name="existeVentilador" Type="Int32" Nullable="false" />
+          <Property Name="existeVentilador" Type="Boolean" Nullable="false" />
           <Property Name="estadoVentilador" Type="Int32" Nullable="false" />
-          <Property Name="existeTapaVentilador" Type="Int32" Nullable="false" />
+          <Property Name="existeTapaVentilador" Type="Boolean" Nullable="false" />
           <Property Name="estadoTapaVentilador" Type="Int32" Nullable="false" />
-          <Property Name="existeTapaDelantera" Type="Int32" Nullable="false" />
-          <Property Name="estadoTapaDelantera" Type="Int32" Nullable="false" />
-          <Property Name="existePolea" Type="Int32" Nullable="false" />
+          <Property Name="existeTapaFrontal" Type="Boolean" Nullable="false" />
+          <Property Name="estadoTapaFrontal" Type="Int32" Nullable="false" />
+          <Property Name="existeTapaPosterior" Type="Boolean" Nullable="false" />
+          <Property Name="estadoTapaPosterior" Type="Int32" Nullable="false" />
+          <Property Name="existePolea" Type="Boolean" Nullable="false" />
           <Property Name="estadoPolea" Type="Int32" Nullable="false" />
-          <Property Name="existeAcople" Type="Int32" Nullable="false" />
+          <Property Name="existeAcople" Type="Boolean" Nullable="false" />
           <Property Name="estadoAcople" Type="Int32" Nullable="false" />
-          <Property Name="existeBaseMotor" Type="Int32" Nullable="false" />
+          <Property Name="existeBaseMotor" Type="Boolean" Nullable="false" />
           <Property Name="estadoBaseMotor" Type="Int32" Nullable="false" />
+          <Property Name="existeCapacitorArranque" Type="Boolean" Nullable="false" />
+          <Property Name="estadoCapacitorArranque" Type="Int32" Nullable="false" />
+          <Property Name="existeCapacitorPermanente" Type="Boolean" Nullable="false" />
+          <Property Name="estadoCapacitorPermanente" Type="Int32" Nullable="false" />
+          <Property Name="existeCentrifugo" Type="Boolean" Nullable="false" />
+          <Property Name="estadoCentrifugo" Type="Int32" Nullable="false" />
+          <Property Name="existePlatinera" Type="Boolean" Nullable="false" />
+          <Property Name="estadoPlatinera" Type="Int32" Nullable="false" />
           <Property Name="observacionesCliente" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="diagnosticoFallas" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="nombreEntrega" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="cargoEntrega" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="nombreRecibe" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="cargoRecibe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="nombreInterventor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="idCliente" Type="Int64" Nullable="false" />
           <Property Name="idEquipo" Type="Int64" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
@@ -934,31 +942,35 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Recepcion">
-            <EntityTypeMapping TypeName="AlprotecdbModel.Recepcion">
-              <MappingFragment StoreEntitySet="Recepcion">
+          <EntitySetMapping Name="RecepcionEquipo">
+            <EntityTypeMapping TypeName="AlprotecdbModel.RecepcionEquipo">
+              <MappingFragment StoreEntitySet="RecepcionEquipo">
                 <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
                 <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-                <ScalarProperty Name="nombreInterventor" ColumnName="nombreInterventor" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="cargoRecibe" ColumnName="cargoRecibe" />
-                <ScalarProperty Name="nombreRecibe" ColumnName="nombreRecibe" />
-                <ScalarProperty Name="cargoEntrega" ColumnName="cargoEntrega" />
-                <ScalarProperty Name="nombreEntrega" ColumnName="nombreEntrega" />
                 <ScalarProperty Name="diagnosticoFallas" ColumnName="diagnosticoFallas" />
                 <ScalarProperty Name="observacionesCliente" ColumnName="observacionesCliente" />
+                <ScalarProperty Name="estadoPlatinera" ColumnName="estadoPlatinera" />
+                <ScalarProperty Name="existePlatinera" ColumnName="existePlatinera" />
+                <ScalarProperty Name="estadoCentrifugo" ColumnName="estadoCentrifugo" />
+                <ScalarProperty Name="existeCentrifugo" ColumnName="existeCentrifugo" />
+                <ScalarProperty Name="estadoCapacitorPermanente" ColumnName="estadoCapacitorPermanente" />
+                <ScalarProperty Name="existeCapacitorPermanente" ColumnName="existeCapacitorPermanente" />
+                <ScalarProperty Name="estadoCapacitorArranque" ColumnName="estadoCapacitorArranque" />
+                <ScalarProperty Name="existeCapacitorArranque" ColumnName="existeCapacitorArranque" />
                 <ScalarProperty Name="estadoBaseMotor" ColumnName="estadoBaseMotor" />
                 <ScalarProperty Name="existeBaseMotor" ColumnName="existeBaseMotor" />
                 <ScalarProperty Name="estadoAcople" ColumnName="estadoAcople" />
                 <ScalarProperty Name="existeAcople" ColumnName="existeAcople" />
                 <ScalarProperty Name="estadoPolea" ColumnName="estadoPolea" />
                 <ScalarProperty Name="existePolea" ColumnName="existePolea" />
-                <ScalarProperty Name="estadoTapaDelantera" ColumnName="estadoTapaDelantera" />
-                <ScalarProperty Name="existeTapaDelantera" ColumnName="existeTapaDelantera" />
+                <ScalarProperty Name="estadoTapaPosterior" ColumnName="estadoTapaPosterior" />
+                <ScalarProperty Name="existeTapaPosterior" ColumnName="existeTapaPosterior" />
+                <ScalarProperty Name="estadoTapaFrontal" ColumnName="estadoTapaFrontal" />
+                <ScalarProperty Name="existeTapaFrontal" ColumnName="existeTapaFrontal" />
                 <ScalarProperty Name="estadoTapaVentilador" ColumnName="estadoTapaVentilador" />
                 <ScalarProperty Name="existeTapaVentilador" ColumnName="existeTapaVentilador" />
                 <ScalarProperty Name="estadoVentilador" ColumnName="estadoVentilador" />
@@ -974,7 +986,7 @@
                 <ScalarProperty Name="existeEstator" ColumnName="existeEstator" />
                 <ScalarProperty Name="reparadoAntes" ColumnName="reparadoAntes" />
                 <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="idRecepcion" ColumnName="idRecepcion" />
+                <ScalarProperty Name="idRecepcionEquipo" ColumnName="idRecepcionEquipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

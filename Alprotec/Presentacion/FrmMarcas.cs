@@ -15,6 +15,10 @@ namespace Presentacion
 {
     public partial class FrmMarcas : Form
     {
+        public FrmNuevoModificarEquipo frmNuevoModificarEquipo;
+
+        public bool busqueda = false;
+
         private bool error = false;
 
         private String mensaje = String.Empty;
@@ -22,6 +26,13 @@ namespace Presentacion
         public FrmMarcas()
         {
             InitializeComponent();
+        }
+
+        public FrmMarcas(FrmNuevoModificarEquipo frmNuevoModificarEquipo, bool busqueda)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarEquipo = frmNuevoModificarEquipo;
+            this.busqueda = busqueda;
         }
 
         private void FrmMarcas_Load(object sender, EventArgs e)
@@ -42,14 +53,23 @@ namespace Presentacion
                 Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
                 if (!error)
                 {
-                    FrmNuevaModificarMarca frmNuevaModificarMarca = new FrmNuevaModificarMarca(this, "M");
-                    frmNuevaModificarMarca.modificarMarca(catalogo);
-                    frmNuevaModificarMarca.ShowDialog();
+                    if (!busqueda)
+                    {
+                        FrmNuevaModificarMarca frmNuevaModificarMarca = new FrmNuevaModificarMarca(this, "M");
+                        frmNuevaModificarMarca.modificarMarca(catalogo);
+                        frmNuevaModificarMarca.ShowDialog();
+                    }
+                    else
+                    {
+                        frmNuevoModificarEquipo.establecerMarca = catalogo;
+                        frmNuevoModificarEquipo.llenarTxtMarca();
+                        this.Close();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }                
             }
         }
 

@@ -53,63 +53,77 @@ namespace Presentacion
             this.busqueda = busqueda;
         }
 
+        private void btnConsultarMarca_Click(object sender, EventArgs e)
+        {
+            FrmMarcas frmMarcas = new FrmMarcas(this, true);
+            frmMarcas.pAcciones.Visible = false;
+            frmMarcas.Width = 477;
+            frmMarcas.ShowDialog();
+        }
+
+        private void btnConsultarModelo_Click(object sender, EventArgs e)
+        {
+            if (txtMarca.Text.Trim() != String.Empty)
+            {
+                FrmModelos frmMarcas = new FrmModelos(this, true, marca.idCatalogo);
+                frmMarcas.pAcciones.Visible = false;
+                frmMarcas.Width = 477;
+                frmMarcas.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una marca.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*
             if (validarCampos())
             {
-                if (dgvContactos.Rows.Count > 0)
+                switch (operacion)
                 {
-                    switch (operacion)
+                    case "N":
+                        EquipoBL.insertarEquipo(objetoEquipo(), ref error, ref mensaje);
+                        break;
+                    case "M":
+                        EquipoBL.actualizarEquipo(objetoEquipo(), ref error, ref mensaje);
+                        break;
+                }
+                if (!error)
+                {
+                    if (!busqueda)
                     {
-                        case "N":
-                            MarcaBL.insertarMarca(objetoMarca(), objetosContactos(), ref error, ref mensaje);
-                            break;
-                        case "M":
-                            MarcaBL.actualizarMarca(objetoMarca(), objetosContactos(), ref error, ref mensaje);
-                            break;
-                    }
-                    if (!error)
-                    {
-                        if (!busqueda)
+                        frmEquipos.actualizarDgvEquipos();
+                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
                         {
-                            frmMarcas.actualizarDgvMarcas();
-                            DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (result == DialogResult.OK)
+                            switch (operacion)
                             {
-                                switch (operacion)
-                                {
-                                    case "N":
-                                        limpiarCampos();
-                                        break;
-                                    case "M":
-                                        this.Close();
-                                        break;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (result == DialogResult.OK)
-                            {
-                                frmNuevaModificarRecepcionEquipo.establecerMarca = marca;
-                                frmNuevaModificarRecepcionEquipo.llenarTxtMarca();
-                                this.Close();
+                                case "N":
+                                    limpiarCampos();
+                                    break;
+                                case "M":
+                                    this.Close();
+                                    break;
                             }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
+                            frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
+                            this.Close();
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe agregar al menos un contacto.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            */
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -147,7 +161,6 @@ namespace Presentacion
         {
             equipo.codigoInterno = txtCodigoInterno.Text.Trim();
             equipo.claseMaquina = txtClaseMaquina.Text.Trim();
-            equipo.idModeloCatalogo = modelo.idCatalogo;
             equipo.numeroSerie = txtNoSerie.Text.Trim();
             equipo.rpm = Convert.ToInt32(txtRPM.Text.Trim());
             equipo.amp = Convert.ToDouble(txtAMP.Text.Trim());
@@ -158,6 +171,7 @@ namespace Presentacion
             equipo.frame = txtFrame.Text.Trim();
             equipo.voltaje = Convert.ToInt32(txtVoltaje.Text.Trim());
             equipo.factorServicio = txtFactorServicio.Text.Trim();
+            equipo.idModeloCatalogo = modelo.idCatalogo;
             equipo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             equipo.fechaCreacion = DateTime.Now;
             equipo.modificadoPor = Globales.UsuarioGlobal.idUsuario;

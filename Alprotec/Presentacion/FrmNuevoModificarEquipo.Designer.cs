@@ -335,6 +335,7 @@
             this.btnConsultarMarca.Size = new System.Drawing.Size(30, 30);
             this.btnConsultarMarca.TabIndex = 31;
             this.btnConsultarMarca.UseVisualStyleBackColor = true;
+            this.btnConsultarMarca.Click += new System.EventHandler(this.btnConsultarMarca_Click);
             // 
             // btnNuevoModelo
             // 
@@ -357,6 +358,7 @@
             this.btnConsultarModelo.Size = new System.Drawing.Size(30, 30);
             this.btnConsultarModelo.TabIndex = 33;
             this.btnConsultarModelo.UseVisualStyleBackColor = true;
+            this.btnConsultarModelo.Click += new System.EventHandler(this.btnConsultarModelo_Click);
             // 
             // txtMarca
             // 

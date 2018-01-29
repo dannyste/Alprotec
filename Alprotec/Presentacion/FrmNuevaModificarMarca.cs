@@ -91,7 +91,7 @@ namespace Presentacion
         private Catalogo objetoMarca()
         {
             catalogo.valor = txtNombre.Text.Trim();
-            catalogo.idTipoCatalogo = 6L;
+            catalogo.idTipoCatalogo = (long)Constantes.Catalogo.Marca;
             catalogo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             catalogo.fechaCreacion = DateTime.Now;
             catalogo.modificadoPor = Globales.UsuarioGlobal.idUsuario;

@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="AlprotecdbModel.Proceso" Width="1.5" PointX="2.75" PointY="10.75" />
         <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaFinal" Width="1.5" PointX="10.75" PointY="4.75" />
         <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaInicial" Width="1.5" PointX="4.75" PointY="10.75" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Recepcion" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AlprotecdbModel.RecepcionEquipo" Width="1.5" PointX="10.75" PointY="6.75" />
         <EntityTypeShape EntityType="AlprotecdbModel.Rodamiento" Width="1.5" PointX="11.75" PointY="0.75" />
         <EntityTypeShape EntityType="AlprotecdbModel.TipoCatalogo" Width="1.5" PointX="0.75" PointY="2.25" />
         <EntityTypeShape EntityType="AlprotecdbModel.Trabajador" Width="1.5" PointX="6.75" PointY="11.75" />

@@ -78,6 +78,12 @@
     <Compile Include="FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDatosTecnicosMotorElectricoTrifasico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosTecnicosMotorElectricoTrifasico.Designer.cs">
+      <DependentUpon>FrmDatosTecnicosMotorElectricoTrifasico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEquipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="FrmNuevoModificarContacto.Designer.cs">
       <DependentUpon>FrmNuevoModificarContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico.Designer.cs">
+      <DependentUpon>FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoModificarEquipo.cs">
       <SubType>Form</SubType>

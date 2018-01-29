@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevaModificarRecepcionEquipo));
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.lbCliente = new System.Windows.Forms.Label();
@@ -50,8 +51,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnConsultarCliente = new System.Windows.Forms.Button();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbEstadoElementosExternos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoElementosExternos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCliente
@@ -286,6 +289,10 @@
             this.btnConsultarCliente.UseVisualStyleBackColor = true;
             this.btnConsultarCliente.Click += new System.EventHandler(this.btnConsultarCliente_Click);
             // 
+            // epError
+            // 
+            this.epError.ContainerControl = this;
+            // 
             // FrmNuevaModificarRecepcionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -317,6 +324,7 @@
             this.Load += new System.EventHandler(this.FrmNuevaModificarRecepcionEquipo_Load);
             this.gbEstadoElementosExternos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoElementosExternos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn elemento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn existe;
         private System.Windows.Forms.DataGridViewComboBoxColumn estado;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }

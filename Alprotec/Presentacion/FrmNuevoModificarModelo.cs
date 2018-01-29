@@ -99,7 +99,7 @@ namespace Presentacion
 
         public void llenarCbMarca()
         {
-            List<Catalogo> marcas = CatalogoBL.obtenerTipoCatalogo(5L, ref error, ref mensaje);
+            List<Catalogo> marcas = CatalogoBL.obtenerTipoCatalogo((long)Constantes.Catalogo.Marca, ref error, ref mensaje);
             if (!error)
             {
                 Catalogo catalogo = new Catalogo();
@@ -120,7 +120,7 @@ namespace Presentacion
         {
             catalogo.valor = txtNombre.Text.Trim();
             catalogo.idPadre = Convert.ToInt64(cbMarca.SelectedValue);
-            catalogo.idTipoCatalogo = 8L;
+            catalogo.idTipoCatalogo = (long)Constantes.Catalogo.Modelo;
             catalogo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             catalogo.fechaCreacion = DateTime.Now;
             catalogo.modificadoPor = Globales.UsuarioGlobal.idUsuario;
@@ -154,7 +154,7 @@ namespace Presentacion
 
         private void limpiarCampos()
         {
-            cbMarca.SelectedValue = 0;
+            cbMarca.SelectedIndex = 0;
             txtNombre.Text = String.Empty;
         }
     }

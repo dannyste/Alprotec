@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidad;
+using Utilidades;
 
 namespace Datos
 {
@@ -19,7 +20,7 @@ namespace Datos
                 {
                     var query = (
                                     from c in db.Catalogo
-                                    where c.valor.Contains(filtro) && c.idTipoCatalogo == 5L
+                                    where c.valor.Contains(filtro) && c.idTipoCatalogo == (long)Constantes.Catalogo.Marca
                                     select new
                                     {
                                         Id = c.idCatalogo,
@@ -47,7 +48,7 @@ namespace Datos
                     var query = (
                                     from c in db.Catalogo
                                     join p in db.Catalogo on c.idPadre equals p.idCatalogo
-                                    where c.valor.Contains(filtro) && (c.idPadre != 0L ? c.idPadre == idPadre : (c.idPadre != 0L)) && c.idTipoCatalogo == 6L
+                                    where c.valor.Contains(filtro) && (idPadre != 0L ? c.idPadre == idPadre : (c.idPadre != 0L)) && c.idTipoCatalogo == (long)Constantes.Catalogo.Modelo
                                     select new
                                     {
                                         Id = c.idCatalogo,
