@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoModificarCliente));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCliente = new System.Windows.Forms.ComboBox();
@@ -68,7 +67,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Cambria", 10F);
             this.btnCancelar.Image = global::Presentacion.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(159, 471);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 514);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(50, 50);
@@ -80,7 +79,7 @@
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 10F);
             this.btnGuardar.Image = global::Presentacion.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(51, 471);
+            this.btnGuardar.Location = new System.Drawing.Point(51, 514);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(50, 50);
@@ -229,7 +228,7 @@
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.ReadOnly = true;
             this.dgvContactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactos.Size = new System.Drawing.Size(213, 79);
+            this.dgvContactos.Size = new System.Drawing.Size(213, 84);
             this.dgvContactos.TabIndex = 0;
             this.dgvContactos.TabStop = false;
             this.dgvContactos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentDoubleClick);
@@ -341,11 +340,11 @@
             // 
             this.btnAñadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAñadir.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnAñadir.Image = ((System.Drawing.Image)(resources.GetObject("btnAñadir.Image")));
-            this.btnAñadir.Location = new System.Drawing.Point(243, 386);
+            this.btnAñadir.Location = new System.Drawing.Point(93, 476);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(30, 30);
+            this.btnAñadir.Size = new System.Drawing.Size(69, 23);
             this.btnAñadir.TabIndex = 8;
+            this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
@@ -353,11 +352,11 @@
             // 
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnEliminar.Image = global::Presentacion.Properties.Resources.remover;
-            this.btnEliminar.Location = new System.Drawing.Point(243, 422);
+            this.btnEliminar.Location = new System.Drawing.Point(168, 476);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(30, 30);
+            this.btnEliminar.Size = new System.Drawing.Size(69, 23);
             this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -365,7 +364,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 525);
+            this.ClientSize = new System.Drawing.Size(264, 569);
             this.Controls.Add(this.txtNumeroDocumento);
             this.Controls.Add(this.lbNumeroDocumento);
             this.Controls.Add(this.cbDocumento);

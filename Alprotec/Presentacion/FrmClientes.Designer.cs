@@ -38,6 +38,7 @@
             this.rbNombre = new System.Windows.Forms.RadioButton();
             this.rbCedulaIdentidad = new System.Windows.Forms.RadioButton();
             this.pAcciones = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -78,7 +79,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(420, 161);
+            this.dgvClientes.Size = new System.Drawing.Size(420, 189);
             this.dgvClientes.TabIndex = 23;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
@@ -159,6 +160,7 @@
             // 
             // pAcciones
             // 
+            this.pAcciones.Controls.Add(this.btnModificar);
             this.pAcciones.Controls.Add(this.btnSalir);
             this.pAcciones.Controls.Add(this.btnImprimir);
             this.pAcciones.Controls.Add(this.btnEliminar);
@@ -166,13 +168,23 @@
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
             this.pAcciones.Location = new System.Drawing.Point(442, 10);
             this.pAcciones.Name = "pAcciones";
-            this.pAcciones.Size = new System.Drawing.Size(70, 281);
+            this.pAcciones.Size = new System.Drawing.Size(70, 309);
             this.pAcciones.TabIndex = 29;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::Presentacion.Properties.Resources.modificar;
+            this.btnModificar.Location = new System.Drawing.Point(10, 69);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(50, 50);
+            this.btnModificar.TabIndex = 29;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Presentacion.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(10, 222);
+            this.btnSalir.Location = new System.Drawing.Point(10, 249);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(50, 50);
             this.btnSalir.TabIndex = 28;
@@ -182,7 +194,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Presentacion.Properties.Resources.imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(10, 151);
+            this.btnImprimir.Location = new System.Drawing.Point(10, 189);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 27;
@@ -192,7 +204,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(10, 80);
+            this.btnEliminar.Location = new System.Drawing.Point(10, 129);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.TabIndex = 26;
@@ -213,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 294);
+            this.ClientSize = new System.Drawing.Size(522, 326);
             this.Controls.Add(this.pAcciones);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.gbCriteriosBusqueda);
@@ -247,6 +259,7 @@
         private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.RadioButton rbRUC;
-        public System.Windows.Forms.Panel pAcciones;
+        private System.Windows.Forms.Panel pAcciones;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

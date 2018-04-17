@@ -214,6 +214,9 @@
     <EmbeddedResource Include="FrmNuevoModificarContacto.resx">
       <DependentUpon>FrmNuevoModificarContacto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico.resx">
+      <DependentUpon>FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoModificarEquipo.resx">
       <DependentUpon>FrmNuevoModificarEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +325,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modificar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

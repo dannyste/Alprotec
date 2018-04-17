@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevaModificarRecepcionEquipo));
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.lbCliente = new System.Windows.Forms.Label();
             this.gbEstadoElementosExternos = new System.Windows.Forms.GroupBox();
             this.dgvEstadoElementosExternos = new System.Windows.Forms.DataGridView();
-            this.elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
             this.txtDiagnosticoFallas = new System.Windows.Forms.TextBox();
@@ -45,13 +41,14 @@
             this.lbObservacionesCliente = new System.Windows.Forms.Label();
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.lbEquipo = new System.Windows.Forms.Label();
-            this.btnNuevoEquipo = new System.Windows.Forms.Button();
-            this.btnConsultarEquipo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.btnConsultarCliente = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBuscarEquipo = new System.Windows.Forms.Button();
+            this.elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gbEstadoElementosExternos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoElementosExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
@@ -95,8 +92,6 @@
             this.dgvEstadoElementosExternos.AllowUserToDeleteRows = false;
             this.dgvEstadoElementosExternos.AllowUserToResizeColumns = false;
             this.dgvEstadoElementosExternos.AllowUserToResizeRows = false;
-            this.dgvEstadoElementosExternos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEstadoElementosExternos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEstadoElementosExternos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstadoElementosExternos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEstadoElementosExternos.ColumnHeadersHeight = 30;
@@ -108,34 +103,12 @@
             this.dgvEstadoElementosExternos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvEstadoElementosExternos.Location = new System.Drawing.Point(14, 19);
             this.dgvEstadoElementosExternos.Name = "dgvEstadoElementosExternos";
+            this.dgvEstadoElementosExternos.RowHeadersVisible = false;
             this.dgvEstadoElementosExternos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvEstadoElementosExternos.RowTemplate.Height = 24;
             this.dgvEstadoElementosExternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvEstadoElementosExternos.Size = new System.Drawing.Size(595, 361);
+            this.dgvEstadoElementosExternos.Size = new System.Drawing.Size(594, 361);
             this.dgvEstadoElementosExternos.TabIndex = 24;
-            // 
-            // elemento
-            // 
-            this.elemento.FillWeight = 152.2842F;
-            this.elemento.HeaderText = "Elemento";
-            this.elemento.Name = "elemento";
-            this.elemento.ReadOnly = true;
-            // 
-            // existe
-            // 
-            this.existe.FillWeight = 70.4614F;
-            this.existe.HeaderText = "Existe";
-            this.existe.Name = "existe";
-            // 
-            // estado
-            // 
-            this.estado.FillWeight = 77.25427F;
-            this.estado.HeaderText = "Estado";
-            this.estado.Items.AddRange(new object[] {
-            "Ninguno",
-            "Bueno",
-            "Regular",
-            "Malo"});
-            this.estado.Name = "estado";
             // 
             // txtNumero
             // 
@@ -201,7 +174,7 @@
             // txtEquipo
             // 
             this.txtEquipo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtEquipo.Location = new System.Drawing.Point(356, 64);
+            this.txtEquipo.Location = new System.Drawing.Point(363, 64);
             this.txtEquipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEquipo.Name = "txtEquipo";
             this.txtEquipo.ReadOnly = true;
@@ -213,33 +186,11 @@
             // 
             this.lbEquipo.AutoSize = true;
             this.lbEquipo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbEquipo.Location = new System.Drawing.Point(354, 46);
+            this.lbEquipo.Location = new System.Drawing.Point(361, 46);
             this.lbEquipo.Name = "lbEquipo";
             this.lbEquipo.Size = new System.Drawing.Size(51, 16);
             this.lbEquipo.TabIndex = 24;
             this.lbEquipo.Text = "Equipo";
-            // 
-            // btnNuevoEquipo
-            // 
-            this.btnNuevoEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoEquipo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnNuevoEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEquipo.Image")));
-            this.btnNuevoEquipo.Location = new System.Drawing.Point(618, 58);
-            this.btnNuevoEquipo.Name = "btnNuevoEquipo";
-            this.btnNuevoEquipo.Size = new System.Drawing.Size(30, 30);
-            this.btnNuevoEquipo.TabIndex = 26;
-            this.btnNuevoEquipo.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultarEquipo
-            // 
-            this.btnConsultarEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultarEquipo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnConsultarEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarEquipo.Image")));
-            this.btnConsultarEquipo.Location = new System.Drawing.Point(582, 58);
-            this.btnConsultarEquipo.Name = "btnConsultarEquipo";
-            this.btnConsultarEquipo.Size = new System.Drawing.Size(30, 30);
-            this.btnConsultarEquipo.TabIndex = 25;
-            this.btnConsultarEquipo.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
@@ -265,41 +216,68 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnNuevoCliente
+            // btnBuscarCliente
             // 
-            this.btnNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCliente.Image")));
-            this.btnNuevoCliente.Location = new System.Drawing.Point(287, 58);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(30, 30);
-            this.btnNuevoCliente.TabIndex = 10;
-            this.btnNuevoCliente.UseVisualStyleBackColor = true;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // btnConsultarCliente
-            // 
-            this.btnConsultarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultarCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnConsultarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarCliente.Image")));
-            this.btnConsultarCliente.Location = new System.Drawing.Point(251, 58);
-            this.btnConsultarCliente.Name = "btnConsultarCliente";
-            this.btnConsultarCliente.Size = new System.Drawing.Size(30, 30);
-            this.btnConsultarCliente.TabIndex = 9;
-            this.btnConsultarCliente.UseVisualStyleBackColor = true;
-            this.btnConsultarCliente.Click += new System.EventHandler(this.btnConsultarCliente_Click);
+            this.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(251, 64);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(60, 23);
+            this.btnBuscarCliente.TabIndex = 9;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // epError
             // 
             this.epError.ContainerControl = this;
+            // 
+            // btnBuscarEquipo
+            // 
+            this.btnBuscarEquipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarEquipo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnBuscarEquipo.Location = new System.Drawing.Point(588, 64);
+            this.btnBuscarEquipo.Name = "btnBuscarEquipo";
+            this.btnBuscarEquipo.Size = new System.Drawing.Size(60, 23);
+            this.btnBuscarEquipo.TabIndex = 25;
+            this.btnBuscarEquipo.Text = "Buscar";
+            this.btnBuscarEquipo.UseVisualStyleBackColor = true;
+            // 
+            // elemento
+            // 
+            this.elemento.HeaderText = "Elemento";
+            this.elemento.Name = "elemento";
+            this.elemento.ReadOnly = true;
+            this.elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.elemento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.elemento.Width = 271;
+            // 
+            // existe
+            // 
+            this.existe.HeaderText = "Existe";
+            this.existe.Name = "existe";
+            this.existe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.existe.Width = 140;
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado.HeaderText = "Estado";
+            this.estado.Items.AddRange(new object[] {
+            "Ninguno",
+            "Bueno",
+            "Regular",
+            "Malo"});
+            this.estado.Name = "estado";
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado.Width = 163;
             // 
             // FrmNuevaModificarRecepcionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 548);
-            this.Controls.Add(this.btnNuevoEquipo);
-            this.Controls.Add(this.btnConsultarEquipo);
+            this.Controls.Add(this.btnBuscarEquipo);
             this.Controls.Add(this.txtEquipo);
             this.Controls.Add(this.lbEquipo);
             this.Controls.Add(this.btnCancelar);
@@ -311,13 +289,13 @@
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lbNumero);
             this.Controls.Add(this.gbEstadoElementosExternos);
-            this.Controls.Add(this.btnNuevoCliente);
-            this.Controls.Add(this.btnConsultarCliente);
+            this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lbCliente);
             this.Font = new System.Drawing.Font("Cambria", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "FrmNuevaModificarRecepcionEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Recepción de Equipo";
@@ -334,8 +312,7 @@
 
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lbCliente;
-        private System.Windows.Forms.Button btnConsultarCliente;
-        private System.Windows.Forms.Button btnNuevoCliente;
+        private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.GroupBox gbEstadoElementosExternos;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lbNumero;
@@ -346,13 +323,12 @@
         private System.Windows.Forms.Label lbObservacionesCliente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnNuevoEquipo;
-        private System.Windows.Forms.Button btnConsultarEquipo;
         private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.Label lbEquipo;
+        private System.Windows.Forms.ErrorProvider epError;
+        private System.Windows.Forms.Button btnBuscarEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn elemento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn existe;
         private System.Windows.Forms.DataGridViewComboBoxColumn estado;
-        private System.Windows.Forms.ErrorProvider epError;
     }
 }

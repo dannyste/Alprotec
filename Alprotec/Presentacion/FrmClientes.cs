@@ -73,36 +73,15 @@ namespace Presentacion
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && busqueda)
             {
                 long idCliente = Convert.ToInt64(dgvClientes.Rows[e.RowIndex].Cells["Id"].Value);
                 Cliente cliente = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
                 if (!error)
                 {
-                    if (!busqueda)
-                    {
-                        List<Contacto> contactos = ContactoBL.obtenerContactos(idCliente, ref error, ref mensaje);
-                        if (!error)
-                        {
-                            FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "M");
-                            frmNuevoModificarCliente.llenarCbCliente();
-                            frmNuevoModificarCliente.llenarCbDocumento();
-                            frmNuevoModificarCliente.llenarCbCiudad();
-                            frmNuevoModificarCliente.modificarCliente(cliente);
-                            frmNuevoModificarCliente.modificarContactos(contactos);
-                            frmNuevoModificarCliente.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
-                        frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
-                        this.Close();
-                    }
+                    frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
+                    frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
+                    this.Close();
                 }
                 else
                 {
@@ -115,6 +94,41 @@ namespace Presentacion
         {
             FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "N");
             frmNuevoModificarCliente.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.Rows.Count > 0)
+            {
+                long idCliente = Convert.ToInt64(dgvClientes.Rows[dgvClientes.CurrentCell.RowIndex].Cells["Id"].Value);
+                Cliente cliente = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
+                if (!error)
+                {
+                    List<Contacto> contactos = ContactoBL.obtenerContactos(idCliente, ref error, ref mensaje);
+                    if (!error)
+                    {
+                        FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "M");
+                        frmNuevoModificarCliente.llenarCbCliente();
+                        frmNuevoModificarCliente.llenarCbDocumento();
+                        frmNuevoModificarCliente.llenarCbCiudad();
+                        frmNuevoModificarCliente.modificarCliente(cliente);
+                        frmNuevoModificarCliente.modificarContactos(contactos);
+                        frmNuevoModificarCliente.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No tiene ningún cliente.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -95,18 +95,10 @@ namespace Presentacion
             dgvEstadoElementosExternos.Rows[15].Cells["estado"].Value = "Ninguno";
         }
 
-        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             FrmClientes frmClientes = new FrmClientes(this, true);
-            frmClientes.pAcciones.Visible = false;
-            frmClientes.Width = 477;
             frmClientes.ShowDialog();
-        }
-        
-        private void btnNuevoCliente_Click(object sender, EventArgs e)
-        {
-            FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "N", true);
-            frmNuevoModificarCliente.ShowDialog();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

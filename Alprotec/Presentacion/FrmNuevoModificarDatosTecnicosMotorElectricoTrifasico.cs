@@ -16,5 +16,10 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void gbProcesosRequieren_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
