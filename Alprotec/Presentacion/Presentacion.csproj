@@ -55,6 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlprotecDS.cs">
+      <DependentUpon>AlprotecDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AlprotecDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +68,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CRClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRDatosTecnicosMotorElectricoTrifasico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRDatosTecnicosMotorElectricoTrifasico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRRecepcionEquipo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRRecepcionEquipo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CRTrabajadores.cs">
@@ -185,6 +201,14 @@
     <EmbeddedResource Include="CRClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRDatosTecnicosMotorElectricoTrifasico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRDatosTecnicosMotorElectricoTrifasico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRRecepcionEquipo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRRecepcionEquipo.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CRTrabajadores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
