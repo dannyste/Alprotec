@@ -111,6 +111,14 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tpPagina33 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -152,14 +160,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.tcPaginas.SuspendLayout();
             this.tpPagina13.SuspendLayout();
             this.gbProcesosRequieren.SuspendLayout();
@@ -173,14 +185,14 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpPagina33.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPaginas
@@ -1115,8 +1127,99 @@
             this.tpPagina33.Padding = new System.Windows.Forms.Padding(3);
             this.tpPagina33.Size = new System.Drawing.Size(838, 573);
             this.tpPagina33.TabIndex = 2;
+            this.tpPagina33.Text = "Pagina 3 de 3";
             this.tpPagina33.UseVisualStyleBackColor = true;
             this.tpPagina33.Click += new System.EventHandler(this.tpPagina33_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.dataGridView4);
+            this.groupBox8.Controls.Add(this.label27);
+            this.groupBox8.Controls.Add(this.label32);
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Location = new System.Drawing.Point(495, 282);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(340, 110);
+            this.groupBox8.TabIndex = 33;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Responsable de actividades";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView4.ColumnHeadersHeight = 30;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.columnaResponsable});
+            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 22);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(323, 80);
+            this.dataGridView4.TabIndex = 78;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn8.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 101;
+            // 
+            // columnaResponsable
+            // 
+            this.columnaResponsable.HeaderText = "Responsable";
+            this.columnaResponsable.Name = "columnaResponsable";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label27.Location = new System.Drawing.Point(6, 258);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(44, 16);
+            this.label27.TabIndex = 77;
+            this.label27.Text = "Nota: ";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label32.Location = new System.Drawing.Point(5, 21);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(0, 16);
+            this.label32.TabIndex = 68;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Cambria", 10F);
+            this.button4.Location = new System.Drawing.Point(405, 39);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(60, 23);
+            this.button4.TabIndex = 45;
+            this.button4.Text = "Buscar";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -1155,9 +1258,9 @@
             this.label20.Font = new System.Drawing.Font("Cambria", 10F);
             this.label20.Location = new System.Drawing.Point(5, 213);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(153, 16);
+            this.label20.Size = new System.Drawing.Size(129, 16);
             this.label20.TabIndex = 76;
-            this.label20.Text = "Lado Ventilador H, MAH";
+            this.label20.Text = "Lado Acople A, MAB";
             // 
             // textBox19
             // 
@@ -1175,9 +1278,9 @@
             this.label22.Font = new System.Drawing.Font("Cambria", 10F);
             this.label22.Location = new System.Drawing.Point(5, 165);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(153, 16);
+            this.label22.Size = new System.Drawing.Size(126, 16);
             this.label22.TabIndex = 74;
-            this.label22.Text = "Lado Ventilador H, MAH";
+            this.label22.Text = "Lado Acople V, MBV";
             // 
             // textBox21
             // 
@@ -1195,9 +1298,9 @@
             this.label23.Font = new System.Drawing.Font("Cambria", 10F);
             this.label23.Location = new System.Drawing.Point(5, 117);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(153, 16);
+            this.label23.Size = new System.Drawing.Size(131, 16);
             this.label23.TabIndex = 72;
-            this.label23.Text = "Lado Ventilador H, MAH";
+            this.label23.Text = "Lado Acople H, MBH";
             // 
             // textBox22
             // 
@@ -1215,9 +1318,9 @@
             this.label24.Font = new System.Drawing.Font("Cambria", 10F);
             this.label24.Location = new System.Drawing.Point(5, 69);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(153, 16);
+            this.label24.Size = new System.Drawing.Size(147, 16);
             this.label24.TabIndex = 70;
-            this.label24.Text = "Lado Ventilador H, MAH";
+            this.label24.Text = "Lado Ventilador V, MAV";
             // 
             // textBox23
             // 
@@ -1252,15 +1355,27 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox26);
             this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.label29);
             this.groupBox6.Controls.Add(this.textBox20);
+            this.groupBox6.Controls.Add(this.textBox25);
             this.groupBox6.Controls.Add(this.label21);
+            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Controls.Add(this.textBox29);
+            this.groupBox6.Controls.Add(this.textBox28);
+            this.groupBox6.Controls.Add(this.textBox27);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Controls.Add(this.textBox24);
+            this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Location = new System.Drawing.Point(6, 403);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(480, 153);
+            this.groupBox6.Size = new System.Drawing.Size(826, 164);
             this.groupBox6.TabIndex = 31;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Montaje Rodamientos";
+            this.groupBox6.Text = "Pruebas Eléctricas Finales";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // button2
@@ -1591,95 +1706,125 @@
             this.lbNumero.TabIndex = 30;
             this.lbNumero.Text = "Número";
             // 
-            // groupBox8
+            // label26
             // 
-            this.groupBox8.Controls.Add(this.dataGridView4);
-            this.groupBox8.Controls.Add(this.label27);
-            this.groupBox8.Controls.Add(this.label32);
-            this.groupBox8.Controls.Add(this.button4);
-            this.groupBox8.Location = new System.Drawing.Point(495, 282);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(340, 110);
-            this.groupBox8.TabIndex = 33;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Responsable de actividades";
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label26.Location = new System.Drawing.Point(486, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(171, 16);
+            this.label26.TabIndex = 72;
+            this.label26.Text = "Resistencia de Aislamiento";
             // 
-            // label27
+            // textBox24
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label27.Location = new System.Drawing.Point(6, 258);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 16);
-            this.label27.TabIndex = 77;
-            this.label27.Text = "Nota: ";
+            this.textBox24.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox24.Location = new System.Drawing.Point(488, 34);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(327, 23);
+            this.textBox24.TabIndex = 71;
+            this.textBox24.TabStop = false;
             // 
-            // label32
+            // label28
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label32.Location = new System.Drawing.Point(5, 21);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(0, 16);
-            this.label32.TabIndex = 68;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label28.Location = new System.Drawing.Point(486, 64);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(126, 16);
+            this.label28.TabIndex = 74;
+            this.label28.Text = "Indice de Polaridad";
             // 
-            // button4
+            // textBox25
             // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Cambria", 10F);
-            this.button4.Location = new System.Drawing.Point(405, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 23);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.textBox25.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox25.Location = new System.Drawing.Point(488, 82);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(327, 23);
+            this.textBox25.TabIndex = 73;
+            this.textBox25.TabStop = false;
             // 
-            // dataGridView4
+            // label29
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToResizeColumns = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView4.ColumnHeadersHeight = 30;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.columnaResponsable});
-            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(323, 80);
-            this.dataGridView4.TabIndex = 78;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label29.Location = new System.Drawing.Point(486, 112);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(162, 16);
+            this.label29.TabIndex = 76;
+            this.label29.Text = "Continuidad entre Lineas";
             // 
-            // dataGridViewTextBoxColumn8
+            // textBox26
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn8.Width = 119;
+            this.textBox26.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox26.Location = new System.Drawing.Point(488, 130);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(327, 23);
+            this.textBox26.TabIndex = 75;
+            this.textBox26.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn9
+            // label30
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 101;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label30.Location = new System.Drawing.Point(9, 76);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(58, 16);
+            this.label30.TabIndex = 72;
+            this.label30.Text = "Fase (R)";
             // 
-            // columnaResponsable
+            // textBox27
             // 
-            this.columnaResponsable.HeaderText = "Responsable";
-            this.columnaResponsable.Name = "columnaResponsable";
+            this.textBox27.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox27.Location = new System.Drawing.Point(11, 94);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(128, 23);
+            this.textBox27.TabIndex = 71;
+            this.textBox27.TabStop = false;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox28.Location = new System.Drawing.Point(180, 94);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(128, 23);
+            this.textBox28.TabIndex = 71;
+            this.textBox28.TabStop = false;
+            // 
+            // textBox29
+            // 
+            this.textBox29.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox29.Location = new System.Drawing.Point(337, 94);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(128, 23);
+            this.textBox29.TabIndex = 71;
+            this.textBox29.TabStop = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label31.Location = new System.Drawing.Point(177, 76);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 16);
+            this.label31.TabIndex = 72;
+            this.label31.Text = "Fase (S)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label33.Location = new System.Drawing.Point(334, 76);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 16);
+            this.label33.TabIndex = 72;
+            this.label33.Text = "Fase (T)";
             // 
             // FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico
             // 
@@ -1692,7 +1837,7 @@
             this.Font = new System.Drawing.Font("Cambria", 10F);
             this.Name = "FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevos datos técnicos del motor eléctrico trifásico";
+            this.Text = "q";
             this.tcPaginas.ResumeLayout(false);
             this.tpPagina13.ResumeLayout(false);
             this.tpPagina13.PerformLayout();
@@ -1713,6 +1858,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tpPagina33.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1722,9 +1870,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1864,5 +2009,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaResponsable;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Label label26;
     }
 }
