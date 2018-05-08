@@ -166,20 +166,22 @@ namespace Presentacion
                     CRClientes crClientes = new CRClientes();
                     crClientes.SetDataSource(db.Contacto.Select(c => new
                     {
-                        Id = c.idContacto,
-                        Nombre = c.nombre,
-                        Cargo = c.cargo,
-                        Telefono = c.telefono,
-                        Movil = c.movil,
-                        CorreoElectronico = c.correoElectronico,
-                        Observaciones = c.observaciones,
-                        IdCliente = c.Cliente.idCliente,
-                        TipoCliente = c.Cliente.Catalogo1.valor,
-                        CodigoCliente = c.Cliente.codigo,
-                        NombreCliente = c.Cliente.nombre,
-                        TelefonoCliente = c.Cliente.telefono,
-                        DireccionCliente = c.Cliente.direccion,
-                        CiudadCliente = c.Cliente.Catalogo.valor
+                        Id = c.Cliente.idCliente,
+                        Tipo = c.Cliente.Catalogo1.valor,
+                        Codigo = c.Cliente.codigo,
+                        Documento = c.Cliente.Catalogo2.valor,
+                        NumeroDocumento = c.Cliente.numeroDocumento,
+                        Nombre = c.Cliente.nombre,
+                        Telefono = c.Cliente.telefono,
+                        Direccion = c.Cliente.direccion,
+                        Ciudad = c.Cliente.Catalogo.valor,
+                        NombreContacto = c.nombre,
+                        CargoContacto = c.cargo,
+                        TelefonoContacto = c.telefono,
+                        MovilContacto = c.movil,
+                        CorreoElectronicoContacto = c.correoElectronico,
+                        ObservacionesContacto = c.observaciones
+                        
                     }).ToList());
                     crClientes.SetParameterValue("CodigoFormulario", formulario.codigo);
                     crClientes.SetParameterValue("NombreFormulario", formulario.nombre);
