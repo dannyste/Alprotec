@@ -33,9 +33,9 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lbContraseña = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +67,6 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(213, 23);
             this.txtContraseña.TabIndex = 3;
-            this.txtContraseña.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContraseña_KeyUp);
             // 
             // lbContraseña
             // 
@@ -79,40 +78,36 @@
             this.lbContraseña.TabIndex = 2;
             this.lbContraseña.Text = "Contraseña";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnCancelar.Image = global::Presentacion.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(159, 93);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnIniciarSesion
-            // 
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnIniciarSesion.Image = global::Presentacion.Properties.Resources.iniciarsesion;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(51, 93);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(50, 50);
-            this.btnIniciarSesion.TabIndex = 17;
-            this.btnIniciarSesion.UseVisualStyleBackColor = true;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
-            // 
             // epError
             // 
             this.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epError.ContainerControl = this;
             // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.Location = new System.Drawing.Point(25, 98);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(100, 23);
+            this.btnIniciarSesion.TabIndex = 19;
+            this.btnIniciarSesion.Text = "Iniciar sesión";
+            this.btnIniciarSesion.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(138, 98);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 23);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 147);
+            this.ClientSize = new System.Drawing.Size(268, 129);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContraseña);
@@ -137,8 +132,8 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label lbContraseña;
+        private System.Windows.Forms.ErrorProvider epError;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.ErrorProvider epError;
     }
 }

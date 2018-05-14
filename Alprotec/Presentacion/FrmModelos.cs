@@ -56,34 +56,24 @@ namespace Presentacion
 
         private void dgvModelos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && busqueda)
             {
                 long idCatalogo = Convert.ToInt64(dgvModelos.Rows[e.RowIndex].Cells["Id"].Value);
-                Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
+                Catalogo modelo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
                 if (!error)
                 {
-                    if (!busqueda)
+                    Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(cbMarca.SelectedValue), ref error, ref mensaje);
+                    if (!error)
                     {
-                        FrmNuevoModificarModelo frmNuevoModificarModelo = new FrmNuevoModificarModelo(this, "M");
-                        frmNuevoModificarModelo.llenarCbMarca();
-                        frmNuevoModificarModelo.modificarModelo(catalogo);
-                        frmNuevoModificarModelo.ShowDialog();
+                        frmNuevoModificarEquipo.establecerMarca = marca;
+                        frmNuevoModificarEquipo.llenarTxtMarca();
+                        frmNuevoModificarEquipo.establecerModelo = modelo;
+                        frmNuevoModificarEquipo.llenarTxtModelo();
+                        this.Close();
                     }
                     else
                     {
-                        Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(cbMarca.SelectedValue), ref error, ref mensaje);
-                        if (!error)
-                        {
-                            frmNuevoModificarEquipo.establecerMarca = marca;
-                            frmNuevoModificarEquipo.llenarTxtMarca();
-                            frmNuevoModificarEquipo.establecerModelo = catalogo;
-                            frmNuevoModificarEquipo.llenarTxtModelo();
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -97,6 +87,26 @@ namespace Presentacion
         {
             FrmNuevoModificarModelo frmNuevoModificarModelo = new FrmNuevoModificarModelo(this, "N");
             frmNuevoModificarModelo.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvModelos.Rows.Count > 0)
+            {
+                long idCatalogo = Convert.ToInt64(dgvModelos.Rows[dgvModelos.CurrentCell.RowIndex].Cells["Id"].Value);
+                Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
+                if (!error)
+                {
+                    FrmNuevoModificarModelo frmNuevoModificarModelo = new FrmNuevoModificarModelo(this, "M");
+                    frmNuevoModificarModelo.llenarCbMarca();
+                    frmNuevoModificarModelo.modificarModelo(catalogo);
+                    frmNuevoModificarModelo.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

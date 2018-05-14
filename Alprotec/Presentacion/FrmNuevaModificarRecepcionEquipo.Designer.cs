@@ -33,6 +33,9 @@
             this.lbCliente = new System.Windows.Forms.Label();
             this.gbEstadoElementosExternos = new System.Windows.Forms.GroupBox();
             this.dgvEstadoElementosExternos = new System.Windows.Forms.DataGridView();
+            this.elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
             this.txtDiagnosticoFallas = new System.Windows.Forms.TextBox();
@@ -46,9 +49,6 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnBuscarEquipo = new System.Windows.Forms.Button();
-            this.elemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existe = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gbEstadoElementosExternos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoElementosExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
@@ -109,6 +109,35 @@
             this.dgvEstadoElementosExternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvEstadoElementosExternos.Size = new System.Drawing.Size(594, 361);
             this.dgvEstadoElementosExternos.TabIndex = 24;
+            // 
+            // elemento
+            // 
+            this.elemento.HeaderText = "Elemento";
+            this.elemento.Name = "elemento";
+            this.elemento.ReadOnly = true;
+            this.elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.elemento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.elemento.Width = 271;
+            // 
+            // existe
+            // 
+            this.existe.HeaderText = "Existe";
+            this.existe.Name = "existe";
+            this.existe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.existe.Width = 140;
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado.HeaderText = "Estado";
+            this.estado.Items.AddRange(new object[] {
+            "Ninguno",
+            "Bueno",
+            "Regular",
+            "Malo"});
+            this.estado.Name = "estado";
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado.Width = 163;
             // 
             // txtNumero
             // 
@@ -242,35 +271,7 @@
             this.btnBuscarEquipo.TabIndex = 25;
             this.btnBuscarEquipo.Text = "Buscar";
             this.btnBuscarEquipo.UseVisualStyleBackColor = true;
-            // 
-            // elemento
-            // 
-            this.elemento.HeaderText = "Elemento";
-            this.elemento.Name = "elemento";
-            this.elemento.ReadOnly = true;
-            this.elemento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.elemento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.elemento.Width = 271;
-            // 
-            // existe
-            // 
-            this.existe.HeaderText = "Existe";
-            this.existe.Name = "existe";
-            this.existe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.existe.Width = 140;
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado.HeaderText = "Estado";
-            this.estado.Items.AddRange(new object[] {
-            "Ninguno",
-            "Bueno",
-            "Regular",
-            "Malo"});
-            this.estado.Name = "estado";
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado.Width = 163;
+            this.btnBuscarEquipo.Click += new System.EventHandler(this.btnBuscarEquipo_Click);
             // 
             // FrmNuevaModificarRecepcionEquipo
             // 

@@ -32,14 +32,6 @@ namespace Presentacion
             this.frmPrincipal = frmPrincipal;
         }
 
-        private void txtContraseña_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnIniciarSesion_Click(null, null);
-            }
-        }
-
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             if (validarCampos())

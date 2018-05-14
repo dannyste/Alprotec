@@ -101,6 +101,12 @@ namespace Presentacion
             frmClientes.ShowDialog();
         }
 
+        private void btnBuscarEquipo_Click(object sender, EventArgs e)
+        {
+            FrmEquipos frmEquipos = new FrmEquipos(this, true);
+            frmEquipos.ShowDialog();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (validarCampos())
@@ -116,9 +122,7 @@ namespace Presentacion
                 }
                 if (!error)
                 {
-                    if (!busqueda)
-                    {
-                        //frmRecepcionEquipos.actualizarDgvRecepcionEquipos();
+                        frmRecepcionEquipos.actualizarDgvRecepcionEquipos();
                         DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
@@ -132,17 +136,6 @@ namespace Presentacion
                                     break;
                             }
                         }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
-                        {
-                            //frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
-                            //frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
-                            this.Close();
-                        }
-                    }
                 }
                 else
                 {
@@ -243,7 +236,7 @@ namespace Presentacion
         {
             txtNumero.Text = String.Empty;
             cliente = null;
-            txtCliente.Text = String.Empty; 
+            txtCliente.Text = String.Empty;
             equipo = null;
             txtEquipo.Text = String.Empty;
             for (int i = 0; i < 16; i++)

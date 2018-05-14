@@ -16,6 +16,8 @@ namespace Presentacion
 {
     public partial class FrmClientes : Form
     {
+        public FrmNuevoModificarEquipo frmNuevoModificarEquipo;
+
         public FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo;
 
         public bool busqueda = false;
@@ -29,6 +31,13 @@ namespace Presentacion
         public FrmClientes()
         {
             InitializeComponent();
+        }
+
+        public FrmClientes(FrmNuevoModificarEquipo frmNuevoModificarEquipo, bool busqueda)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarEquipo = frmNuevoModificarEquipo;
+            this.busqueda = busqueda;
         }
 
         public FrmClientes(FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo, bool busqueda)
@@ -79,9 +88,18 @@ namespace Presentacion
                 Cliente cliente = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
                 if (!error)
                 {
-                    frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
-                    frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
-                    this.Close();
+                    if (frmNuevoModificarEquipo != null)
+                    {
+                        frmNuevoModificarEquipo.establecerCliente = cliente;
+                        frmNuevoModificarEquipo.llenarTxtCliente();
+                        this.Close();
+                    }
+                    else
+                    {
+                        frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
+                        frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
+                        this.Close();
+                    }
                 }
                 else
                 {

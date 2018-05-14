@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoModificarEquipo));
             this.txtCodigoInterno = new System.Windows.Forms.TextBox();
             this.lbCodigoInterno = new System.Windows.Forms.Label();
             this.lbMarca = new System.Windows.Forms.Label();
@@ -56,22 +55,23 @@
             this.lbVoltaje = new System.Windows.Forms.Label();
             this.txtFactorServicio = new System.Windows.Forms.TextBox();
             this.lbFactorServicio = new System.Windows.Forms.Label();
-            this.btnNuevaMarca = new System.Windows.Forms.Button();
-            this.btnConsultarMarca = new System.Windows.Forms.Button();
-            this.btnNuevoModelo = new System.Windows.Forms.Button();
-            this.btnConsultarModelo = new System.Windows.Forms.Button();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBuscarModelo = new System.Windows.Forms.Button();
+            this.btnBuscarMarca = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lbCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigoInterno
             // 
             this.txtCodigoInterno.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtCodigoInterno.Location = new System.Drawing.Point(24, 20);
+            this.txtCodigoInterno.Location = new System.Drawing.Point(24, 73);
             this.txtCodigoInterno.Name = "txtCodigoInterno";
             this.txtCodigoInterno.Size = new System.Drawing.Size(213, 23);
             this.txtCodigoInterno.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             this.lbCodigoInterno.AutoSize = true;
             this.lbCodigoInterno.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbCodigoInterno.Location = new System.Drawing.Point(22, 2);
+            this.lbCodigoInterno.Location = new System.Drawing.Point(22, 55);
             this.lbCodigoInterno.Name = "lbCodigoInterno";
             this.lbCodigoInterno.Size = new System.Drawing.Size(97, 16);
             this.lbCodigoInterno.TabIndex = 2;
@@ -90,7 +90,7 @@
             // 
             this.lbMarca.AutoSize = true;
             this.lbMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbMarca.Location = new System.Drawing.Point(22, 88);
+            this.lbMarca.Location = new System.Drawing.Point(22, 141);
             this.lbMarca.Name = "lbMarca";
             this.lbMarca.Size = new System.Drawing.Size(45, 16);
             this.lbMarca.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             this.lbModelo.AutoSize = true;
             this.lbModelo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbModelo.Location = new System.Drawing.Point(22, 131);
+            this.lbModelo.Location = new System.Drawing.Point(22, 184);
             this.lbModelo.Name = "lbModelo";
             this.lbModelo.Size = new System.Drawing.Size(52, 16);
             this.lbModelo.TabIndex = 6;
@@ -109,7 +109,7 @@
             // txtClaseMaquina
             // 
             this.txtClaseMaquina.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtClaseMaquina.Location = new System.Drawing.Point(24, 63);
+            this.txtClaseMaquina.Location = new System.Drawing.Point(24, 116);
             this.txtClaseMaquina.Name = "txtClaseMaquina";
             this.txtClaseMaquina.Size = new System.Drawing.Size(213, 23);
             this.txtClaseMaquina.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             this.lbClaseMaquina.AutoSize = true;
             this.lbClaseMaquina.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbClaseMaquina.Location = new System.Drawing.Point(22, 45);
+            this.lbClaseMaquina.Location = new System.Drawing.Point(22, 98);
             this.lbClaseMaquina.Name = "lbClaseMaquina";
             this.lbClaseMaquina.Size = new System.Drawing.Size(115, 16);
             this.lbClaseMaquina.TabIndex = 8;
@@ -127,7 +127,7 @@
             // txtNoSerie
             // 
             this.txtNoSerie.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtNoSerie.Location = new System.Drawing.Point(24, 192);
+            this.txtNoSerie.Location = new System.Drawing.Point(24, 245);
             this.txtNoSerie.Name = "txtNoSerie";
             this.txtNoSerie.ShortcutsEnabled = false;
             this.txtNoSerie.Size = new System.Drawing.Size(213, 23);
@@ -137,7 +137,7 @@
             // 
             this.lbNoSerie.AutoSize = true;
             this.lbNoSerie.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNoSerie.Location = new System.Drawing.Point(22, 174);
+            this.lbNoSerie.Location = new System.Drawing.Point(22, 227);
             this.lbNoSerie.Name = "lbNoSerie";
             this.lbNoSerie.Size = new System.Drawing.Size(62, 16);
             this.lbNoSerie.TabIndex = 12;
@@ -146,7 +146,7 @@
             // txtRPM
             // 
             this.txtRPM.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtRPM.Location = new System.Drawing.Point(24, 235);
+            this.txtRPM.Location = new System.Drawing.Point(24, 288);
             this.txtRPM.Name = "txtRPM";
             this.txtRPM.ShortcutsEnabled = false;
             this.txtRPM.Size = new System.Drawing.Size(213, 23);
@@ -156,7 +156,7 @@
             // 
             this.lbRPM.AutoSize = true;
             this.lbRPM.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbRPM.Location = new System.Drawing.Point(22, 217);
+            this.lbRPM.Location = new System.Drawing.Point(22, 270);
             this.lbRPM.Name = "lbRPM";
             this.lbRPM.Size = new System.Drawing.Size(36, 16);
             this.lbRPM.TabIndex = 14;
@@ -165,7 +165,7 @@
             // txtAMP
             // 
             this.txtAMP.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtAMP.Location = new System.Drawing.Point(24, 278);
+            this.txtAMP.Location = new System.Drawing.Point(24, 331);
             this.txtAMP.Name = "txtAMP";
             this.txtAMP.ShortcutsEnabled = false;
             this.txtAMP.Size = new System.Drawing.Size(213, 23);
@@ -175,7 +175,7 @@
             // 
             this.lbAMP.AutoSize = true;
             this.lbAMP.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbAMP.Location = new System.Drawing.Point(22, 260);
+            this.lbAMP.Location = new System.Drawing.Point(22, 313);
             this.lbAMP.Name = "lbAMP";
             this.lbAMP.Size = new System.Drawing.Size(36, 16);
             this.lbAMP.TabIndex = 16;
@@ -184,7 +184,7 @@
             // txtNoInventario
             // 
             this.txtNoInventario.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtNoInventario.Location = new System.Drawing.Point(340, 20);
+            this.txtNoInventario.Location = new System.Drawing.Point(340, 73);
             this.txtNoInventario.Name = "txtNoInventario";
             this.txtNoInventario.ShortcutsEnabled = false;
             this.txtNoInventario.Size = new System.Drawing.Size(213, 23);
@@ -194,7 +194,7 @@
             // 
             this.lbNoInventario.AutoSize = true;
             this.lbNoInventario.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNoInventario.Location = new System.Drawing.Point(338, 2);
+            this.lbNoInventario.Location = new System.Drawing.Point(338, 55);
             this.lbNoInventario.Name = "lbNoInventario";
             this.lbNoInventario.Size = new System.Drawing.Size(95, 16);
             this.lbNoInventario.TabIndex = 18;
@@ -203,7 +203,7 @@
             // txtPotencia
             // 
             this.txtPotencia.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtPotencia.Location = new System.Drawing.Point(340, 63);
+            this.txtPotencia.Location = new System.Drawing.Point(340, 116);
             this.txtPotencia.Name = "txtPotencia";
             this.txtPotencia.ShortcutsEnabled = false;
             this.txtPotencia.Size = new System.Drawing.Size(213, 23);
@@ -213,7 +213,7 @@
             // 
             this.lbPotencia.AutoSize = true;
             this.lbPotencia.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbPotencia.Location = new System.Drawing.Point(338, 45);
+            this.lbPotencia.Location = new System.Drawing.Point(338, 98);
             this.lbPotencia.Name = "lbPotencia";
             this.lbPotencia.Size = new System.Drawing.Size(60, 16);
             this.lbPotencia.TabIndex = 20;
@@ -222,7 +222,7 @@
             // txtClaseAislamiento
             // 
             this.txtClaseAislamiento.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtClaseAislamiento.Location = new System.Drawing.Point(340, 106);
+            this.txtClaseAislamiento.Location = new System.Drawing.Point(340, 159);
             this.txtClaseAislamiento.Name = "txtClaseAislamiento";
             this.txtClaseAislamiento.ShortcutsEnabled = false;
             this.txtClaseAislamiento.Size = new System.Drawing.Size(213, 23);
@@ -232,7 +232,7 @@
             // 
             this.lbClaseAislamiento.AutoSize = true;
             this.lbClaseAislamiento.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbClaseAislamiento.Location = new System.Drawing.Point(338, 88);
+            this.lbClaseAislamiento.Location = new System.Drawing.Point(338, 141);
             this.lbClaseAislamiento.Name = "lbClaseAislamiento";
             this.lbClaseAislamiento.Size = new System.Drawing.Size(132, 16);
             this.lbClaseAislamiento.TabIndex = 22;
@@ -241,7 +241,7 @@
             // txtDesignacionNema
             // 
             this.txtDesignacionNema.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtDesignacionNema.Location = new System.Drawing.Point(340, 149);
+            this.txtDesignacionNema.Location = new System.Drawing.Point(340, 202);
             this.txtDesignacionNema.Name = "txtDesignacionNema";
             this.txtDesignacionNema.ShortcutsEnabled = false;
             this.txtDesignacionNema.Size = new System.Drawing.Size(213, 23);
@@ -251,7 +251,7 @@
             // 
             this.lbDesignacionNema.AutoSize = true;
             this.lbDesignacionNema.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbDesignacionNema.Location = new System.Drawing.Point(338, 131);
+            this.lbDesignacionNema.Location = new System.Drawing.Point(338, 184);
             this.lbDesignacionNema.Name = "lbDesignacionNema";
             this.lbDesignacionNema.Size = new System.Drawing.Size(118, 16);
             this.lbDesignacionNema.TabIndex = 24;
@@ -260,7 +260,7 @@
             // txtFrame
             // 
             this.txtFrame.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtFrame.Location = new System.Drawing.Point(340, 192);
+            this.txtFrame.Location = new System.Drawing.Point(340, 245);
             this.txtFrame.Name = "txtFrame";
             this.txtFrame.ShortcutsEnabled = false;
             this.txtFrame.Size = new System.Drawing.Size(213, 23);
@@ -270,7 +270,7 @@
             // 
             this.lbFrame.AutoSize = true;
             this.lbFrame.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbFrame.Location = new System.Drawing.Point(338, 174);
+            this.lbFrame.Location = new System.Drawing.Point(338, 227);
             this.lbFrame.Name = "lbFrame";
             this.lbFrame.Size = new System.Drawing.Size(48, 16);
             this.lbFrame.TabIndex = 26;
@@ -279,7 +279,7 @@
             // txtVoltaje
             // 
             this.txtVoltaje.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtVoltaje.Location = new System.Drawing.Point(340, 235);
+            this.txtVoltaje.Location = new System.Drawing.Point(340, 288);
             this.txtVoltaje.Name = "txtVoltaje";
             this.txtVoltaje.ShortcutsEnabled = false;
             this.txtVoltaje.Size = new System.Drawing.Size(213, 23);
@@ -289,7 +289,7 @@
             // 
             this.lbVoltaje.AutoSize = true;
             this.lbVoltaje.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbVoltaje.Location = new System.Drawing.Point(338, 217);
+            this.lbVoltaje.Location = new System.Drawing.Point(338, 270);
             this.lbVoltaje.Name = "lbVoltaje";
             this.lbVoltaje.Size = new System.Drawing.Size(49, 16);
             this.lbVoltaje.TabIndex = 28;
@@ -298,7 +298,7 @@
             // txtFactorServicio
             // 
             this.txtFactorServicio.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtFactorServicio.Location = new System.Drawing.Point(340, 278);
+            this.txtFactorServicio.Location = new System.Drawing.Point(340, 331);
             this.txtFactorServicio.Name = "txtFactorServicio";
             this.txtFactorServicio.ShortcutsEnabled = false;
             this.txtFactorServicio.Size = new System.Drawing.Size(213, 23);
@@ -308,62 +308,16 @@
             // 
             this.lbFactorServicio.AutoSize = true;
             this.lbFactorServicio.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbFactorServicio.Location = new System.Drawing.Point(338, 260);
+            this.lbFactorServicio.Location = new System.Drawing.Point(338, 313);
             this.lbFactorServicio.Name = "lbFactorServicio";
             this.lbFactorServicio.Size = new System.Drawing.Size(115, 16);
             this.lbFactorServicio.TabIndex = 30;
             this.lbFactorServicio.Text = "Factor de servicio";
             // 
-            // btnNuevaMarca
-            // 
-            this.btnNuevaMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevaMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnNuevaMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaMarca.Image")));
-            this.btnNuevaMarca.Location = new System.Drawing.Point(279, 100);
-            this.btnNuevaMarca.Name = "btnNuevaMarca";
-            this.btnNuevaMarca.Size = new System.Drawing.Size(30, 30);
-            this.btnNuevaMarca.TabIndex = 32;
-            this.btnNuevaMarca.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultarMarca
-            // 
-            this.btnConsultarMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultarMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnConsultarMarca.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarMarca.Image")));
-            this.btnConsultarMarca.Location = new System.Drawing.Point(243, 100);
-            this.btnConsultarMarca.Name = "btnConsultarMarca";
-            this.btnConsultarMarca.Size = new System.Drawing.Size(30, 30);
-            this.btnConsultarMarca.TabIndex = 31;
-            this.btnConsultarMarca.UseVisualStyleBackColor = true;
-            this.btnConsultarMarca.Click += new System.EventHandler(this.btnConsultarMarca_Click);
-            // 
-            // btnNuevoModelo
-            // 
-            this.btnNuevoModelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoModelo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnNuevoModelo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoModelo.Image")));
-            this.btnNuevoModelo.Location = new System.Drawing.Point(279, 143);
-            this.btnNuevoModelo.Name = "btnNuevoModelo";
-            this.btnNuevoModelo.Size = new System.Drawing.Size(30, 30);
-            this.btnNuevoModelo.TabIndex = 34;
-            this.btnNuevoModelo.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultarModelo
-            // 
-            this.btnConsultarModelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultarModelo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnConsultarModelo.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarModelo.Image")));
-            this.btnConsultarModelo.Location = new System.Drawing.Point(243, 143);
-            this.btnConsultarModelo.Name = "btnConsultarModelo";
-            this.btnConsultarModelo.Size = new System.Drawing.Size(30, 30);
-            this.btnConsultarModelo.TabIndex = 33;
-            this.btnConsultarModelo.UseVisualStyleBackColor = true;
-            this.btnConsultarModelo.Click += new System.EventHandler(this.btnConsultarModelo_Click);
-            // 
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtMarca.Location = new System.Drawing.Point(24, 106);
+            this.txtMarca.Location = new System.Drawing.Point(24, 159);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
@@ -374,7 +328,7 @@
             // txtModelo
             // 
             this.txtModelo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtModelo.Location = new System.Drawing.Point(24, 149);
+            this.txtModelo.Location = new System.Drawing.Point(24, 202);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.ReadOnly = true;
@@ -386,7 +340,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Cambria", 10F);
             this.btnCancelar.Image = global::Presentacion.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(318, 307);
+            this.btnCancelar.Location = new System.Drawing.Point(318, 360);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(50, 50);
@@ -398,7 +352,7 @@
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 10F);
             this.btnGuardar.Image = global::Presentacion.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(210, 307);
+            this.btnGuardar.Location = new System.Drawing.Point(210, 360);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(50, 50);
@@ -410,19 +364,77 @@
             // 
             this.epError.ContainerControl = this;
             // 
+            // btnBuscarModelo
+            // 
+            this.btnBuscarModelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarModelo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnBuscarModelo.Location = new System.Drawing.Point(243, 202);
+            this.btnBuscarModelo.Name = "btnBuscarModelo";
+            this.btnBuscarModelo.Size = new System.Drawing.Size(60, 23);
+            this.btnBuscarModelo.TabIndex = 39;
+            this.btnBuscarModelo.Text = "Buscar";
+            this.btnBuscarModelo.UseVisualStyleBackColor = true;
+            this.btnBuscarModelo.Click += new System.EventHandler(this.btnBuscarModelo_Click);
+            // 
+            // btnBuscarMarca
+            // 
+            this.btnBuscarMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnBuscarMarca.Location = new System.Drawing.Point(243, 159);
+            this.btnBuscarMarca.Name = "btnBuscarMarca";
+            this.btnBuscarMarca.Size = new System.Drawing.Size(60, 23);
+            this.btnBuscarMarca.TabIndex = 40;
+            this.btnBuscarMarca.Text = "Buscar";
+            this.btnBuscarMarca.UseVisualStyleBackColor = true;
+            this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(243, 25);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(60, 23);
+            this.btnBuscarCliente.TabIndex = 43;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCliente.Location = new System.Drawing.Point(24, 25);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(213, 23);
+            this.txtCliente.TabIndex = 41;
+            this.txtCliente.TabStop = false;
+            // 
+            // lbCliente
+            // 
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCliente.Location = new System.Drawing.Point(22, 7);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(51, 16);
+            this.lbCliente.TabIndex = 42;
+            this.lbCliente.Text = "Cliente";
+            // 
             // FrmNuevoModificarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 362);
+            this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.lbCliente);
+            this.Controls.Add(this.btnBuscarMarca);
+            this.Controls.Add(this.btnBuscarModelo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.btnNuevoModelo);
-            this.Controls.Add(this.btnConsultarModelo);
-            this.Controls.Add(this.btnNuevaMarca);
-            this.Controls.Add(this.btnConsultarMarca);
             this.Controls.Add(this.txtFactorServicio);
             this.Controls.Add(this.lbFactorServicio);
             this.Controls.Add(this.txtVoltaje);
@@ -488,15 +500,16 @@
         private System.Windows.Forms.Label lbVoltaje;
         private System.Windows.Forms.TextBox txtFactorServicio;
         private System.Windows.Forms.Label lbFactorServicio;
-        private System.Windows.Forms.Button btnNuevaMarca;
-        private System.Windows.Forms.Button btnConsultarMarca;
-        private System.Windows.Forms.Button btnNuevoModelo;
-        private System.Windows.Forms.Button btnConsultarModelo;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ErrorProvider epError;
+        private System.Windows.Forms.Button btnBuscarMarca;
+        private System.Windows.Forms.Button btnBuscarModelo;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lbCliente;
 
     }
 }
