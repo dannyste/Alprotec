@@ -104,6 +104,7 @@
             this.gbCriteriosBusqueda.TabIndex = 24;
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
+            this.gbCriteriosBusqueda.Enter += new System.EventHandler(this.gbCriteriosBusqueda_Enter);
             // 
             // rbRUC
             // 

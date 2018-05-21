@@ -41,5 +41,10 @@ namespace Presentacion
         {
 
         }
+
+        private void FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

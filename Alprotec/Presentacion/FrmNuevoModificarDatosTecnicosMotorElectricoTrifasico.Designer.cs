@@ -800,7 +800,7 @@
             this.tpPagina23.Location = new System.Drawing.Point(4, 24);
             this.tpPagina23.Name = "tpPagina23";
             this.tpPagina23.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPagina23.Size = new System.Drawing.Size(838, 573);
+            this.tpPagina23.Size = new System.Drawing.Size(835, 573);
             this.tpPagina23.TabIndex = 1;
             this.tpPagina23.Text = "Página 2 de 3";
             this.tpPagina23.UseVisualStyleBackColor = true;
@@ -1125,7 +1125,7 @@
             this.tpPagina33.Location = new System.Drawing.Point(4, 24);
             this.tpPagina33.Name = "tpPagina33";
             this.tpPagina33.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPagina33.Size = new System.Drawing.Size(838, 573);
+            this.tpPagina33.Size = new System.Drawing.Size(835, 573);
             this.tpPagina33.TabIndex = 2;
             this.tpPagina33.Text = "Pagina 3 de 3";
             this.tpPagina33.UseVisualStyleBackColor = true;
@@ -1838,6 +1838,7 @@
             this.Name = "FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "q";
+            this.Load += new System.EventHandler(this.FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico_Load);
             this.tcPaginas.ResumeLayout(false);
             this.tpPagina13.ResumeLayout(false);
             this.tpPagina13.PerformLayout();
