@@ -32,8 +32,8 @@
             this.lbBuscar = new System.Windows.Forms.Label();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
-            this.rbPotencia = new System.Windows.Forms.RadioButton();
-            this.rbMarca = new System.Windows.Forms.RadioButton();
+            this.rbCodigoInterno = new System.Windows.Forms.RadioButton();
+            this.rbClaseMaquina = new System.Windows.Forms.RadioButton();
             this.rbCliente = new System.Windows.Forms.RadioButton();
             this.pAcciones = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -85,8 +85,8 @@
             // 
             // gbCriteriosBusqueda
             // 
-            this.gbCriteriosBusqueda.Controls.Add(this.rbPotencia);
-            this.gbCriteriosBusqueda.Controls.Add(this.rbMarca);
+            this.gbCriteriosBusqueda.Controls.Add(this.rbCodigoInterno);
+            this.gbCriteriosBusqueda.Controls.Add(this.rbClaseMaquina);
             this.gbCriteriosBusqueda.Controls.Add(this.rbCliente);
             this.gbCriteriosBusqueda.Controls.Add(this.txtBuscar);
             this.gbCriteriosBusqueda.Controls.Add(this.lbBuscar);
@@ -98,27 +98,29 @@
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
             // 
-            // rbPotencia
+            // rbCodigoInterno
             // 
-            this.rbPotencia.AutoSize = true;
-            this.rbPotencia.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbPotencia.Location = new System.Drawing.Point(186, 17);
-            this.rbPotencia.Name = "rbPotencia";
-            this.rbPotencia.Size = new System.Drawing.Size(78, 20);
-            this.rbPotencia.TabIndex = 31;
-            this.rbPotencia.Text = "Potencia";
-            this.rbPotencia.UseVisualStyleBackColor = true;
+            this.rbCodigoInterno.AutoSize = true;
+            this.rbCodigoInterno.Font = new System.Drawing.Font("Cambria", 10F);
+            this.rbCodigoInterno.Location = new System.Drawing.Point(128, 17);
+            this.rbCodigoInterno.Name = "rbCodigoInterno";
+            this.rbCodigoInterno.Size = new System.Drawing.Size(115, 20);
+            this.rbCodigoInterno.TabIndex = 31;
+            this.rbCodigoInterno.Text = "Código interno";
+            this.rbCodigoInterno.UseVisualStyleBackColor = true;
+            this.rbCodigoInterno.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
-            // rbMarca
+            // rbClaseMaquina
             // 
-            this.rbMarca.AutoSize = true;
-            this.rbMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbMarca.Location = new System.Drawing.Point(325, 17);
-            this.rbMarca.Name = "rbMarca";
-            this.rbMarca.Size = new System.Drawing.Size(63, 20);
-            this.rbMarca.TabIndex = 25;
-            this.rbMarca.Text = "Marca";
-            this.rbMarca.UseVisualStyleBackColor = true;
+            this.rbClaseMaquina.AutoSize = true;
+            this.rbClaseMaquina.Font = new System.Drawing.Font("Cambria", 10F);
+            this.rbClaseMaquina.Location = new System.Drawing.Point(267, 17);
+            this.rbClaseMaquina.Name = "rbClaseMaquina";
+            this.rbClaseMaquina.Size = new System.Drawing.Size(133, 20);
+            this.rbClaseMaquina.TabIndex = 25;
+            this.rbClaseMaquina.Text = "Clase de máquina";
+            this.rbClaseMaquina.UseVisualStyleBackColor = true;
+            this.rbClaseMaquina.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // rbCliente
             // 
@@ -132,6 +134,7 @@
             this.rbCliente.TabStop = true;
             this.rbCliente.Text = "Cliente";
             this.rbCliente.UseVisualStyleBackColor = true;
+            this.rbCliente.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // pAcciones
             // 
@@ -141,7 +144,7 @@
             this.pAcciones.Controls.Add(this.btnEliminar);
             this.pAcciones.Controls.Add(this.btnNuevo);
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
-            this.pAcciones.Location = new System.Drawing.Point(448, 11);
+            this.pAcciones.Location = new System.Drawing.Point(443, 11);
             this.pAcciones.Name = "pAcciones";
             this.pAcciones.Size = new System.Drawing.Size(70, 309);
             this.pAcciones.TabIndex = 32;
@@ -230,8 +233,8 @@
         private System.Windows.Forms.Label lbBuscar;
         private System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
-        private System.Windows.Forms.RadioButton rbPotencia;
-        private System.Windows.Forms.RadioButton rbMarca;
+        private System.Windows.Forms.RadioButton rbCodigoInterno;
+        private System.Windows.Forms.RadioButton rbClaseMaquina;
         private System.Windows.Forms.RadioButton rbCliente;
         private System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnModificar;

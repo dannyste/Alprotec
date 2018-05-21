@@ -15,6 +15,8 @@ namespace Presentacion
 {
     public partial class FrmRecepcionEquipos : Form
     {
+        public FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+
         public bool busqueda = false;
 
         private bool error = false;
@@ -26,15 +28,51 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        public FrmRecepcionEquipos(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarDatosTecnicosMotorElectricoTrifasico = frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+            this.busqueda = busqueda;
+        }
+
         private void FrmRecepcionEquipos_Load(object sender, EventArgs e)
         {
             actualizarDgvRecepcionEquipos();
+        }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+            actualizarDgvRecepcionEquipos();
+        }
+
+        private void dgvRecepcionEquipos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && busqueda)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo = new FrmNuevaModificarRecepcionEquipo(this, "N");
             frmNuevaModificarRecepcionEquipo.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvRecepcionEquipos.Rows.Count > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("No tiene ningún cliente.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -73,7 +111,7 @@ namespace Presentacion
 
         public void actualizarDgvRecepcionEquipos()
         {
-            IEnumerable dataSource = RecepcionEquipoBL.filtrarRecepcionEquipos(1, txtBuscar.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = RecepcionEquipoBL.filtrarRecepcionEquipos(1, txtCliente.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvRecepcionEquipos.DataSource = dataSource;

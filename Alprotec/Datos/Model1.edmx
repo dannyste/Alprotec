@@ -107,6 +107,7 @@
           <Property Name="frame" Type="nvarchar" MaxLength="50" />
           <Property Name="voltaje" Type="int" />
           <Property Name="factorServicio" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCliente" Type="bigint" Nullable="false" />
           <Property Name="idModeloCatalogo" Type="bigint" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
@@ -333,6 +334,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Equipo_Catalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="idModeloCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Equipo" Type="Self.Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecepcionEquipo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RecepcionEquipo" Type="Self.RecepcionEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="RecepcionEquipo">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AlprotecdbModelStoreContainer">
           <EntitySet Name="Alojamiento" EntityType="Self.Alojamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bobinado" EntityType="Self.Bobinado" Schema="dbo" store:Type="Tables" />
@@ -375,6 +418,18 @@
           <AssociationSet Name="FK_Contacto_Cliente" Association="Self.FK_Contacto_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Catalogo" Association="Self.FK_Equipo_Catalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Cliente" Association="Self.FK_Equipo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecepcionEquipo_Cliente" Association="Self.FK_RecepcionEquipo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="RecepcionEquipo" EntitySet="RecepcionEquipo" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -420,9 +475,21 @@
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Catalogo" Association="AlprotecdbModel.FK_Equipo_Catalogo">
+            <End Role="Catalogo" EntitySet="Catalogo" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
           <AssociationSet Name="FK_Contacto_Cliente" Association="AlprotecdbModel.FK_Contacto_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipo_Cliente" Association="AlprotecdbModel.FK_Equipo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Equipo" EntitySet="Equipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecepcionEquipo_Cliente" Association="AlprotecdbModel.FK_RecepcionEquipo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="RecepcionEquipo" EntitySet="RecepcionEquipo" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Alojamiento">
@@ -457,6 +524,7 @@
           <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_Cliente_CiudadCatalogo" FromRole="Catalogo" ToRole="Cliente" />
           <NavigationProperty Name="Cliente1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Catalogo" ToRole="Cliente" />
           <NavigationProperty Name="Cliente2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+          <NavigationProperty Name="Equipo" Relationship="AlprotecdbModel.FK_Equipo_Catalogo" FromRole="Catalogo" ToRole="Equipo" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -479,6 +547,8 @@
           <NavigationProperty Name="Catalogo1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Cliente" ToRole="Catalogo" />
           <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Cliente" ToRole="Catalogo" />
           <NavigationProperty Name="Contacto" Relationship="AlprotecdbModel.FK_Contacto_Cliente" FromRole="Cliente" ToRole="Contacto" />
+          <NavigationProperty Name="Equipo" Relationship="AlprotecdbModel.FK_Equipo_Cliente" FromRole="Cliente" ToRole="Equipo" />
+          <NavigationProperty Name="RecepcionEquipo" Relationship="AlprotecdbModel.FK_RecepcionEquipo_Cliente" FromRole="Cliente" ToRole="RecepcionEquipo" />
         </EntityType>
         <EntityType Name="Contacto">
           <Key>
@@ -538,11 +608,14 @@
           <Property Name="frame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="voltaje" Type="Int32" />
           <Property Name="factorServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCliente" Type="Int64" Nullable="false" />
           <Property Name="idModeloCatalogo" Type="Int64" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Catalogo" Relationship="AlprotecdbModel.FK_Equipo_Catalogo" FromRole="Equipo" ToRole="Catalogo" />
+          <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_Equipo_Cliente" FromRole="Equipo" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Formulario">
           <Key>
@@ -640,6 +713,7 @@
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_RecepcionEquipo_Cliente" FromRole="RecepcionEquipo" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Rodamiento">
           <Key>
@@ -751,6 +825,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Equipo_Catalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlprotecdbModel.Equipo" Role="Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="idModeloCatalogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Contacto_Cliente">
           <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -761,6 +849,34 @@
               <PropertyRef Name="idCliente" />
             </Principal>
             <Dependent Role="Contacto">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipo_Cliente">
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlprotecdbModel.Equipo" Role="Equipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Equipo">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecepcionEquipo_Cliente">
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlprotecdbModel.RecepcionEquipo" Role="RecepcionEquipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="RecepcionEquipo">
               <PropertyRef Name="idCliente" />
             </Dependent>
           </ReferentialConstraint>
@@ -870,6 +986,7 @@
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
                 <ScalarProperty Name="idModeloCatalogo" ColumnName="idModeloCatalogo" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="factorServicio" ColumnName="factorServicio" />
                 <ScalarProperty Name="voltaje" ColumnName="voltaje" />
                 <ScalarProperty Name="frame" ColumnName="frame" />

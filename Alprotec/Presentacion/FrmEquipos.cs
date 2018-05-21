@@ -48,7 +48,7 @@ namespace Presentacion
             {
                 opcion = 1;
             }
-            else if (rbPotencia.Checked)
+            else if (rbCodigoInterno.Checked)
             {
                 opcion = 2;
             }
@@ -97,9 +97,33 @@ namespace Presentacion
                 Equipo equipo = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
                 if (!error)
                 {
-                    FrmNuevoModificarEquipo frmNuevoModificarEquipo = new FrmNuevoModificarEquipo(this, "M");
-                    //frmNuevoModificarEquipo.modificarEquipo(equipo);
-                    frmNuevoModificarEquipo.ShowDialog();
+                    Cliente cliente = ClienteBL.obtenerCliente(equipo.idCliente, ref error, ref mensaje);
+                    if (!error)
+                    {
+                        Catalogo modelo = CatalogoBL.obtenerCatalogo(equipo.idModeloCatalogo, ref error, ref mensaje);
+                        if (!error)
+                        {
+                            Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(modelo.idPadre), ref error, ref mensaje);
+                            if (!error)
+                            {
+                                FrmNuevoModificarEquipo frmNuevoModificarEquipo = new FrmNuevoModificarEquipo(this, "M");
+                                frmNuevoModificarEquipo.modificarEquipo(equipo, cliente, marca, modelo);
+                                frmNuevoModificarEquipo.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

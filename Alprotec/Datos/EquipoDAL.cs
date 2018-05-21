@@ -22,12 +22,16 @@ namespace Datos
                     {
                         var query = (
                                         from e in db.Equipo 
-                                        join r in db.RecepcionEquipo on e.idEquipo equals r.idEquipo
-                                        join c in db.Cliente on r.idEquipo equals c.idCliente
+                                        join c in db.Cliente on e.idEquipo equals c.idCliente
                                         where c.nombre.Contains(filtro)
                                         select new
                                         {
                                             Id = e.idEquipo,
+                                            Cliente = c.nombre,
+                                            CodigoInterno = e.codigoInterno,
+                                            ClaseMaquina = e.claseMaquina,
+                                            NumeroSerie = e.numeroSerie,
+
                                         }
                                     ).ToList();
                         return query;
@@ -36,10 +40,12 @@ namespace Datos
                     {
                         var query = (
                                         from e in db.Equipo
-                                        where e.potenciaHP == Convert.ToDouble(filtro)  
+                                        join c in db.Cliente on e.idEquipo equals c.idCliente
+                                        where e.codigoInterno.Contains(filtro)  
                                         select new
                                         {
                                             Id = e.idEquipo,
+                                            Cliente = c.nombre,
                                         }
                                     ).ToList();
                         return query;
@@ -48,12 +54,12 @@ namespace Datos
                     {
                         var query = (
                                         from e in db.Equipo
-                                        join c in db.Catalogo on e.idModeloCatalogo equals c.idCatalogo
-                                        join m in db.Catalogo on c.idPadre equals m.idCatalogo
-                                        where m.valor.Contains(filtro)
+                                        join c in db.Cliente on e.idEquipo equals c.idCliente
+                                        where e.claseMaquina.Contains(filtro)
                                         select new
                                         {
                                             Id = e.idEquipo,
+                                            Cliente = c.nombre,
                                         }
                                     ).ToList();
                         return query;
@@ -77,6 +83,8 @@ namespace Datos
                 {
                     var query = (
                                     from e in db.Equipo
+                                    join c in db.Cliente on e.idEquipo equals c.idCliente
+                                    join m in db.Catalogo on e.idModeloCatalogo equals m.idCatalogo
                                     where e.idEquipo == idEquipo
                                     select e
                                 ).First();
@@ -134,6 +142,7 @@ namespace Datos
                     actualizarEquipo.frame = equipo.frame;
                     actualizarEquipo.voltaje = equipo.voltaje;
                     actualizarEquipo.factorServicio = equipo.factorServicio;
+                    actualizarEquipo.idCliente = equipo.idCliente;
                     actualizarEquipo.idModeloCatalogo = equipo.idModeloCatalogo;
                     actualizarEquipo.modificadoPor = Globales.UsuarioGlobal.idUsuario;
                     actualizarEquipo.fechaModificacion = DateTime.Now;

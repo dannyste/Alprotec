@@ -17,15 +17,13 @@ namespace Presentacion
     {
         private FrmEquipos frmEquipos;
 
-        private FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo;
-
         private String operacion;
-
-        private bool busqueda = false;
 
         private bool error = false;
 
         private String mensaje = String.Empty;
+
+        private Cliente cliente;
 
         private Catalogo marca;
 
@@ -45,29 +43,23 @@ namespace Presentacion
             this.operacion = operacion;
         }
 
-        public FrmNuevoModificarEquipo(FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo, String operacion, bool busqueda)
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.frmNuevaModificarRecepcionEquipo = frmNuevaModificarRecepcionEquipo;
-            this.operacion = operacion;
-            this.busqueda = busqueda;
+            FrmClientes frmClientes = new FrmClientes(this, true);
+            frmClientes.ShowDialog();
         }
 
-        private void btnConsultarMarca_Click(object sender, EventArgs e)
+        private void btnBuscarMarca_Click(object sender, EventArgs e)
         {
             FrmMarcas frmMarcas = new FrmMarcas(this, true);
-            frmMarcas.pAcciones.Visible = false;
-            frmMarcas.Width = 477;
             frmMarcas.ShowDialog();
         }
 
-        private void btnConsultarModelo_Click(object sender, EventArgs e)
+        private void btnBuscarModelo_Click(object sender, EventArgs e)
         {
             if (txtMarca.Text.Trim() != String.Empty)
             {
                 FrmModelos frmMarcas = new FrmModelos(this, true, marca.idCatalogo);
-                frmMarcas.pAcciones.Visible = false;
-                frmMarcas.Width = 477;
                 frmMarcas.ShowDialog();
             }
             else
@@ -91,31 +83,18 @@ namespace Presentacion
                 }
                 if (!error)
                 {
-                    if (!busqueda)
+                    frmEquipos.actualizarDgvEquipos();
+                    DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
                     {
-                        frmEquipos.actualizarDgvEquipos();
-                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
+                        switch (operacion)
                         {
-                            switch (operacion)
-                            {
-                                case "N":
-                                    limpiarCampos();
-                                    break;
-                                case "M":
-                                    this.Close();
-                                    break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
-                        {
-                            frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
-                            frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
-                            this.Close();
+                            case "N":
+                                limpiarCampos();
+                                break;
+                            case "M":
+                                this.Close();
+                                break;
                         }
                     }
                 }
@@ -129,6 +108,19 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public Cliente establecerCliente
+        {
+            set
+            {
+                this.cliente = value;
+            }
+        }
+
+        public void llenarTxtCliente()
+        {
+            txtCliente.Text = cliente.nombre;
         }
 
         public Catalogo establecerMarca
@@ -171,6 +163,7 @@ namespace Presentacion
             equipo.frame = txtFrame.Text.Trim();
             equipo.voltaje = Convert.ToInt32(txtVoltaje.Text.Trim());
             equipo.factorServicio = txtFactorServicio.Text.Trim();
+            equipo.idCliente = cliente.idCliente;
             equipo.idModeloCatalogo = modelo.idCatalogo;
             equipo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             equipo.fechaCreacion = DateTime.Now;
@@ -179,9 +172,11 @@ namespace Presentacion
             return equipo;
         }
         
-        public void modificarEquipo(Equipo equipo, Catalogo marca, Catalogo modelo)
+        public void modificarEquipo(Equipo equipo, Cliente cliente, Catalogo marca, Catalogo modelo)
         {
             this.equipo.idEquipo = equipo.idEquipo;
+            this.cliente = cliente;
+            txtCliente.Text = cliente.nombre;
             txtCodigoInterno.Text = equipo.codigoInterno;
             txtClaseMaquina.Text = equipo.claseMaquina;
             this.marca = marca;
@@ -204,6 +199,11 @@ namespace Presentacion
         {
             bool resultado = true;
             epError.Clear();
+            if (txtCliente.Text == String.Empty)
+            {
+                epError.SetError(txtCliente, lbCliente.Text + " es requerido");
+                resultado = false;
+            }
             if (txtCodigoInterno.Text == String.Empty)
             {
                 epError.SetError(txtCodigoInterno, lbCodigoInterno.Text + " es requerido");
@@ -244,6 +244,8 @@ namespace Presentacion
 
         public void limpiarCampos()
         {
+            cliente = null;
+            txtCliente.Text = String.Empty;
             txtCodigoInterno.Text = String.Empty;
             txtClaseMaquina.Text = String.Empty;
             marca = null;

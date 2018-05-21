@@ -56,5 +56,7 @@ namespace Entidad
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }
         public System.DateTime fechaModificacion { get; set; }
+    
+        public virtual Cliente Cliente { get; set; }
     }
 }

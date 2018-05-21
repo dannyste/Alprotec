@@ -18,11 +18,7 @@ namespace Presentacion
     {
         private FrmClientes frmClientes;
 
-        private FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo;
-
         private String operacion;
-
-        private bool busqueda = false;
 
         private bool error = false;
 
@@ -40,14 +36,6 @@ namespace Presentacion
             InitializeComponent();
             this.frmClientes = frmClientes;
             this.operacion = operacion;
-        }
-
-        public FrmNuevoModificarCliente(FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo, String operacion, bool busqueda)
-        {
-            InitializeComponent();
-            this.frmNuevaModificarRecepcionEquipo = frmNuevaModificarRecepcionEquipo;
-            this.operacion = operacion;
-            this.busqueda = busqueda;
         }
 
         private void FrmNuevoModificaCliente_Load(object sender, EventArgs e)
@@ -132,31 +120,18 @@ namespace Presentacion
                     }
                     if (!error)
                     {
-                        if (!busqueda)
+                        frmClientes.actualizarDgvClientes();
+                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
                         {
-                            frmClientes.actualizarDgvClientes();
-                            DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (result == DialogResult.OK)
+                            switch (operacion)
                             {
-                                switch (operacion)
-                                {
-                                    case "N":
-                                        limpiarCampos();
-                                        break;
-                                    case "M":
-                                        this.Close();
-                                        break;
-                                }
-                            }
-                        }
-                        else 
-                        {
-                            DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (result == DialogResult.OK)
-                            {
-                                frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
-                                frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
-                                this.Close();
+                                case "N":
+                                    limpiarCampos();
+                                    break;
+                                case "M":
+                                    this.Close();
+                                    break;
                             }
                         }
                     }

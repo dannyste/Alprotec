@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lbNombreCliente = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lbCliente = new System.Windows.Forms.Label();
             this.dgvRecepcionEquipos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -37,6 +37,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbFechaInicial = new System.Windows.Forms.Label();
             this.pAcciones = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,24 +47,25 @@
             this.pAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtBuscar
+            // txtCliente
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtBuscar.Location = new System.Drawing.Point(34, 79);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(355, 23);
-            this.txtBuscar.TabIndex = 21;
+            this.txtCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCliente.Location = new System.Drawing.Point(34, 79);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(355, 23);
+            this.txtCliente.TabIndex = 21;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
-            // lbNombreCliente
+            // lbCliente
             // 
-            this.lbNombreCliente.AutoSize = true;
-            this.lbNombreCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNombreCliente.Location = new System.Drawing.Point(32, 61);
-            this.lbNombreCliente.Name = "lbNombreCliente";
-            this.lbNombreCliente.Size = new System.Drawing.Size(124, 16);
-            this.lbNombreCliente.TabIndex = 22;
-            this.lbNombreCliente.Text = "Nombre del cliente";
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCliente.Location = new System.Drawing.Point(32, 61);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(51, 16);
+            this.lbCliente.TabIndex = 22;
+            this.lbCliente.Text = "Cliente";
             // 
             // dgvRecepcionEquipos
             // 
@@ -76,8 +78,9 @@
             this.dgvRecepcionEquipos.Name = "dgvRecepcionEquipos";
             this.dgvRecepcionEquipos.ReadOnly = true;
             this.dgvRecepcionEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecepcionEquipos.Size = new System.Drawing.Size(420, 180);
+            this.dgvRecepcionEquipos.Size = new System.Drawing.Size(420, 208);
             this.dgvRecepcionEquipos.TabIndex = 30;
+            this.dgvRecepcionEquipos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecepcionEquipos_CellDoubleClick);
             // 
             // gbCriteriosBusqueda
             // 
@@ -85,8 +88,8 @@
             this.gbCriteriosBusqueda.Controls.Add(this.lbFechaFinal);
             this.gbCriteriosBusqueda.Controls.Add(this.dateTimePicker1);
             this.gbCriteriosBusqueda.Controls.Add(this.lbFechaInicial);
-            this.gbCriteriosBusqueda.Controls.Add(this.txtBuscar);
-            this.gbCriteriosBusqueda.Controls.Add(this.lbNombreCliente);
+            this.gbCriteriosBusqueda.Controls.Add(this.txtCliente);
+            this.gbCriteriosBusqueda.Controls.Add(this.lbCliente);
             this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 2);
             this.gbCriteriosBusqueda.Name = "gbCriteriosBusqueda";
             this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 107);
@@ -134,6 +137,7 @@
             // 
             // pAcciones
             // 
+            this.pAcciones.Controls.Add(this.btnModificar);
             this.pAcciones.Controls.Add(this.btnSalir);
             this.pAcciones.Controls.Add(this.btnImprimir);
             this.pAcciones.Controls.Add(this.btnEliminar);
@@ -141,54 +145,69 @@
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
             this.pAcciones.Location = new System.Drawing.Point(443, 9);
             this.pAcciones.Name = "pAcciones";
-            this.pAcciones.Size = new System.Drawing.Size(70, 281);
-            this.pAcciones.TabIndex = 32;
+            this.pAcciones.Size = new System.Drawing.Size(70, 309);
+            this.pAcciones.TabIndex = 33;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Image = global::Presentacion.Properties.Resources.modificar;
+            this.btnModificar.Location = new System.Drawing.Point(10, 69);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(50, 50);
+            this.btnModificar.TabIndex = 29;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Image = global::Presentacion.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(10, 222);
+            this.btnSalir.Location = new System.Drawing.Point(10, 249);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(50, 50);
             this.btnSalir.TabIndex = 28;
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnImprimir
             // 
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Image = global::Presentacion.Properties.Resources.imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(10, 151);
+            this.btnImprimir.Location = new System.Drawing.Point(10, 189);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 27;
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(10, 80);
+            this.btnEliminar.Location = new System.Drawing.Point(10, 129);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.nuevo;
             this.btnNuevo.Location = new System.Drawing.Point(10, 9);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(50, 50);
             this.btnNuevo.TabIndex = 25;
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FrmRecepcionEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 294);
+            this.ClientSize = new System.Drawing.Size(522, 326);
             this.Controls.Add(this.pAcciones);
             this.Controls.Add(this.dgvRecepcionEquipos);
             this.Controls.Add(this.gbCriteriosBusqueda);
@@ -209,8 +228,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label lbNombreCliente;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lbCliente;
         private System.Windows.Forms.DataGridView dgvRecepcionEquipos;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -218,6 +237,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbFechaInicial;
         private System.Windows.Forms.Panel pAcciones;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnEliminar;

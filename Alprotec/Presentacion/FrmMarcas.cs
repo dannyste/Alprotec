@@ -47,29 +47,20 @@ namespace Presentacion
 
         private void dgvMarcas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && busqueda)
             {
                 long idCatalogo = Convert.ToInt64(dgvMarcas.Rows[e.RowIndex].Cells["Id"].Value);
                 Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
                 if (!error)
                 {
-                    if (!busqueda)
-                    {
-                        FrmNuevaModificarMarca frmNuevaModificarMarca = new FrmNuevaModificarMarca(this, "M");
-                        frmNuevaModificarMarca.modificarMarca(catalogo);
-                        frmNuevaModificarMarca.ShowDialog();
-                    }
-                    else
-                    {
-                        frmNuevoModificarEquipo.establecerMarca = catalogo;
-                        frmNuevoModificarEquipo.llenarTxtMarca();
-                        this.Close();
-                    }
+                    frmNuevoModificarEquipo.establecerMarca = catalogo;
+                    frmNuevoModificarEquipo.llenarTxtMarca();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }                
+                }
             }
         }
 
@@ -77,6 +68,25 @@ namespace Presentacion
         {
             FrmNuevaModificarMarca frmNuevaModificarMarca = new FrmNuevaModificarMarca(this, "N");
             frmNuevaModificarMarca.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvMarcas.Rows.Count > 0)
+            {
+                long idCatalogo = Convert.ToInt64(dgvMarcas.Rows[dgvMarcas.CurrentCell.RowIndex].Cells["Id"].Value);
+                Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
+                if (!error)
+                {
+                    FrmNuevaModificarMarca frmNuevaModificarMarca = new FrmNuevaModificarMarca(this, "M");
+                    frmNuevaModificarMarca.modificarMarca(catalogo);
+                    frmNuevaModificarMarca.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
