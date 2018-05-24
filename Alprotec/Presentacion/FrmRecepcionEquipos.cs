@@ -49,7 +49,7 @@ namespace Presentacion
         {
             if (e.RowIndex >= 0 && busqueda)
             {
-
+                
             }
             else
             {

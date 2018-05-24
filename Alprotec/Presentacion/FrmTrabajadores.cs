@@ -23,9 +23,20 @@ namespace Presentacion
 
         private int opcion = 1;
 
+        private FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+        private String tag;
+
         public FrmTrabajadores()
         {
             InitializeComponent();
+        }
+
+        public FrmTrabajadores(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda, String tag)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarDatosTecnicosMotorElectricoTrifasico = frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+            this.busqueda = busqueda;
+            this.tag = tag;
         }
 
         private void FrmTrabajadores_Load(object sender, EventArgs e)
@@ -71,9 +82,18 @@ namespace Presentacion
                     List<Contacto> contactos = ContactoBL.obtenerContactos(idTrabajador, ref error, ref mensaje);
                     if (!error)
                     {
-                        FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
-                        frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
-                        frmNuevoModificarTrabajador.ShowDialog();
+                        if (frmNuevoModificarDatosTecnicosMotorElectricoTrifasico != null)
+                        {
+                            frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.llenarTrabajador(trabajador, tag);
+                            this.Close();
+                        }
+                        else
+                        {
+                            FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
+                            frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
+                            frmNuevoModificarTrabajador.ShowDialog();
+                        }
+                        
                     }
                     else
                     {

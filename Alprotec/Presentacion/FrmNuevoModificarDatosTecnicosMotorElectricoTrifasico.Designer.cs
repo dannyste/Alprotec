@@ -132,15 +132,27 @@
             this.label25 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btBuscarMontajeRodamientosRealizadoPo = new System.Windows.Forms.Button();
+            this.tbMontajeRodamientoRealizadoPor = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -160,18 +172,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tcPaginas.SuspendLayout();
             this.tpPagina13.SuspendLayout();
             this.gbProcesosRequieren.SuspendLayout();
@@ -427,6 +429,7 @@
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.TabIndex = 48;
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.Text = "Buscar";
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.UseVisualStyleBackColor = true;
+            this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.Click += new System.EventHandler(this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada_Click);
             // 
             // txtRealizadoPorPruebasElectricasEntrada
             // 
@@ -559,6 +562,7 @@
             this.btnBuscarRealizadoPorInspeccionMedicion.TabIndex = 45;
             this.btnBuscarRealizadoPorInspeccionMedicion.Text = "Buscar";
             this.btnBuscarRealizadoPorInspeccionMedicion.UseVisualStyleBackColor = true;
+            this.btnBuscarRealizadoPorInspeccionMedicion.Click += new System.EventHandler(this.btnBuscarRealizadoPorInspeccionMedicion_Click);
             // 
             // txtRealizadoPorInspeccionMedicion
             // 
@@ -769,6 +773,7 @@
             this.btnBuscarRecepcionEquipo.TabIndex = 28;
             this.btnBuscarRecepcionEquipo.Text = "Buscar";
             this.btnBuscarRecepcionEquipo.UseVisualStyleBackColor = true;
+            this.btnBuscarRecepcionEquipo.Click += new System.EventHandler(this.btnBuscarRecepcionEquipo_Click);
             // 
             // txtRecepcionEquipo
             // 
@@ -800,7 +805,7 @@
             this.tpPagina23.Location = new System.Drawing.Point(4, 24);
             this.tpPagina23.Name = "tpPagina23";
             this.tpPagina23.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPagina23.Size = new System.Drawing.Size(835, 573);
+            this.tpPagina23.Size = new System.Drawing.Size(838, 573);
             this.tpPagina23.TabIndex = 1;
             this.tpPagina23.Text = "Página 2 de 3";
             this.tpPagina23.UseVisualStyleBackColor = true;
@@ -1125,7 +1130,7 @@
             this.tpPagina33.Location = new System.Drawing.Point(4, 24);
             this.tpPagina33.Name = "tpPagina33";
             this.tpPagina33.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPagina33.Size = new System.Drawing.Size(835, 573);
+            this.tpPagina33.Size = new System.Drawing.Size(838, 573);
             this.tpPagina33.TabIndex = 2;
             this.tpPagina33.Text = "Pagina 3 de 3";
             this.tpPagina33.UseVisualStyleBackColor = true;
@@ -1378,6 +1383,16 @@
             this.groupBox6.Text = "Pruebas Eléctricas Finales";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // textBox26
+            // 
+            this.textBox26.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox26.Location = new System.Drawing.Point(488, 130);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(327, 23);
+            this.textBox26.TabIndex = 75;
+            this.textBox26.TabStop = false;
+            // 
             // button2
             // 
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -1388,6 +1403,16 @@
             this.button2.TabIndex = 45;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label29.Location = new System.Drawing.Point(486, 112);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(162, 16);
+            this.label29.TabIndex = 76;
+            this.label29.Text = "Continuidad entre Lineas";
             // 
             // textBox20
             // 
@@ -1400,6 +1425,16 @@
             this.textBox20.TabIndex = 43;
             this.textBox20.TabStop = false;
             // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox25.Location = new System.Drawing.Point(488, 82);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(327, 23);
+            this.textBox25.TabIndex = 73;
+            this.textBox25.TabStop = false;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1410,13 +1445,103 @@
             this.label21.TabIndex = 44;
             this.label21.Text = "Realizado por";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label28.Location = new System.Drawing.Point(486, 64);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(126, 16);
+            this.label28.TabIndex = 74;
+            this.label28.Text = "Indice de Polaridad";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox29.Location = new System.Drawing.Point(337, 94);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(128, 23);
+            this.textBox29.TabIndex = 71;
+            this.textBox29.TabStop = false;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox28.Location = new System.Drawing.Point(180, 94);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(128, 23);
+            this.textBox28.TabIndex = 71;
+            this.textBox28.TabStop = false;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox27.Location = new System.Drawing.Point(11, 94);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(128, 23);
+            this.textBox27.TabIndex = 71;
+            this.textBox27.TabStop = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label33.Location = new System.Drawing.Point(334, 76);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(57, 16);
+            this.label33.TabIndex = 72;
+            this.label33.Text = "Fase (T)";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label31.Location = new System.Drawing.Point(177, 76);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 16);
+            this.label31.TabIndex = 72;
+            this.label31.Text = "Fase (S)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label30.Location = new System.Drawing.Point(9, 76);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(58, 16);
+            this.label30.TabIndex = 72;
+            this.label30.Text = "Fase (R)";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Cambria", 10F);
+            this.textBox24.Location = new System.Drawing.Point(488, 34);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(327, 23);
+            this.textBox24.TabIndex = 71;
+            this.textBox24.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Cambria", 10F);
+            this.label26.Location = new System.Drawing.Point(486, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(171, 16);
+            this.label26.TabIndex = 72;
+            this.label26.Text = "Resistencia de Aislamiento";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.textBox18);
             this.groupBox5.Controls.Add(this.textBox16);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.textBox8);
+            this.groupBox5.Controls.Add(this.btBuscarMontajeRodamientosRealizadoPo);
+            this.groupBox5.Controls.Add(this.tbMontajeRodamientoRealizadoPor);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Controls.Add(this.label8);
@@ -1465,27 +1590,27 @@
             this.textBox16.TabIndex = 46;
             this.textBox16.TabStop = false;
             // 
-            // button1
+            // btBuscarMontajeRodamientosRealizadoPo
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Cambria", 10F);
-            this.button1.Location = new System.Drawing.Point(405, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 23);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btBuscarMontajeRodamientosRealizadoPo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btBuscarMontajeRodamientosRealizadoPo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btBuscarMontajeRodamientosRealizadoPo.Location = new System.Drawing.Point(405, 39);
+            this.btBuscarMontajeRodamientosRealizadoPo.Name = "btBuscarMontajeRodamientosRealizadoPo";
+            this.btBuscarMontajeRodamientosRealizadoPo.Size = new System.Drawing.Size(60, 23);
+            this.btBuscarMontajeRodamientosRealizadoPo.TabIndex = 45;
+            this.btBuscarMontajeRodamientosRealizadoPo.Text = "Buscar";
+            this.btBuscarMontajeRodamientosRealizadoPo.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // tbMontajeRodamientoRealizadoPor
             // 
-            this.textBox8.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox8.Location = new System.Drawing.Point(12, 39);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(387, 23);
-            this.textBox8.TabIndex = 43;
-            this.textBox8.TabStop = false;
+            this.tbMontajeRodamientoRealizadoPor.Font = new System.Drawing.Font("Cambria", 10F);
+            this.tbMontajeRodamientoRealizadoPor.Location = new System.Drawing.Point(12, 39);
+            this.tbMontajeRodamientoRealizadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbMontajeRodamientoRealizadoPor.Name = "tbMontajeRodamientoRealizadoPor";
+            this.tbMontajeRodamientoRealizadoPor.ReadOnly = true;
+            this.tbMontajeRodamientoRealizadoPor.Size = new System.Drawing.Size(387, 23);
+            this.tbMontajeRodamientoRealizadoPor.TabIndex = 43;
+            this.tbMontajeRodamientoRealizadoPor.TabStop = false;
             // 
             // label7
             // 
@@ -1706,131 +1831,36 @@
             this.lbNumero.TabIndex = 30;
             this.lbNumero.Text = "Número";
             // 
-            // label26
+            // btnGuardar
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label26.Location = new System.Drawing.Point(486, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(171, 16);
-            this.label26.TabIndex = 72;
-            this.label26.Text = "Resistencia de Aislamiento";
+            this.btnGuardar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnGuardar.Image = global::Presentacion.Properties.Resources.guardar;
+            this.btnGuardar.Location = new System.Drawing.Point(872, 186);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(50, 50);
+            this.btnGuardar.TabIndex = 31;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // textBox24
+            // btnCancelar
             // 
-            this.textBox24.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox24.Location = new System.Drawing.Point(488, 34);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(327, 23);
-            this.textBox24.TabIndex = 71;
-            this.textBox24.TabStop = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label28.Location = new System.Drawing.Point(486, 64);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(126, 16);
-            this.label28.TabIndex = 74;
-            this.label28.Text = "Indice de Polaridad";
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox25.Location = new System.Drawing.Point(488, 82);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(327, 23);
-            this.textBox25.TabIndex = 73;
-            this.textBox25.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label29.Location = new System.Drawing.Point(486, 112);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(162, 16);
-            this.label29.TabIndex = 76;
-            this.label29.Text = "Continuidad entre Lineas";
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox26.Location = new System.Drawing.Point(488, 130);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(327, 23);
-            this.textBox26.TabIndex = 75;
-            this.textBox26.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label30.Location = new System.Drawing.Point(9, 76);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(58, 16);
-            this.label30.TabIndex = 72;
-            this.label30.Text = "Fase (R)";
-            // 
-            // textBox27
-            // 
-            this.textBox27.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox27.Location = new System.Drawing.Point(11, 94);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(128, 23);
-            this.textBox27.TabIndex = 71;
-            this.textBox27.TabStop = false;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox28.Location = new System.Drawing.Point(180, 94);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(128, 23);
-            this.textBox28.TabIndex = 71;
-            this.textBox28.TabStop = false;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox29.Location = new System.Drawing.Point(337, 94);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(128, 23);
-            this.textBox29.TabIndex = 71;
-            this.textBox29.TabStop = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label31.Location = new System.Drawing.Point(177, 76);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(56, 16);
-            this.label31.TabIndex = 72;
-            this.label31.Text = "Fase (S)";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label33.Location = new System.Drawing.Point(334, 76);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(57, 16);
-            this.label33.TabIndex = 72;
-            this.label33.Text = "Fase (T)";
+            this.btnCancelar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnCancelar.Image = global::Presentacion.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(872, 303);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 662);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tcPaginas);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lbNumero);
@@ -1964,8 +1994,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btBuscarMontajeRodamientosRealizadoPo;
+        private System.Windows.Forms.TextBox tbMontajeRodamientoRealizadoPor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -2022,5 +2052,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
