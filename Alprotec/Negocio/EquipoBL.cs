@@ -11,10 +11,10 @@ namespace Negocio
 {
     public class EquipoBL
     {
-        public static IEnumerable filtrarEquipos(int opcion, String filtro, ref bool error, ref String mensaje)
+        public static IEnumerable filtrarEquipos(String cliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
         {
             EquipoDAL equipoDAL = new EquipoDAL();
-            return equipoDAL.filtrarEquipos(opcion, filtro, ref error, ref mensaje);
+            return equipoDAL.filtrarEquipos(cliente, potenciaHP, potenciakW, idMarca, ref error, ref mensaje);
         }
 
         public static Equipo obtenerEquipo(long idEquipo, ref bool error, ref String mensaje)

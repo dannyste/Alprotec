@@ -11,59 +11,29 @@ namespace Datos
 {
     public class EquipoDAL
     {
-        public IEnumerable filtrarEquipos(int opcion, String filtro, ref bool error, ref String mensaje)
+        public IEnumerable filtrarEquipos(String cliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    if (opcion == 1)
-                    {
-                        var query = (
-                                        from e in db.Equipo 
-                                        join c in db.Cliente on e.idEquipo equals c.idCliente
-                                        where c.nombre.Contains(filtro)
-                                        select new
-                                        {
-                                            Id = e.idEquipo,
-                                            Cliente = c.nombre,
-                                            CodigoInterno = e.codigoInterno,
-                                            ClaseMaquina = e.claseMaquina,
-                                            NumeroSerie = e.numeroSerie,
-
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    if (opcion == 2)
-                    {
-                        var query = (
-                                        from e in db.Equipo
-                                        join c in db.Cliente on e.idEquipo equals c.idCliente
-                                        where e.codigoInterno.Contains(filtro)  
-                                        select new
-                                        {
-                                            Id = e.idEquipo,
-                                            Cliente = c.nombre,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    else
-                    {
-                        var query = (
-                                        from e in db.Equipo
-                                        join c in db.Cliente on e.idEquipo equals c.idCliente
-                                        where e.claseMaquina.Contains(filtro)
-                                        select new
-                                        {
-                                            Id = e.idEquipo,
-                                            Cliente = c.nombre,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
+                    var query = (
+                                    from e in db.Equipo 
+                                    join c in db.Cliente on e.idEquipo equals c.idCliente
+                                    join modelo in db.Catalogo on e.idModeloCatalogo equals modelo.idCatalogo
+                                    join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
+                                    where c.nombre.Contains(cliente) && ((e.potenciaHP == potenciaHP || potenciaHP == 0) || (e.potenciakW == potenciakW || potenciakW == 0)) && (marca.idCatalogo == idMarca || idMarca == 0)
+                                    select new
+                                    {
+                                        Id = e.idEquipo,
+                                        Cliente = c.nombre,
+                                        CodigoInterno = e.codigoInterno,
+                                        ClaseMaquina = e.claseMaquina,
+                                        NumeroSerie = e.numeroSerie,
+                                    }
+                                ).ToList();
+                    return query;
                 }
                 catch (Exception ex)
                 {

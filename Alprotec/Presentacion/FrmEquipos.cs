@@ -23,8 +23,6 @@ namespace Presentacion
 
         private String mensaje = String.Empty;
 
-        private int opcion = 1;
-
         public FrmEquipos()
         {
             InitializeComponent();
@@ -39,27 +37,21 @@ namespace Presentacion
 
         private void FrmEquipos_Load(object sender, EventArgs e)
         {
+            cbUd.SelectedIndex = 0;
+            llenarCbMarca();
             actualizarDgvEquipos();
         }
 
-        private void rb_CheckedChanged(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
         {
-            if (rbCliente.Checked)
-            {
-                opcion = 1;
-            }
-            else if (rbCodigoInterno.Checked)
-            {
-                opcion = 2;
-            }
-            else
-            {
-                opcion = 3;
-            }
+            txtCliente.Text = String.Empty;
+            nudPotencia.Value = 0;
+            cbUd.SelectedIndex = 0;
+            cbMarca.SelectedValue = 0L;
             actualizarDgvEquipos();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvEquipos();
         }
@@ -170,15 +162,42 @@ namespace Presentacion
             this.Close();
         }
 
-        public void actualizarDgvEquipos()
+        public void llenarCbMarca()
         {
-            IEnumerable dataSource = EquipoBL.filtrarEquipos(opcion, txtBuscar.Text.Trim(), ref error, ref mensaje);
+            List<Catalogo> marcas = CatalogoBL.obtenerTipoCatalogo(6L, ref error, ref mensaje);
             if (!error)
             {
-                dgvEquipos.DataSource = dataSource;
-                dgvEquipos.Columns[0].Visible = false;
+                Catalogo catalogo = new Catalogo();
+                catalogo.idCatalogo = 0L;
+                catalogo.valor = "Todas";
+                marcas.Insert(0, catalogo);
+                cbMarca.DataSource = marcas;
+                cbMarca.DisplayMember = "valor";
+                cbMarca.ValueMember = "idCatalogo";
+                cbMarca.SelectedValue = 0L;
             }
             else
+            {
+                MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void actualizarDgvEquipos()
+        {
+            try
+            {
+                IEnumerable dataSource = EquipoBL.filtrarEquipos(txtCliente.Text.Trim(), cbUd.SelectedIndex == 1 ? Convert.ToDouble(nudPotencia.Value) : 0D, cbUd.SelectedIndex == 2 ? Convert.ToDouble(nudPotencia.Value) : 0D, Convert.ToInt64(cbMarca.SelectedValue), ref error, ref mensaje);
+                if (!error)
+                {
+                    dgvEquipos.DataSource = dataSource;
+                    dgvEquipos.Columns[0].Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception exception) 
             {
                 MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
