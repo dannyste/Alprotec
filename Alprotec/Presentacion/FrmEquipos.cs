@@ -23,9 +23,18 @@ namespace Presentacion
 
         private String mensaje = String.Empty;
 
+        private FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+
         public FrmEquipos()
         {
             InitializeComponent();
+        }
+
+        public FrmEquipos(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarDatosTecnicosMotorElectricoTrifasico = frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+            this.busqueda = busqueda;
         }
 
         public FrmEquipos(FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo, bool busqueda)
@@ -64,9 +73,17 @@ namespace Presentacion
                 Equipo equipo = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
                 if (!error)
                 {
-                    frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
-                    frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
+                    if(frmNuevoModificarDatosTecnicosMotorElectricoTrifasico != null)
+                    {
+                        frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.llenarEquipo(equipo);
+                    }
+                    else
+                    {
+                        frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
+                        frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
+                    }
                     this.Close();
+
                 }
                 else
                 {

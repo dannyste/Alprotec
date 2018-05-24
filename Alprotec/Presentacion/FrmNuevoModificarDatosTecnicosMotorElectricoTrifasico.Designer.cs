@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcPaginas = new System.Windows.Forms.TabControl();
             this.tpPagina13 = new System.Windows.Forms.TabPage();
             this.gbProcesosRequieren = new System.Windows.Forms.GroupBox();
@@ -172,8 +173,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSiguienteGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcPaginas.SuspendLayout();
             this.tpPagina13.SuspendLayout();
             this.gbProcesosRequieren.SuspendLayout();
@@ -195,6 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPaginas
@@ -207,6 +210,7 @@
             this.tcPaginas.SelectedIndex = 0;
             this.tcPaginas.Size = new System.Drawing.Size(846, 601);
             this.tcPaginas.TabIndex = 0;
+            this.tcPaginas.SelectedIndexChanged += new System.EventHandler(this.tcPaginas_SelectedIndexChanged);
             // 
             // tpPagina13
             // 
@@ -1831,17 +1835,17 @@
             this.lbNumero.TabIndex = 30;
             this.lbNumero.Text = "Número";
             // 
-            // btnGuardar
+            // btnSiguienteGuardar
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.btnGuardar.Image = global::Presentacion.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(872, 186);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(50, 50);
-            this.btnGuardar.TabIndex = 31;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnSiguienteGuardar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnSiguienteGuardar.Image = global::Presentacion.Properties.Resources.siguiente;
+            this.btnSiguienteGuardar.Location = new System.Drawing.Point(872, 186);
+            this.btnSiguienteGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSiguienteGuardar.Name = "btnSiguienteGuardar";
+            this.btnSiguienteGuardar.Size = new System.Drawing.Size(50, 50);
+            this.btnSiguienteGuardar.TabIndex = 31;
+            this.btnSiguienteGuardar.UseVisualStyleBackColor = true;
+            this.btnSiguienteGuardar.Click += new System.EventHandler(this.btnSiguienteGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -1854,13 +1858,18 @@
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // epError
+            // 
+            this.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epError.ContainerControl = this;
+            // 
             // FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 662);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnSiguienteGuardar);
             this.Controls.Add(this.tcPaginas);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lbNumero);
@@ -1901,6 +1910,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2052,7 +2062,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnSiguienteGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }
