@@ -81,5 +81,11 @@ namespace Presentacion
             tsmiMantenimiento.Visible = true;
             tsmiFormulario.Visible = true;
         }
+
+        private void motorEléctricoTrifásicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico datosTecnicosMotorElectricoTrifasico = new FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico();
+            datosTecnicosMotorElectricoTrifasico.ShowDialog();
+        }
     }
 }

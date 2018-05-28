@@ -41,6 +41,7 @@
             this.tsmiEquipos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFormulario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRecepcionEquipos = new System.Windows.Forms.ToolStripMenuItem();
+            this.motorEléctricoTrifásicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,14 +72,14 @@
             // tsmiIniciarSesion
             // 
             this.tsmiIniciarSesion.Name = "tsmiIniciarSesion";
-            this.tsmiIniciarSesion.Size = new System.Drawing.Size(160, 22);
+            this.tsmiIniciarSesion.Size = new System.Drawing.Size(157, 22);
             this.tsmiIniciarSesion.Text = "Iniciar sesión";
             this.tsmiIniciarSesion.Click += new System.EventHandler(this.tsmiIniciarSesion_Click);
             // 
             // tsmiCerrarSesion
             // 
             this.tsmiCerrarSesion.Name = "tsmiCerrarSesion";
-            this.tsmiCerrarSesion.Size = new System.Drawing.Size(160, 22);
+            this.tsmiCerrarSesion.Size = new System.Drawing.Size(157, 22);
             this.tsmiCerrarSesion.Text = "Cerrar sesión";
             this.tsmiCerrarSesion.Visible = false;
             this.tsmiCerrarSesion.Click += new System.EventHandler(this.tsmiCerrarSesion_Click);
@@ -86,7 +87,7 @@
             // tsmiSalir
             // 
             this.tsmiSalir.Name = "tsmiSalir";
-            this.tsmiSalir.Size = new System.Drawing.Size(160, 22);
+            this.tsmiSalir.Size = new System.Drawing.Size(157, 22);
             this.tsmiSalir.Text = "Salir";
             this.tsmiSalir.Click += new System.EventHandler(this.tsmiSalir_Click);
             // 
@@ -106,42 +107,43 @@
             // tsmiClientes
             // 
             this.tsmiClientes.Name = "tsmiClientes";
-            this.tsmiClientes.Size = new System.Drawing.Size(160, 22);
+            this.tsmiClientes.Size = new System.Drawing.Size(157, 22);
             this.tsmiClientes.Text = "Clientes";
             this.tsmiClientes.Click += new System.EventHandler(this.tsmiClientes_Click);
             // 
             // tsmiMarcas
             // 
             this.tsmiMarcas.Name = "tsmiMarcas";
-            this.tsmiMarcas.Size = new System.Drawing.Size(160, 22);
+            this.tsmiMarcas.Size = new System.Drawing.Size(157, 22);
             this.tsmiMarcas.Text = "Marcas";
             this.tsmiMarcas.Click += new System.EventHandler(this.tsmiMarcas_Click);
             // 
             // tsmiModelos
             // 
             this.tsmiModelos.Name = "tsmiModelos";
-            this.tsmiModelos.Size = new System.Drawing.Size(160, 22);
+            this.tsmiModelos.Size = new System.Drawing.Size(157, 22);
             this.tsmiModelos.Text = "Modelos";
             this.tsmiModelos.Click += new System.EventHandler(this.tsmiModelos_Click);
             // 
             // tsmiTrabajadores
             // 
             this.tsmiTrabajadores.Name = "tsmiTrabajadores";
-            this.tsmiTrabajadores.Size = new System.Drawing.Size(160, 22);
+            this.tsmiTrabajadores.Size = new System.Drawing.Size(157, 22);
             this.tsmiTrabajadores.Text = "Trabajadores";
             this.tsmiTrabajadores.Click += new System.EventHandler(this.tsmiTrabajadores_Click);
             // 
             // tsmiEquipos
             // 
             this.tsmiEquipos.Name = "tsmiEquipos";
-            this.tsmiEquipos.Size = new System.Drawing.Size(160, 22);
+            this.tsmiEquipos.Size = new System.Drawing.Size(157, 22);
             this.tsmiEquipos.Text = "Equipos";
             this.tsmiEquipos.Click += new System.EventHandler(this.tsmiEquipos_Click);
             // 
             // tsmiFormulario
             // 
             this.tsmiFormulario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiRecepcionEquipos});
+            this.tsmiRecepcionEquipos,
+            this.motorEléctricoTrifásicoToolStripMenuItem});
             this.tsmiFormulario.Name = "tsmiFormulario";
             this.tsmiFormulario.Size = new System.Drawing.Size(88, 20);
             this.tsmiFormulario.Text = "Formulario";
@@ -150,9 +152,16 @@
             // tsmiRecepcionEquipos
             // 
             this.tsmiRecepcionEquipos.Name = "tsmiRecepcionEquipos";
-            this.tsmiRecepcionEquipos.Size = new System.Drawing.Size(210, 22);
+            this.tsmiRecepcionEquipos.Size = new System.Drawing.Size(219, 22);
             this.tsmiRecepcionEquipos.Text = "Recepción de equipos";
             this.tsmiRecepcionEquipos.Click += new System.EventHandler(this.tsmiRecepcionEquipos_Click);
+            // 
+            // motorEléctricoTrifásicoToolStripMenuItem
+            // 
+            this.motorEléctricoTrifásicoToolStripMenuItem.Name = "motorEléctricoTrifásicoToolStripMenuItem";
+            this.motorEléctricoTrifásicoToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.motorEléctricoTrifásicoToolStripMenuItem.Text = "Motor eléctrico trifásico";
+            this.motorEléctricoTrifásicoToolStripMenuItem.Click += new System.EventHandler(this.motorEléctricoTrifásicoToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -189,6 +198,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEquipos;
         private System.Windows.Forms.ToolStripMenuItem tsmiFormulario;
         private System.Windows.Forms.ToolStripMenuItem tsmiRecepcionEquipos;
+        private System.Windows.Forms.ToolStripMenuItem motorEléctricoTrifásicoToolStripMenuItem;
     }
 }
 
