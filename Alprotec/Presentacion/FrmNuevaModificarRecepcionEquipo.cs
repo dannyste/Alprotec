@@ -162,17 +162,15 @@ namespace Presentacion
             txtCliente.Text = cliente.nombre;
         }
 
-        public Equipo establecerEquipo
+        public void establecerEquipo(Equipo equipo)
         {
-            set
-            {
-                this.equipo = value;
-            }
+            this.equipo = equipo;
+            txtEquipo.Text = equipo.codigoInterno;
         }
 
         public void llenarTxtEquipo()
         {
-            txtEquipo.Text = equipo.codigoInterno;
+            
         }
 
         private RecepcionEquipo objetoRecepcionEquipo()

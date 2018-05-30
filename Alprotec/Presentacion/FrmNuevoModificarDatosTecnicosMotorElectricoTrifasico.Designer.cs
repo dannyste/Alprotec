@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcPaginas = new System.Windows.Forms.TabControl();
             this.tpPagina13 = new System.Windows.Forms.TabPage();
             this.gbProcesosRequieren = new System.Windows.Forms.GroupBox();
@@ -81,38 +82,38 @@
             this.txtRecepcionEquipo = new System.Windows.Forms.TextBox();
             this.lbRecepcionEquipo = new System.Windows.Forms.Label();
             this.tpPagina23 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbDiagramaConexion = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLadoAcople = new System.Windows.Forms.TextBox();
+            this.lbLadoAcople = new System.Windows.Forms.Label();
+            this.txtLadoVentilador = new System.Windows.Forms.TextBox();
+            this.lbLadoVentilador = new System.Windows.Forms.Label();
+            this.gbDescripcionReparacion = new System.Windows.Forms.GroupBox();
+            this.txtDescripcionReparacion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtLongBobina = new System.Windows.Forms.TextBox();
+            this.lbLongBobina = new System.Windows.Forms.Label();
+            this.txtEspiras = new System.Windows.Forms.TextBox();
+            this.lbEspiras = new System.Windows.Forms.Label();
+            this.txtHierro = new System.Windows.Forms.TextBox();
+            this.lbHierro = new System.Windows.Forms.Label();
+            this.txtPaso = new System.Windows.Forms.TextBox();
+            this.lbPaso = new System.Windows.Forms.Label();
+            this.txtCabeza = new System.Windows.Forms.TextBox();
+            this.lbCabeza = new System.Windows.Forms.Label();
+            this.txtBobinaPorGrupo = new System.Windows.Forms.TextBox();
+            this.lbBobinaPorGrupo = new System.Windows.Forms.Label();
+            this.txtHilos = new System.Windows.Forms.TextBox();
+            this.lbHilos = new System.Windows.Forms.Label();
+            this.txtNoGrupos = new System.Windows.Forms.TextBox();
+            this.lbNoGrupos = new System.Windows.Forms.Label();
+            this.txtCalibre = new System.Windows.Forms.TextBox();
+            this.lbCalibre = new System.Windows.Forms.Label();
+            this.txtNoRanuras = new System.Windows.Forms.TextBox();
+            this.lbNoRanuras = new System.Windows.Forms.Label();
             this.tpPagina33 = new System.Windows.Forms.TabPage();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.gbResponsableActividades = new System.Windows.Forms.GroupBox();
+            this.dgResponsableActividades = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,58 +121,61 @@
             this.label32 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.txtLadoAcopleAMAB = new System.Windows.Forms.TextBox();
+            this.lbLadoAcopleAMAB = new System.Windows.Forms.Label();
+            this.txtLadoAcopleVMBV = new System.Windows.Forms.TextBox();
+            this.lbLadoAcopleVMBV = new System.Windows.Forms.Label();
+            this.txtLadoAcopleHMBH = new System.Windows.Forms.TextBox();
+            this.lbLadoAcopleHMBH = new System.Windows.Forms.Label();
+            this.txtLadoVentiladorVMAV = new System.Windows.Forms.TextBox();
+            this.lbLadoVentiladorVMAV = new System.Windows.Forms.Label();
+            this.txtLadoVentiladorHMAH = new System.Windows.Forms.TextBox();
+            this.lbLadoVentiladorHMAH = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtContinuidadLineas = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lbContinuidadLineas = new System.Windows.Forms.Label();
+            this.txtRealizadoPorPruebasElectricasFinales = new System.Windows.Forms.TextBox();
+            this.txtIndicePolaridadP3 = new System.Windows.Forms.TextBox();
+            this.lbRealizadoPorPruebasElectricasFinales = new System.Windows.Forms.Label();
+            this.lbIndicePolaridadP3 = new System.Windows.Forms.Label();
+            this.txtFaseT = new System.Windows.Forms.TextBox();
+            this.txtFaseS = new System.Windows.Forms.TextBox();
+            this.txtFaseR = new System.Windows.Forms.TextBox();
+            this.lbFaseT = new System.Windows.Forms.Label();
+            this.lbFaseS = new System.Windows.Forms.Label();
+            this.lbFaseR = new System.Windows.Forms.Label();
+            this.txtResistenciaAislamientoP3 = new System.Windows.Forms.TextBox();
+            this.lbResistenciaAislamientoP3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtAlojamientosP3 = new System.Windows.Forms.TextBox();
+            this.txtEjeP3 = new System.Windows.Forms.TextBox();
+            this.btBuscarMontajeRodamientosRealizadoPo = new System.Windows.Forms.Button();
+            this.txtRealizadoPorMontajeRodamientos = new System.Windows.Forms.TextBox();
+            this.lbRealizadoPorMontajeRodamientos = new System.Windows.Forms.Label();
+            this.dgAlojamientosP3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.lbAlojamientosP3 = new System.Windows.Forms.Label();
+            this.dgEjeP3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.lbEjeP3 = new System.Windows.Forms.Label();
+            this.dgDataGridRodamientos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.txtObservacionesP3 = new System.Windows.Forms.TextBox();
+            this.lbObservacionesP3 = new System.Windows.Forms.Label();
+            this.lbDataGridRodamientos = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lbNumero = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.btnSiguienteGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcPaginas.SuspendLayout();
             this.tpPagina13.SuspendLayout();
             this.gbProcesosRequieren.SuspendLayout();
@@ -182,17 +186,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRodamientos)).BeginInit();
             this.tpPagina23.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbDescripcionReparacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpPagina33.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.gbResponsableActividades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResponsableActividades)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlojamientosP3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEjeP3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDataGridRodamientos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPaginas
@@ -205,6 +210,8 @@
             this.tcPaginas.SelectedIndex = 0;
             this.tcPaginas.Size = new System.Drawing.Size(846, 601);
             this.tcPaginas.TabIndex = 0;
+            this.tcPaginas.SelectedIndexChanged += new System.EventHandler(this.tcPaginas_SelectedIndexChanged);
+            this.tcPaginas.TabIndexChanged += new System.EventHandler(this.tcPaginas_TabIndexChanged);
             // 
             // tpPagina13
             // 
@@ -427,6 +434,7 @@
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.TabIndex = 48;
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.Text = "Buscar";
             this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.UseVisualStyleBackColor = true;
+            this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada.Click += new System.EventHandler(this.btnBuscarRealizadoPorRealizadoPorPruebasElectricasEntrada_Click);
             // 
             // txtRealizadoPorPruebasElectricasEntrada
             // 
@@ -559,6 +567,7 @@
             this.btnBuscarRealizadoPorInspeccionMedicion.TabIndex = 45;
             this.btnBuscarRealizadoPorInspeccionMedicion.Text = "Buscar";
             this.btnBuscarRealizadoPorInspeccionMedicion.UseVisualStyleBackColor = true;
+            this.btnBuscarRealizadoPorInspeccionMedicion.Click += new System.EventHandler(this.btnBuscarRealizadoPorInspeccionMedicion_Click);
             // 
             // txtRealizadoPorInspeccionMedicion
             // 
@@ -769,6 +778,7 @@
             this.btnBuscarRecepcionEquipo.TabIndex = 28;
             this.btnBuscarRecepcionEquipo.Text = "Buscar";
             this.btnBuscarRecepcionEquipo.UseVisualStyleBackColor = true;
+            this.btnBuscarRecepcionEquipo.Click += new System.EventHandler(this.btnBuscarRecepcionEquipo_Click);
             // 
             // txtRecepcionEquipo
             // 
@@ -793,9 +803,9 @@
             // 
             // tpPagina23
             // 
-            this.tpPagina23.Controls.Add(this.groupBox4);
+            this.tpPagina23.Controls.Add(this.gbDiagramaConexion);
             this.tpPagina23.Controls.Add(this.groupBox3);
-            this.tpPagina23.Controls.Add(this.groupBox2);
+            this.tpPagina23.Controls.Add(this.gbDescripcionReparacion);
             this.tpPagina23.Controls.Add(this.groupBox1);
             this.tpPagina23.Location = new System.Drawing.Point(4, 24);
             this.tpPagina23.Name = "tpPagina23";
@@ -805,21 +815,21 @@
             this.tpPagina23.Text = "Página 2 de 3";
             this.tpPagina23.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // gbDiagramaConexion
             // 
-            this.groupBox4.Location = new System.Drawing.Point(10, 279);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(817, 266);
-            this.groupBox4.TabIndex = 39;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Diagrama de conexión";
+            this.gbDiagramaConexion.Location = new System.Drawing.Point(10, 279);
+            this.gbDiagramaConexion.Name = "gbDiagramaConexion";
+            this.gbDiagramaConexion.Size = new System.Drawing.Size(817, 266);
+            this.gbDiagramaConexion.TabIndex = 39;
+            this.gbDiagramaConexion.TabStop = false;
+            this.gbDiagramaConexion.Text = "Diagrama de conexión";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.txtLadoAcople);
+            this.groupBox3.Controls.Add(this.lbLadoAcople);
+            this.groupBox3.Controls.Add(this.txtLadoVentilador);
+            this.groupBox3.Controls.Add(this.lbLadoVentilador);
             this.groupBox3.Location = new System.Drawing.Point(651, 7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(176, 266);
@@ -827,298 +837,298 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Temperatura";
             // 
-            // textBox7
+            // txtLadoAcople
             // 
-            this.textBox7.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox7.Location = new System.Drawing.Point(12, 104);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(152, 23);
-            this.textBox7.TabIndex = 32;
-            this.textBox7.TabStop = false;
+            this.txtLadoAcople.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoAcople.Location = new System.Drawing.Point(12, 104);
+            this.txtLadoAcople.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoAcople.Name = "txtLadoAcople";
+            this.txtLadoAcople.Size = new System.Drawing.Size(152, 23);
+            this.txtLadoAcople.TabIndex = 32;
+            this.txtLadoAcople.TabStop = false;
             // 
-            // label5
+            // lbLadoAcople
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label5.Location = new System.Drawing.Point(10, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 16);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Inspección";
+            this.lbLadoAcople.AutoSize = true;
+            this.lbLadoAcople.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoAcople.Location = new System.Drawing.Point(10, 86);
+            this.lbLadoAcople.Name = "lbLadoAcople";
+            this.lbLadoAcople.Size = new System.Drawing.Size(106, 16);
+            this.lbLadoAcople.TabIndex = 33;
+            this.lbLadoAcople.Text = "Lado acople (°C)";
             // 
-            // textBox5
+            // txtLadoVentilador
             // 
-            this.textBox5.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox5.Location = new System.Drawing.Point(12, 155);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 23);
-            this.textBox5.TabIndex = 30;
-            this.textBox5.TabStop = false;
+            this.txtLadoVentilador.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoVentilador.Location = new System.Drawing.Point(12, 155);
+            this.txtLadoVentilador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoVentilador.Name = "txtLadoVentilador";
+            this.txtLadoVentilador.Size = new System.Drawing.Size(152, 23);
+            this.txtLadoVentilador.TabIndex = 30;
+            this.txtLadoVentilador.TabStop = false;
             // 
-            // label4
+            // lbLadoVentilador
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label4.Location = new System.Drawing.Point(10, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Inspección";
+            this.lbLadoVentilador.AutoSize = true;
+            this.lbLadoVentilador.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoVentilador.Location = new System.Drawing.Point(10, 137);
+            this.lbLadoVentilador.Name = "lbLadoVentilador";
+            this.lbLadoVentilador.Size = new System.Drawing.Size(130, 16);
+            this.lbLadoVentilador.TabIndex = 31;
+            this.lbLadoVentilador.Text = "Lado ventilador (°C)";
             // 
-            // groupBox2
+            // gbDescripcionReparacion
             // 
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Location = new System.Drawing.Point(346, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(299, 266);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Descripción de la reparación";
+            this.gbDescripcionReparacion.Controls.Add(this.txtDescripcionReparacion);
+            this.gbDescripcionReparacion.Location = new System.Drawing.Point(346, 7);
+            this.gbDescripcionReparacion.Name = "gbDescripcionReparacion";
+            this.gbDescripcionReparacion.Size = new System.Drawing.Size(299, 266);
+            this.gbDescripcionReparacion.TabIndex = 31;
+            this.gbDescripcionReparacion.TabStop = false;
+            this.gbDescripcionReparacion.Text = "Descripción de la reparación";
             // 
-            // textBox4
+            // txtDescripcionReparacion
             // 
-            this.textBox4.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox4.Location = new System.Drawing.Point(6, 19);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 235);
-            this.textBox4.TabIndex = 37;
+            this.txtDescripcionReparacion.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtDescripcionReparacion.Location = new System.Drawing.Point(6, 19);
+            this.txtDescripcionReparacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescripcionReparacion.Multiline = true;
+            this.txtDescripcionReparacion.Name = "txtDescripcionReparacion";
+            this.txtDescripcionReparacion.Size = new System.Drawing.Size(287, 235);
+            this.txtDescripcionReparacion.TabIndex = 37;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtLongBobina);
+            this.groupBox1.Controls.Add(this.lbLongBobina);
+            this.groupBox1.Controls.Add(this.txtEspiras);
+            this.groupBox1.Controls.Add(this.lbEspiras);
+            this.groupBox1.Controls.Add(this.txtHierro);
+            this.groupBox1.Controls.Add(this.lbHierro);
+            this.groupBox1.Controls.Add(this.txtPaso);
+            this.groupBox1.Controls.Add(this.lbPaso);
+            this.groupBox1.Controls.Add(this.txtCabeza);
+            this.groupBox1.Controls.Add(this.lbCabeza);
+            this.groupBox1.Controls.Add(this.txtBobinaPorGrupo);
+            this.groupBox1.Controls.Add(this.lbBobinaPorGrupo);
+            this.groupBox1.Controls.Add(this.txtHilos);
+            this.groupBox1.Controls.Add(this.lbHilos);
+            this.groupBox1.Controls.Add(this.txtNoGrupos);
+            this.groupBox1.Controls.Add(this.lbNoGrupos);
+            this.groupBox1.Controls.Add(this.txtCalibre);
+            this.groupBox1.Controls.Add(this.lbCalibre);
+            this.groupBox1.Controls.Add(this.txtNoRanuras);
+            this.groupBox1.Controls.Add(this.lbNoRanuras);
             this.groupBox1.Location = new System.Drawing.Point(10, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(329, 266);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pruebas eléctricas de entrada";
+            this.groupBox1.Text = "Datos del bobinado";
             // 
-            // textBox13
+            // txtLongBobina
             // 
-            this.textBox13.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox13.Location = new System.Drawing.Point(166, 231);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(152, 23);
-            this.textBox13.TabIndex = 67;
-            this.textBox13.TabStop = false;
+            this.txtLongBobina.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLongBobina.Location = new System.Drawing.Point(166, 231);
+            this.txtLongBobina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLongBobina.Name = "txtLongBobina";
+            this.txtLongBobina.Size = new System.Drawing.Size(152, 23);
+            this.txtLongBobina.TabIndex = 67;
+            this.txtLongBobina.TabStop = false;
             // 
-            // label13
+            // lbLongBobina
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label13.Location = new System.Drawing.Point(164, 213);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 16);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "Inspección";
+            this.lbLongBobina.AutoSize = true;
+            this.lbLongBobina.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLongBobina.Location = new System.Drawing.Point(164, 213);
+            this.lbLongBobina.Name = "lbLongBobina";
+            this.lbLongBobina.Size = new System.Drawing.Size(86, 16);
+            this.lbLongBobina.TabIndex = 68;
+            this.lbLongBobina.Text = "Long. bobina";
             // 
-            // textBox14
+            // txtEspiras
             // 
-            this.textBox14.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox14.Location = new System.Drawing.Point(8, 231);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 23);
-            this.textBox14.TabIndex = 65;
-            this.textBox14.TabStop = false;
+            this.txtEspiras.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtEspiras.Location = new System.Drawing.Point(8, 231);
+            this.txtEspiras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEspiras.Name = "txtEspiras";
+            this.txtEspiras.Size = new System.Drawing.Size(152, 23);
+            this.txtEspiras.TabIndex = 65;
+            this.txtEspiras.TabStop = false;
             // 
-            // label14
+            // lbEspiras
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label14.Location = new System.Drawing.Point(6, 213);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 16);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "Inspección";
+            this.lbEspiras.AutoSize = true;
+            this.lbEspiras.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbEspiras.Location = new System.Drawing.Point(6, 213);
+            this.lbEspiras.Name = "lbEspiras";
+            this.lbEspiras.Size = new System.Drawing.Size(53, 16);
+            this.lbEspiras.TabIndex = 66;
+            this.lbEspiras.Text = "Espiras";
             // 
-            // textBox11
+            // txtHierro
             // 
-            this.textBox11.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox11.Location = new System.Drawing.Point(166, 183);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(152, 23);
-            this.textBox11.TabIndex = 63;
-            this.textBox11.TabStop = false;
+            this.txtHierro.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtHierro.Location = new System.Drawing.Point(166, 183);
+            this.txtHierro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHierro.Name = "txtHierro";
+            this.txtHierro.Size = new System.Drawing.Size(152, 23);
+            this.txtHierro.TabIndex = 63;
+            this.txtHierro.TabStop = false;
             // 
-            // label11
+            // lbHierro
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label11.Location = new System.Drawing.Point(164, 165);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 16);
-            this.label11.TabIndex = 64;
-            this.label11.Text = "Inspección";
+            this.lbHierro.AutoSize = true;
+            this.lbHierro.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbHierro.Location = new System.Drawing.Point(164, 165);
+            this.lbHierro.Name = "lbHierro";
+            this.lbHierro.Size = new System.Drawing.Size(48, 16);
+            this.lbHierro.TabIndex = 64;
+            this.lbHierro.Text = "Hierro";
             // 
-            // textBox12
+            // txtPaso
             // 
-            this.textBox12.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox12.Location = new System.Drawing.Point(8, 183);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(152, 23);
-            this.textBox12.TabIndex = 61;
-            this.textBox12.TabStop = false;
+            this.txtPaso.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtPaso.Location = new System.Drawing.Point(8, 183);
+            this.txtPaso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPaso.Name = "txtPaso";
+            this.txtPaso.Size = new System.Drawing.Size(152, 23);
+            this.txtPaso.TabIndex = 61;
+            this.txtPaso.TabStop = false;
             // 
-            // label12
+            // lbPaso
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label12.Location = new System.Drawing.Point(6, 165);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 16);
-            this.label12.TabIndex = 62;
-            this.label12.Text = "Inspección";
+            this.lbPaso.AutoSize = true;
+            this.lbPaso.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbPaso.Location = new System.Drawing.Point(6, 165);
+            this.lbPaso.Name = "lbPaso";
+            this.lbPaso.Size = new System.Drawing.Size(36, 16);
+            this.lbPaso.TabIndex = 62;
+            this.lbPaso.Text = "Paso";
             // 
-            // textBox9
+            // txtCabeza
             // 
-            this.textBox9.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox9.Location = new System.Drawing.Point(166, 135);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(152, 23);
-            this.textBox9.TabIndex = 59;
-            this.textBox9.TabStop = false;
+            this.txtCabeza.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCabeza.Location = new System.Drawing.Point(166, 135);
+            this.txtCabeza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCabeza.Name = "txtCabeza";
+            this.txtCabeza.Size = new System.Drawing.Size(152, 23);
+            this.txtCabeza.TabIndex = 59;
+            this.txtCabeza.TabStop = false;
             // 
-            // label9
+            // lbCabeza
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label9.Location = new System.Drawing.Point(164, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 16);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Inspección";
+            this.lbCabeza.AutoSize = true;
+            this.lbCabeza.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCabeza.Location = new System.Drawing.Point(164, 117);
+            this.lbCabeza.Name = "lbCabeza";
+            this.lbCabeza.Size = new System.Drawing.Size(51, 16);
+            this.lbCabeza.TabIndex = 60;
+            this.lbCabeza.Text = "Cabeza";
             // 
-            // textBox10
+            // txtBobinaPorGrupo
             // 
-            this.textBox10.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox10.Location = new System.Drawing.Point(8, 135);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(152, 23);
-            this.textBox10.TabIndex = 57;
-            this.textBox10.TabStop = false;
+            this.txtBobinaPorGrupo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtBobinaPorGrupo.Location = new System.Drawing.Point(8, 135);
+            this.txtBobinaPorGrupo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBobinaPorGrupo.Name = "txtBobinaPorGrupo";
+            this.txtBobinaPorGrupo.Size = new System.Drawing.Size(152, 23);
+            this.txtBobinaPorGrupo.TabIndex = 57;
+            this.txtBobinaPorGrupo.TabStop = false;
             // 
-            // label10
+            // lbBobinaPorGrupo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label10.Location = new System.Drawing.Point(6, 117);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 16);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "Inspección";
+            this.lbBobinaPorGrupo.AutoSize = true;
+            this.lbBobinaPorGrupo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbBobinaPorGrupo.Location = new System.Drawing.Point(6, 117);
+            this.lbBobinaPorGrupo.Name = "lbBobinaPorGrupo";
+            this.lbBobinaPorGrupo.Size = new System.Drawing.Size(114, 16);
+            this.lbBobinaPorGrupo.TabIndex = 58;
+            this.lbBobinaPorGrupo.Text = "Bobina por grupo";
             // 
-            // textBox1
+            // txtHilos
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox1.Location = new System.Drawing.Point(166, 87);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 23);
-            this.textBox1.TabIndex = 55;
-            this.textBox1.TabStop = false;
+            this.txtHilos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtHilos.Location = new System.Drawing.Point(166, 87);
+            this.txtHilos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHilos.Name = "txtHilos";
+            this.txtHilos.Size = new System.Drawing.Size(152, 23);
+            this.txtHilos.TabIndex = 55;
+            this.txtHilos.TabStop = false;
             // 
-            // label1
+            // lbHilos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label1.Location = new System.Drawing.Point(164, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Inspección";
+            this.lbHilos.AutoSize = true;
+            this.lbHilos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbHilos.Location = new System.Drawing.Point(164, 69);
+            this.lbHilos.Name = "lbHilos";
+            this.lbHilos.Size = new System.Drawing.Size(39, 16);
+            this.lbHilos.TabIndex = 56;
+            this.lbHilos.Text = "Hilos";
             // 
-            // textBox3
+            // txtNoGrupos
             // 
-            this.textBox3.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox3.Location = new System.Drawing.Point(8, 87);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 23);
-            this.textBox3.TabIndex = 53;
-            this.textBox3.TabStop = false;
+            this.txtNoGrupos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtNoGrupos.Location = new System.Drawing.Point(8, 87);
+            this.txtNoGrupos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNoGrupos.Name = "txtNoGrupos";
+            this.txtNoGrupos.Size = new System.Drawing.Size(152, 23);
+            this.txtNoGrupos.TabIndex = 53;
+            this.txtNoGrupos.TabStop = false;
             // 
-            // label3
+            // lbNoGrupos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label3.Location = new System.Drawing.Point(6, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Inspección";
+            this.lbNoGrupos.AutoSize = true;
+            this.lbNoGrupos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbNoGrupos.Location = new System.Drawing.Point(6, 69);
+            this.lbNoGrupos.Name = "lbNoGrupos";
+            this.lbNoGrupos.Size = new System.Drawing.Size(75, 16);
+            this.lbNoGrupos.TabIndex = 54;
+            this.lbNoGrupos.Text = "No. Grupos";
             // 
-            // textBox2
+            // txtCalibre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox2.Location = new System.Drawing.Point(166, 39);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 23);
-            this.textBox2.TabIndex = 51;
-            this.textBox2.TabStop = false;
+            this.txtCalibre.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCalibre.Location = new System.Drawing.Point(166, 39);
+            this.txtCalibre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCalibre.Name = "txtCalibre";
+            this.txtCalibre.Size = new System.Drawing.Size(152, 23);
+            this.txtCalibre.TabIndex = 51;
+            this.txtCalibre.TabStop = false;
             // 
-            // label2
+            // lbCalibre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label2.Location = new System.Drawing.Point(164, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Inspección";
+            this.lbCalibre.AutoSize = true;
+            this.lbCalibre.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCalibre.Location = new System.Drawing.Point(164, 21);
+            this.lbCalibre.Name = "lbCalibre";
+            this.lbCalibre.Size = new System.Drawing.Size(52, 16);
+            this.lbCalibre.TabIndex = 52;
+            this.lbCalibre.Text = "Calibre";
             // 
-            // textBox6
+            // txtNoRanuras
             // 
-            this.textBox6.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox6.Location = new System.Drawing.Point(8, 39);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 23);
-            this.textBox6.TabIndex = 28;
-            this.textBox6.TabStop = false;
+            this.txtNoRanuras.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtNoRanuras.Location = new System.Drawing.Point(8, 39);
+            this.txtNoRanuras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNoRanuras.Name = "txtNoRanuras";
+            this.txtNoRanuras.Size = new System.Drawing.Size(152, 23);
+            this.txtNoRanuras.TabIndex = 28;
+            this.txtNoRanuras.TabStop = false;
             // 
-            // label6
+            // lbNoRanuras
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label6.Location = new System.Drawing.Point(6, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 16);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Inspección";
+            this.lbNoRanuras.AutoSize = true;
+            this.lbNoRanuras.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbNoRanuras.Location = new System.Drawing.Point(6, 21);
+            this.lbNoRanuras.Name = "lbNoRanuras";
+            this.lbNoRanuras.Size = new System.Drawing.Size(82, 16);
+            this.lbNoRanuras.TabIndex = 29;
+            this.lbNoRanuras.Text = "No. Ranuras";
             // 
             // tpPagina33
             // 
-            this.tpPagina33.Controls.Add(this.groupBox8);
+            this.tpPagina33.Controls.Add(this.gbResponsableActividades);
             this.tpPagina33.Controls.Add(this.groupBox7);
             this.tpPagina33.Controls.Add(this.groupBox6);
             this.tpPagina33.Controls.Add(this.groupBox5);
@@ -1131,43 +1141,43 @@
             this.tpPagina33.UseVisualStyleBackColor = true;
             this.tpPagina33.Click += new System.EventHandler(this.tpPagina33_Click);
             // 
-            // groupBox8
+            // gbResponsableActividades
             // 
-            this.groupBox8.Controls.Add(this.dataGridView4);
-            this.groupBox8.Controls.Add(this.label27);
-            this.groupBox8.Controls.Add(this.label32);
-            this.groupBox8.Controls.Add(this.button4);
-            this.groupBox8.Location = new System.Drawing.Point(495, 282);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(340, 110);
-            this.groupBox8.TabIndex = 33;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Responsable de actividades";
+            this.gbResponsableActividades.Controls.Add(this.dgResponsableActividades);
+            this.gbResponsableActividades.Controls.Add(this.label27);
+            this.gbResponsableActividades.Controls.Add(this.label32);
+            this.gbResponsableActividades.Controls.Add(this.button4);
+            this.gbResponsableActividades.Location = new System.Drawing.Point(495, 282);
+            this.gbResponsableActividades.Name = "gbResponsableActividades";
+            this.gbResponsableActividades.Size = new System.Drawing.Size(340, 110);
+            this.gbResponsableActividades.TabIndex = 33;
+            this.gbResponsableActividades.TabStop = false;
+            this.gbResponsableActividades.Text = "Responsable de actividades";
             // 
-            // dataGridView4
+            // dgResponsableActividades
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToResizeColumns = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView4.ColumnHeadersHeight = 30;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgResponsableActividades.AllowUserToAddRows = false;
+            this.dgResponsableActividades.AllowUserToDeleteRows = false;
+            this.dgResponsableActividades.AllowUserToResizeColumns = false;
+            this.dgResponsableActividades.AllowUserToResizeRows = false;
+            this.dgResponsableActividades.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgResponsableActividades.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgResponsableActividades.ColumnHeadersHeight = 30;
+            this.dgResponsableActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgResponsableActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.columnaResponsable});
-            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 22);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(323, 80);
-            this.dataGridView4.TabIndex = 78;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.dgResponsableActividades.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgResponsableActividades.Location = new System.Drawing.Point(6, 22);
+            this.dgResponsableActividades.Name = "dgResponsableActividades";
+            this.dgResponsableActividades.RowHeadersVisible = false;
+            this.dgResponsableActividades.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgResponsableActividades.RowTemplate.Height = 24;
+            this.dgResponsableActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgResponsableActividades.Size = new System.Drawing.Size(323, 80);
+            this.dgResponsableActividades.TabIndex = 78;
+            this.dgResponsableActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -1223,16 +1233,16 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.textBox17);
-            this.groupBox7.Controls.Add(this.label20);
-            this.groupBox7.Controls.Add(this.textBox19);
-            this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.textBox21);
-            this.groupBox7.Controls.Add(this.label23);
-            this.groupBox7.Controls.Add(this.textBox22);
-            this.groupBox7.Controls.Add(this.label24);
-            this.groupBox7.Controls.Add(this.textBox23);
-            this.groupBox7.Controls.Add(this.label25);
+            this.groupBox7.Controls.Add(this.txtLadoAcopleAMAB);
+            this.groupBox7.Controls.Add(this.lbLadoAcopleAMAB);
+            this.groupBox7.Controls.Add(this.txtLadoAcopleVMBV);
+            this.groupBox7.Controls.Add(this.lbLadoAcopleVMBV);
+            this.groupBox7.Controls.Add(this.txtLadoAcopleHMBH);
+            this.groupBox7.Controls.Add(this.lbLadoAcopleHMBH);
+            this.groupBox7.Controls.Add(this.txtLadoVentiladorVMAV);
+            this.groupBox7.Controls.Add(this.lbLadoVentiladorVMAV);
+            this.groupBox7.Controls.Add(this.txtLadoVentiladorHMAH);
+            this.groupBox7.Controls.Add(this.lbLadoVentiladorHMAH);
             this.groupBox7.Controls.Add(this.button3);
             this.groupBox7.Location = new System.Drawing.Point(492, 6);
             this.groupBox7.Name = "groupBox7";
@@ -1242,105 +1252,105 @@
             this.groupBox7.Text = "Análisis de Vibraciones";
             this.groupBox7.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
-            // textBox17
+            // txtLadoAcopleAMAB
             // 
-            this.textBox17.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox17.Location = new System.Drawing.Point(7, 231);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(327, 23);
-            this.textBox17.TabIndex = 75;
-            this.textBox17.TabStop = false;
+            this.txtLadoAcopleAMAB.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoAcopleAMAB.Location = new System.Drawing.Point(7, 231);
+            this.txtLadoAcopleAMAB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoAcopleAMAB.Name = "txtLadoAcopleAMAB";
+            this.txtLadoAcopleAMAB.Size = new System.Drawing.Size(327, 23);
+            this.txtLadoAcopleAMAB.TabIndex = 75;
+            this.txtLadoAcopleAMAB.TabStop = false;
             // 
-            // label20
+            // lbLadoAcopleAMAB
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label20.Location = new System.Drawing.Point(5, 213);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(129, 16);
-            this.label20.TabIndex = 76;
-            this.label20.Text = "Lado Acople A, MAB";
+            this.lbLadoAcopleAMAB.AutoSize = true;
+            this.lbLadoAcopleAMAB.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoAcopleAMAB.Location = new System.Drawing.Point(5, 213);
+            this.lbLadoAcopleAMAB.Name = "lbLadoAcopleAMAB";
+            this.lbLadoAcopleAMAB.Size = new System.Drawing.Size(129, 16);
+            this.lbLadoAcopleAMAB.TabIndex = 76;
+            this.lbLadoAcopleAMAB.Text = "Lado Acople A, MAB";
             // 
-            // textBox19
+            // txtLadoAcopleVMBV
             // 
-            this.textBox19.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox19.Location = new System.Drawing.Point(7, 183);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(327, 23);
-            this.textBox19.TabIndex = 73;
-            this.textBox19.TabStop = false;
+            this.txtLadoAcopleVMBV.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoAcopleVMBV.Location = new System.Drawing.Point(7, 183);
+            this.txtLadoAcopleVMBV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoAcopleVMBV.Name = "txtLadoAcopleVMBV";
+            this.txtLadoAcopleVMBV.Size = new System.Drawing.Size(327, 23);
+            this.txtLadoAcopleVMBV.TabIndex = 73;
+            this.txtLadoAcopleVMBV.TabStop = false;
             // 
-            // label22
+            // lbLadoAcopleVMBV
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label22.Location = new System.Drawing.Point(5, 165);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(126, 16);
-            this.label22.TabIndex = 74;
-            this.label22.Text = "Lado Acople V, MBV";
+            this.lbLadoAcopleVMBV.AutoSize = true;
+            this.lbLadoAcopleVMBV.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoAcopleVMBV.Location = new System.Drawing.Point(5, 165);
+            this.lbLadoAcopleVMBV.Name = "lbLadoAcopleVMBV";
+            this.lbLadoAcopleVMBV.Size = new System.Drawing.Size(126, 16);
+            this.lbLadoAcopleVMBV.TabIndex = 74;
+            this.lbLadoAcopleVMBV.Text = "Lado Acople V, MBV";
             // 
-            // textBox21
+            // txtLadoAcopleHMBH
             // 
-            this.textBox21.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox21.Location = new System.Drawing.Point(7, 135);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(327, 23);
-            this.textBox21.TabIndex = 71;
-            this.textBox21.TabStop = false;
+            this.txtLadoAcopleHMBH.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoAcopleHMBH.Location = new System.Drawing.Point(7, 135);
+            this.txtLadoAcopleHMBH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoAcopleHMBH.Name = "txtLadoAcopleHMBH";
+            this.txtLadoAcopleHMBH.Size = new System.Drawing.Size(327, 23);
+            this.txtLadoAcopleHMBH.TabIndex = 71;
+            this.txtLadoAcopleHMBH.TabStop = false;
             // 
-            // label23
+            // lbLadoAcopleHMBH
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label23.Location = new System.Drawing.Point(5, 117);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(131, 16);
-            this.label23.TabIndex = 72;
-            this.label23.Text = "Lado Acople H, MBH";
+            this.lbLadoAcopleHMBH.AutoSize = true;
+            this.lbLadoAcopleHMBH.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoAcopleHMBH.Location = new System.Drawing.Point(5, 117);
+            this.lbLadoAcopleHMBH.Name = "lbLadoAcopleHMBH";
+            this.lbLadoAcopleHMBH.Size = new System.Drawing.Size(131, 16);
+            this.lbLadoAcopleHMBH.TabIndex = 72;
+            this.lbLadoAcopleHMBH.Text = "Lado Acople H, MBH";
             // 
-            // textBox22
+            // txtLadoVentiladorVMAV
             // 
-            this.textBox22.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox22.Location = new System.Drawing.Point(7, 87);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(327, 23);
-            this.textBox22.TabIndex = 69;
-            this.textBox22.TabStop = false;
+            this.txtLadoVentiladorVMAV.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoVentiladorVMAV.Location = new System.Drawing.Point(7, 87);
+            this.txtLadoVentiladorVMAV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoVentiladorVMAV.Name = "txtLadoVentiladorVMAV";
+            this.txtLadoVentiladorVMAV.Size = new System.Drawing.Size(327, 23);
+            this.txtLadoVentiladorVMAV.TabIndex = 69;
+            this.txtLadoVentiladorVMAV.TabStop = false;
             // 
-            // label24
+            // lbLadoVentiladorVMAV
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label24.Location = new System.Drawing.Point(5, 69);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(147, 16);
-            this.label24.TabIndex = 70;
-            this.label24.Text = "Lado Ventilador V, MAV";
+            this.lbLadoVentiladorVMAV.AutoSize = true;
+            this.lbLadoVentiladorVMAV.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoVentiladorVMAV.Location = new System.Drawing.Point(5, 69);
+            this.lbLadoVentiladorVMAV.Name = "lbLadoVentiladorVMAV";
+            this.lbLadoVentiladorVMAV.Size = new System.Drawing.Size(147, 16);
+            this.lbLadoVentiladorVMAV.TabIndex = 70;
+            this.lbLadoVentiladorVMAV.Text = "Lado Ventilador V, MAV";
             // 
-            // textBox23
+            // txtLadoVentiladorHMAH
             // 
-            this.textBox23.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox23.Location = new System.Drawing.Point(7, 39);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(327, 23);
-            this.textBox23.TabIndex = 67;
-            this.textBox23.TabStop = false;
+            this.txtLadoVentiladorHMAH.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtLadoVentiladorHMAH.Location = new System.Drawing.Point(7, 39);
+            this.txtLadoVentiladorHMAH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLadoVentiladorHMAH.Name = "txtLadoVentiladorHMAH";
+            this.txtLadoVentiladorHMAH.Size = new System.Drawing.Size(327, 23);
+            this.txtLadoVentiladorHMAH.TabIndex = 67;
+            this.txtLadoVentiladorHMAH.TabStop = false;
             // 
-            // label25
+            // lbLadoVentiladorHMAH
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label25.Location = new System.Drawing.Point(5, 21);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(153, 16);
-            this.label25.TabIndex = 68;
-            this.label25.Text = "Lado Ventilador H, MAH";
+            this.lbLadoVentiladorHMAH.AutoSize = true;
+            this.lbLadoVentiladorHMAH.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbLadoVentiladorHMAH.Location = new System.Drawing.Point(5, 21);
+            this.lbLadoVentiladorHMAH.Name = "lbLadoVentiladorHMAH";
+            this.lbLadoVentiladorHMAH.Size = new System.Drawing.Size(153, 16);
+            this.lbLadoVentiladorHMAH.TabIndex = 68;
+            this.lbLadoVentiladorHMAH.Text = "Lado Ventilador H, MAH";
             // 
             // button3
             // 
@@ -1355,21 +1365,21 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox26);
+            this.groupBox6.Controls.Add(this.txtContinuidadLineas);
             this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.label29);
-            this.groupBox6.Controls.Add(this.textBox20);
-            this.groupBox6.Controls.Add(this.textBox25);
-            this.groupBox6.Controls.Add(this.label21);
-            this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Controls.Add(this.textBox29);
-            this.groupBox6.Controls.Add(this.textBox28);
-            this.groupBox6.Controls.Add(this.textBox27);
-            this.groupBox6.Controls.Add(this.label33);
-            this.groupBox6.Controls.Add(this.label31);
-            this.groupBox6.Controls.Add(this.label30);
-            this.groupBox6.Controls.Add(this.textBox24);
-            this.groupBox6.Controls.Add(this.label26);
+            this.groupBox6.Controls.Add(this.lbContinuidadLineas);
+            this.groupBox6.Controls.Add(this.txtRealizadoPorPruebasElectricasFinales);
+            this.groupBox6.Controls.Add(this.txtIndicePolaridadP3);
+            this.groupBox6.Controls.Add(this.lbRealizadoPorPruebasElectricasFinales);
+            this.groupBox6.Controls.Add(this.lbIndicePolaridadP3);
+            this.groupBox6.Controls.Add(this.txtFaseT);
+            this.groupBox6.Controls.Add(this.txtFaseS);
+            this.groupBox6.Controls.Add(this.txtFaseR);
+            this.groupBox6.Controls.Add(this.lbFaseT);
+            this.groupBox6.Controls.Add(this.lbFaseS);
+            this.groupBox6.Controls.Add(this.lbFaseR);
+            this.groupBox6.Controls.Add(this.txtResistenciaAislamientoP3);
+            this.groupBox6.Controls.Add(this.lbResistenciaAislamientoP3);
             this.groupBox6.Location = new System.Drawing.Point(6, 403);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(826, 164);
@@ -1377,6 +1387,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Pruebas Eléctricas Finales";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // txtContinuidadLineas
+            // 
+            this.txtContinuidadLineas.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtContinuidadLineas.Location = new System.Drawing.Point(488, 130);
+            this.txtContinuidadLineas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContinuidadLineas.Name = "txtContinuidadLineas";
+            this.txtContinuidadLineas.Size = new System.Drawing.Size(327, 23);
+            this.txtContinuidadLineas.TabIndex = 75;
+            this.txtContinuidadLineas.TabStop = false;
             // 
             // button2
             // 
@@ -1389,44 +1409,154 @@
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox20
+            // lbContinuidadLineas
             // 
-            this.textBox20.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox20.Location = new System.Drawing.Point(12, 39);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(387, 23);
-            this.textBox20.TabIndex = 43;
-            this.textBox20.TabStop = false;
+            this.lbContinuidadLineas.AutoSize = true;
+            this.lbContinuidadLineas.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbContinuidadLineas.Location = new System.Drawing.Point(486, 112);
+            this.lbContinuidadLineas.Name = "lbContinuidadLineas";
+            this.lbContinuidadLineas.Size = new System.Drawing.Size(162, 16);
+            this.lbContinuidadLineas.TabIndex = 76;
+            this.lbContinuidadLineas.Text = "Continuidad entre Lineas";
             // 
-            // label21
+            // txtRealizadoPorPruebasElectricasFinales
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label21.Location = new System.Drawing.Point(10, 21);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 16);
-            this.label21.TabIndex = 44;
-            this.label21.Text = "Realizado por";
+            this.txtRealizadoPorPruebasElectricasFinales.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtRealizadoPorPruebasElectricasFinales.Location = new System.Drawing.Point(12, 39);
+            this.txtRealizadoPorPruebasElectricasFinales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRealizadoPorPruebasElectricasFinales.Name = "txtRealizadoPorPruebasElectricasFinales";
+            this.txtRealizadoPorPruebasElectricasFinales.ReadOnly = true;
+            this.txtRealizadoPorPruebasElectricasFinales.Size = new System.Drawing.Size(387, 23);
+            this.txtRealizadoPorPruebasElectricasFinales.TabIndex = 43;
+            this.txtRealizadoPorPruebasElectricasFinales.TabStop = false;
+            // 
+            // txtIndicePolaridadP3
+            // 
+            this.txtIndicePolaridadP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtIndicePolaridadP3.Location = new System.Drawing.Point(488, 82);
+            this.txtIndicePolaridadP3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIndicePolaridadP3.Name = "txtIndicePolaridadP3";
+            this.txtIndicePolaridadP3.Size = new System.Drawing.Size(327, 23);
+            this.txtIndicePolaridadP3.TabIndex = 73;
+            this.txtIndicePolaridadP3.TabStop = false;
+            // 
+            // lbRealizadoPorPruebasElectricasFinales
+            // 
+            this.lbRealizadoPorPruebasElectricasFinales.AutoSize = true;
+            this.lbRealizadoPorPruebasElectricasFinales.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbRealizadoPorPruebasElectricasFinales.Location = new System.Drawing.Point(10, 21);
+            this.lbRealizadoPorPruebasElectricasFinales.Name = "lbRealizadoPorPruebasElectricasFinales";
+            this.lbRealizadoPorPruebasElectricasFinales.Size = new System.Drawing.Size(91, 16);
+            this.lbRealizadoPorPruebasElectricasFinales.TabIndex = 44;
+            this.lbRealizadoPorPruebasElectricasFinales.Text = "Realizado por";
+            // 
+            // lbIndicePolaridadP3
+            // 
+            this.lbIndicePolaridadP3.AutoSize = true;
+            this.lbIndicePolaridadP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbIndicePolaridadP3.Location = new System.Drawing.Point(486, 64);
+            this.lbIndicePolaridadP3.Name = "lbIndicePolaridadP3";
+            this.lbIndicePolaridadP3.Size = new System.Drawing.Size(126, 16);
+            this.lbIndicePolaridadP3.TabIndex = 74;
+            this.lbIndicePolaridadP3.Text = "Indice de Polaridad";
+            // 
+            // txtFaseT
+            // 
+            this.txtFaseT.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtFaseT.Location = new System.Drawing.Point(337, 94);
+            this.txtFaseT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFaseT.Name = "txtFaseT";
+            this.txtFaseT.Size = new System.Drawing.Size(128, 23);
+            this.txtFaseT.TabIndex = 71;
+            this.txtFaseT.TabStop = false;
+            // 
+            // txtFaseS
+            // 
+            this.txtFaseS.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtFaseS.Location = new System.Drawing.Point(180, 94);
+            this.txtFaseS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFaseS.Name = "txtFaseS";
+            this.txtFaseS.Size = new System.Drawing.Size(128, 23);
+            this.txtFaseS.TabIndex = 71;
+            this.txtFaseS.TabStop = false;
+            // 
+            // txtFaseR
+            // 
+            this.txtFaseR.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtFaseR.Location = new System.Drawing.Point(11, 94);
+            this.txtFaseR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFaseR.Name = "txtFaseR";
+            this.txtFaseR.Size = new System.Drawing.Size(128, 23);
+            this.txtFaseR.TabIndex = 71;
+            this.txtFaseR.TabStop = false;
+            // 
+            // lbFaseT
+            // 
+            this.lbFaseT.AutoSize = true;
+            this.lbFaseT.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbFaseT.Location = new System.Drawing.Point(334, 76);
+            this.lbFaseT.Name = "lbFaseT";
+            this.lbFaseT.Size = new System.Drawing.Size(57, 16);
+            this.lbFaseT.TabIndex = 72;
+            this.lbFaseT.Text = "Fase (T)";
+            // 
+            // lbFaseS
+            // 
+            this.lbFaseS.AutoSize = true;
+            this.lbFaseS.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbFaseS.Location = new System.Drawing.Point(177, 76);
+            this.lbFaseS.Name = "lbFaseS";
+            this.lbFaseS.Size = new System.Drawing.Size(56, 16);
+            this.lbFaseS.TabIndex = 72;
+            this.lbFaseS.Text = "Fase (S)";
+            // 
+            // lbFaseR
+            // 
+            this.lbFaseR.AutoSize = true;
+            this.lbFaseR.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbFaseR.Location = new System.Drawing.Point(9, 76);
+            this.lbFaseR.Name = "lbFaseR";
+            this.lbFaseR.Size = new System.Drawing.Size(58, 16);
+            this.lbFaseR.TabIndex = 72;
+            this.lbFaseR.Text = "Fase (R)";
+            // 
+            // txtResistenciaAislamientoP3
+            // 
+            this.txtResistenciaAislamientoP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtResistenciaAislamientoP3.Location = new System.Drawing.Point(488, 34);
+            this.txtResistenciaAislamientoP3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtResistenciaAislamientoP3.Name = "txtResistenciaAislamientoP3";
+            this.txtResistenciaAislamientoP3.Size = new System.Drawing.Size(327, 23);
+            this.txtResistenciaAislamientoP3.TabIndex = 71;
+            this.txtResistenciaAislamientoP3.TabStop = false;
+            // 
+            // lbResistenciaAislamientoP3
+            // 
+            this.lbResistenciaAislamientoP3.AutoSize = true;
+            this.lbResistenciaAislamientoP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbResistenciaAislamientoP3.Location = new System.Drawing.Point(486, 16);
+            this.lbResistenciaAislamientoP3.Name = "lbResistenciaAislamientoP3";
+            this.lbResistenciaAislamientoP3.Size = new System.Drawing.Size(171, 16);
+            this.lbResistenciaAislamientoP3.TabIndex = 72;
+            this.lbResistenciaAislamientoP3.Text = "Resistencia de Aislamiento";
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.textBox18);
-            this.groupBox5.Controls.Add(this.textBox16);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.dataGridView1);
-            this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.dataGridView2);
+            this.groupBox5.Controls.Add(this.txtAlojamientosP3);
+            this.groupBox5.Controls.Add(this.txtEjeP3);
+            this.groupBox5.Controls.Add(this.btBuscarMontajeRodamientosRealizadoPo);
+            this.groupBox5.Controls.Add(this.txtRealizadoPorMontajeRodamientos);
+            this.groupBox5.Controls.Add(this.lbRealizadoPorMontajeRodamientos);
+            this.groupBox5.Controls.Add(this.dgAlojamientosP3);
+            this.groupBox5.Controls.Add(this.lbAlojamientosP3);
+            this.groupBox5.Controls.Add(this.dgEjeP3);
             this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.dataGridView3);
-            this.groupBox5.Controls.Add(this.textBox15);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.lbEjeP3);
+            this.groupBox5.Controls.Add(this.dgDataGridRodamientos);
+            this.groupBox5.Controls.Add(this.txtObservacionesP3);
+            this.groupBox5.Controls.Add(this.lbObservacionesP3);
+            this.groupBox5.Controls.Add(this.lbDataGridRodamientos);
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(480, 386);
@@ -1445,80 +1575,80 @@
             this.label19.TabIndex = 47;
             this.label19.Text = "Ajuste";
             // 
-            // textBox18
+            // txtAlojamientosP3
             // 
-            this.textBox18.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox18.Location = new System.Drawing.Point(293, 198);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(171, 23);
-            this.textBox18.TabIndex = 46;
-            this.textBox18.TabStop = false;
+            this.txtAlojamientosP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtAlojamientosP3.Location = new System.Drawing.Point(293, 198);
+            this.txtAlojamientosP3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAlojamientosP3.Name = "txtAlojamientosP3";
+            this.txtAlojamientosP3.Size = new System.Drawing.Size(171, 23);
+            this.txtAlojamientosP3.TabIndex = 46;
+            this.txtAlojamientosP3.TabStop = false;
             // 
-            // textBox16
+            // txtEjeP3
             // 
-            this.textBox16.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox16.Location = new System.Drawing.Point(63, 198);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(171, 23);
-            this.textBox16.TabIndex = 46;
-            this.textBox16.TabStop = false;
+            this.txtEjeP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtEjeP3.Location = new System.Drawing.Point(63, 198);
+            this.txtEjeP3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEjeP3.Name = "txtEjeP3";
+            this.txtEjeP3.Size = new System.Drawing.Size(171, 23);
+            this.txtEjeP3.TabIndex = 46;
+            this.txtEjeP3.TabStop = false;
             // 
-            // button1
+            // btBuscarMontajeRodamientosRealizadoPo
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Cambria", 10F);
-            this.button1.Location = new System.Drawing.Point(405, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 23);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btBuscarMontajeRodamientosRealizadoPo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btBuscarMontajeRodamientosRealizadoPo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btBuscarMontajeRodamientosRealizadoPo.Location = new System.Drawing.Point(405, 39);
+            this.btBuscarMontajeRodamientosRealizadoPo.Name = "btBuscarMontajeRodamientosRealizadoPo";
+            this.btBuscarMontajeRodamientosRealizadoPo.Size = new System.Drawing.Size(60, 23);
+            this.btBuscarMontajeRodamientosRealizadoPo.TabIndex = 45;
+            this.btBuscarMontajeRodamientosRealizadoPo.Text = "Buscar";
+            this.btBuscarMontajeRodamientosRealizadoPo.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtRealizadoPorMontajeRodamientos
             // 
-            this.textBox8.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox8.Location = new System.Drawing.Point(12, 39);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(387, 23);
-            this.textBox8.TabIndex = 43;
-            this.textBox8.TabStop = false;
+            this.txtRealizadoPorMontajeRodamientos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtRealizadoPorMontajeRodamientos.Location = new System.Drawing.Point(12, 39);
+            this.txtRealizadoPorMontajeRodamientos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRealizadoPorMontajeRodamientos.Name = "txtRealizadoPorMontajeRodamientos";
+            this.txtRealizadoPorMontajeRodamientos.ReadOnly = true;
+            this.txtRealizadoPorMontajeRodamientos.Size = new System.Drawing.Size(387, 23);
+            this.txtRealizadoPorMontajeRodamientos.TabIndex = 43;
+            this.txtRealizadoPorMontajeRodamientos.TabStop = false;
             // 
-            // label7
+            // lbRealizadoPorMontajeRodamientos
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label7.Location = new System.Drawing.Point(10, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 16);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Realizado por";
+            this.lbRealizadoPorMontajeRodamientos.AutoSize = true;
+            this.lbRealizadoPorMontajeRodamientos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbRealizadoPorMontajeRodamientos.Location = new System.Drawing.Point(10, 21);
+            this.lbRealizadoPorMontajeRodamientos.Name = "lbRealizadoPorMontajeRodamientos";
+            this.lbRealizadoPorMontajeRodamientos.Size = new System.Drawing.Size(91, 16);
+            this.lbRealizadoPorMontajeRodamientos.TabIndex = 44;
+            this.lbRealizadoPorMontajeRodamientos.Text = "Realizado por";
             // 
-            // dataGridView1
+            // dgAlojamientosP3
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgAlojamientosP3.AllowUserToAddRows = false;
+            this.dgAlojamientosP3.AllowUserToDeleteRows = false;
+            this.dgAlojamientosP3.AllowUserToResizeColumns = false;
+            this.dgAlojamientosP3.AllowUserToResizeRows = false;
+            this.dgAlojamientosP3.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgAlojamientosP3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgAlojamientosP3.ColumnHeadersHeight = 30;
+            this.dgAlojamientosP3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgAlojamientosP3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(241, 225);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(223, 80);
-            this.dataGridView1.TabIndex = 42;
+            this.dgAlojamientosP3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgAlojamientosP3.Location = new System.Drawing.Point(241, 225);
+            this.dgAlojamientosP3.Name = "dgAlojamientosP3";
+            this.dgAlojamientosP3.RowHeadersVisible = false;
+            this.dgAlojamientosP3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgAlojamientosP3.RowTemplate.Height = 24;
+            this.dgAlojamientosP3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgAlojamientosP3.Size = new System.Drawing.Size(223, 80);
+            this.dgAlojamientosP3.TabIndex = 42;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1537,38 +1667,38 @@
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn2.Width = 101;
             // 
-            // label8
+            // lbAlojamientosP3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label8.Location = new System.Drawing.Point(311, 178);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 16);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Alojamientos";
+            this.lbAlojamientosP3.AutoSize = true;
+            this.lbAlojamientosP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbAlojamientosP3.Location = new System.Drawing.Point(311, 178);
+            this.lbAlojamientosP3.Name = "lbAlojamientosP3";
+            this.lbAlojamientosP3.Size = new System.Drawing.Size(88, 16);
+            this.lbAlojamientosP3.TabIndex = 41;
+            this.lbAlojamientosP3.Text = "Alojamientos";
             // 
-            // dataGridView2
+            // dgEjeP3
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.ColumnHeadersHeight = 30;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgEjeP3.AllowUserToAddRows = false;
+            this.dgEjeP3.AllowUserToDeleteRows = false;
+            this.dgEjeP3.AllowUserToResizeColumns = false;
+            this.dgEjeP3.AllowUserToResizeRows = false;
+            this.dgEjeP3.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgEjeP3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgEjeP3.ColumnHeadersHeight = 30;
+            this.dgEjeP3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgEjeP3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 225);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(223, 80);
-            this.dataGridView2.TabIndex = 40;
+            this.dgEjeP3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgEjeP3.Location = new System.Drawing.Point(11, 225);
+            this.dgEjeP3.Name = "dgEjeP3";
+            this.dgEjeP3.RowHeadersVisible = false;
+            this.dgEjeP3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgEjeP3.RowTemplate.Height = 24;
+            this.dgEjeP3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgEjeP3.Size = new System.Drawing.Size(223, 80);
+            this.dgEjeP3.TabIndex = 40;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -1597,39 +1727,39 @@
             this.label18.TabIndex = 39;
             this.label18.Text = "Ajuste";
             // 
-            // label15
+            // lbEjeP3
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label15.Location = new System.Drawing.Point(103, 178);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(27, 16);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "Eje";
+            this.lbEjeP3.AutoSize = true;
+            this.lbEjeP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbEjeP3.Location = new System.Drawing.Point(103, 178);
+            this.lbEjeP3.Name = "lbEjeP3";
+            this.lbEjeP3.Size = new System.Drawing.Size(27, 16);
+            this.lbEjeP3.TabIndex = 39;
+            this.lbEjeP3.Text = "Eje";
             // 
-            // dataGridView3
+            // dgDataGridRodamientos
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView3.ColumnHeadersHeight = 30;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgDataGridRodamientos.AllowUserToAddRows = false;
+            this.dgDataGridRodamientos.AllowUserToDeleteRows = false;
+            this.dgDataGridRodamientos.AllowUserToResizeColumns = false;
+            this.dgDataGridRodamientos.AllowUserToResizeRows = false;
+            this.dgDataGridRodamientos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgDataGridRodamientos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgDataGridRodamientos.ColumnHeadersHeight = 30;
+            this.dgDataGridRodamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgDataGridRodamientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 89);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(453, 80);
-            this.dataGridView3.TabIndex = 38;
+            this.dgDataGridRodamientos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgDataGridRodamientos.Location = new System.Drawing.Point(12, 89);
+            this.dgDataGridRodamientos.Name = "dgDataGridRodamientos";
+            this.dgDataGridRodamientos.RowHeadersVisible = false;
+            this.dgDataGridRodamientos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgDataGridRodamientos.RowTemplate.Height = 24;
+            this.dgDataGridRodamientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgDataGridRodamientos.Size = new System.Drawing.Size(453, 80);
+            this.dgDataGridRodamientos.TabIndex = 38;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1655,35 +1785,35 @@
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn7.Width = 175;
             // 
-            // textBox15
+            // txtObservacionesP3
             // 
-            this.textBox15.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox15.Location = new System.Drawing.Point(12, 332);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(453, 45);
-            this.textBox15.TabIndex = 36;
+            this.txtObservacionesP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtObservacionesP3.Location = new System.Drawing.Point(12, 332);
+            this.txtObservacionesP3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtObservacionesP3.Multiline = true;
+            this.txtObservacionesP3.Name = "txtObservacionesP3";
+            this.txtObservacionesP3.Size = new System.Drawing.Size(453, 45);
+            this.txtObservacionesP3.TabIndex = 36;
             // 
-            // label16
+            // lbObservacionesP3
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label16.Location = new System.Drawing.Point(10, 314);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(96, 16);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Observaciones";
+            this.lbObservacionesP3.AutoSize = true;
+            this.lbObservacionesP3.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbObservacionesP3.Location = new System.Drawing.Point(10, 314);
+            this.lbObservacionesP3.Name = "lbObservacionesP3";
+            this.lbObservacionesP3.Size = new System.Drawing.Size(96, 16);
+            this.lbObservacionesP3.TabIndex = 37;
+            this.lbObservacionesP3.Text = "Observaciones";
             // 
-            // label17
+            // lbDataGridRodamientos
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label17.Location = new System.Drawing.Point(8, 71);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 16);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "Rodamientos";
+            this.lbDataGridRodamientos.AutoSize = true;
+            this.lbDataGridRodamientos.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbDataGridRodamientos.Location = new System.Drawing.Point(8, 71);
+            this.lbDataGridRodamientos.Name = "lbDataGridRodamientos";
+            this.lbDataGridRodamientos.Size = new System.Drawing.Size(88, 16);
+            this.lbDataGridRodamientos.TabIndex = 30;
+            this.lbDataGridRodamientos.Text = "Rodamientos";
             // 
             // txtNumero
             // 
@@ -1706,138 +1836,50 @@
             this.lbNumero.TabIndex = 30;
             this.lbNumero.Text = "Número";
             // 
-            // label26
+            // btnSiguienteGuardar
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label26.Location = new System.Drawing.Point(486, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(171, 16);
-            this.label26.TabIndex = 72;
-            this.label26.Text = "Resistencia de Aislamiento";
+            this.btnSiguienteGuardar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnSiguienteGuardar.Image = global::Presentacion.Properties.Resources.siguiente;
+            this.btnSiguienteGuardar.Location = new System.Drawing.Point(872, 186);
+            this.btnSiguienteGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSiguienteGuardar.Name = "btnSiguienteGuardar";
+            this.btnSiguienteGuardar.Size = new System.Drawing.Size(50, 50);
+            this.btnSiguienteGuardar.TabIndex = 31;
+            this.btnSiguienteGuardar.UseVisualStyleBackColor = true;
+            this.btnSiguienteGuardar.Click += new System.EventHandler(this.btnSiguienteGuardar_Click);
             // 
-            // textBox24
+            // btnCancelar
             // 
-            this.textBox24.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox24.Location = new System.Drawing.Point(488, 34);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(327, 23);
-            this.textBox24.TabIndex = 71;
-            this.textBox24.TabStop = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnCancelar.Image = global::Presentacion.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(872, 303);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label28
+            // epError
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label28.Location = new System.Drawing.Point(486, 64);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(126, 16);
-            this.label28.TabIndex = 74;
-            this.label28.Text = "Indice de Polaridad";
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox25.Location = new System.Drawing.Point(488, 82);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(327, 23);
-            this.textBox25.TabIndex = 73;
-            this.textBox25.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label29.Location = new System.Drawing.Point(486, 112);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(162, 16);
-            this.label29.TabIndex = 76;
-            this.label29.Text = "Continuidad entre Lineas";
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox26.Location = new System.Drawing.Point(488, 130);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(327, 23);
-            this.textBox26.TabIndex = 75;
-            this.textBox26.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label30.Location = new System.Drawing.Point(9, 76);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(58, 16);
-            this.label30.TabIndex = 72;
-            this.label30.Text = "Fase (R)";
-            // 
-            // textBox27
-            // 
-            this.textBox27.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox27.Location = new System.Drawing.Point(11, 94);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(128, 23);
-            this.textBox27.TabIndex = 71;
-            this.textBox27.TabStop = false;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox28.Location = new System.Drawing.Point(180, 94);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(128, 23);
-            this.textBox28.TabIndex = 71;
-            this.textBox28.TabStop = false;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Font = new System.Drawing.Font("Cambria", 10F);
-            this.textBox29.Location = new System.Drawing.Point(337, 94);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(128, 23);
-            this.textBox29.TabIndex = 71;
-            this.textBox29.TabStop = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label31.Location = new System.Drawing.Point(177, 76);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(56, 16);
-            this.label31.TabIndex = 72;
-            this.label31.Text = "Fase (S)";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Cambria", 10F);
-            this.label33.Location = new System.Drawing.Point(334, 76);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(57, 16);
-            this.label33.TabIndex = 72;
-            this.label33.Text = "Fase (T)";
+            this.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epError.ContainerControl = this;
             // 
             // FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 662);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSiguienteGuardar);
             this.Controls.Add(this.tcPaginas);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lbNumero);
             this.Font = new System.Drawing.Font("Cambria", 10F);
             this.Name = "FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "q";
+            this.Text = "Datos técnicos motor eléctrico trifásico";
+            this.Load += new System.EventHandler(this.FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico_Load);
             this.tcPaginas.ResumeLayout(false);
             this.tpPagina13.ResumeLayout(false);
             this.tpPagina13.PerformLayout();
@@ -1853,23 +1895,24 @@
             this.tpPagina23.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbDescripcionReparacion.ResumeLayout(false);
+            this.gbDescripcionReparacion.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tpPagina33.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.gbResponsableActividades.ResumeLayout(false);
+            this.gbResponsableActividades.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResponsableActividades)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlojamientosP3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEjeP3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDataGridRodamientos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1933,93 +1976,96 @@
         private System.Windows.Forms.CheckBox cbMantenimiento;
         private System.Windows.Forms.TextBox txtOtros;
         private System.Windows.Forms.Label lbOtros;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbDescripcionReparacion;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtLongBobina;
+        private System.Windows.Forms.Label lbLongBobina;
+        private System.Windows.Forms.TextBox txtEspiras;
+        private System.Windows.Forms.Label lbEspiras;
+        private System.Windows.Forms.TextBox txtHierro;
+        private System.Windows.Forms.Label lbHierro;
+        private System.Windows.Forms.TextBox txtPaso;
+        private System.Windows.Forms.Label lbPaso;
+        private System.Windows.Forms.TextBox txtCabeza;
+        private System.Windows.Forms.Label lbCabeza;
+        private System.Windows.Forms.TextBox txtBobinaPorGrupo;
+        private System.Windows.Forms.Label lbBobinaPorGrupo;
+        private System.Windows.Forms.TextBox txtHilos;
+        private System.Windows.Forms.Label lbHilos;
+        private System.Windows.Forms.TextBox txtNoGrupos;
+        private System.Windows.Forms.Label lbNoGrupos;
+        private System.Windows.Forms.TextBox txtCalibre;
+        private System.Windows.Forms.Label lbCalibre;
+        private System.Windows.Forms.TextBox txtNoRanuras;
+        private System.Windows.Forms.Label lbNoRanuras;
+        private System.Windows.Forms.GroupBox gbDiagramaConexion;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLadoAcople;
+        private System.Windows.Forms.Label lbLadoAcople;
+        private System.Windows.Forms.TextBox txtLadoVentilador;
+        private System.Windows.Forms.Label lbLadoVentilador;
+        private System.Windows.Forms.TextBox txtDescripcionReparacion;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btBuscarMontajeRodamientosRealizadoPo;
+        private System.Windows.Forms.TextBox txtRealizadoPorMontajeRodamientos;
+        private System.Windows.Forms.Label lbRealizadoPorMontajeRodamientos;
+        private System.Windows.Forms.DataGridView dgAlojamientosP3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label lbAlojamientosP3;
+        private System.Windows.Forms.DataGridView dgEjeP3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label lbEjeP3;
+        private System.Windows.Forms.DataGridView dgDataGridRodamientos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtObservacionesP3;
+        private System.Windows.Forms.Label lbObservacionesP3;
+        private System.Windows.Forms.Label lbDataGridRodamientos;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtLadoAcopleAMAB;
+        private System.Windows.Forms.Label lbLadoAcopleAMAB;
+        private System.Windows.Forms.TextBox txtLadoAcopleVMBV;
+        private System.Windows.Forms.Label lbLadoAcopleVMBV;
+        private System.Windows.Forms.TextBox txtLadoAcopleHMBH;
+        private System.Windows.Forms.Label lbLadoAcopleHMBH;
+        private System.Windows.Forms.TextBox txtLadoVentiladorVMAV;
+        private System.Windows.Forms.Label lbLadoVentiladorVMAV;
+        private System.Windows.Forms.TextBox txtLadoVentiladorHMAH;
+        private System.Windows.Forms.Label lbLadoVentiladorHMAH;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtRealizadoPorPruebasElectricasFinales;
+        private System.Windows.Forms.Label lbRealizadoPorPruebasElectricasFinales;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtAlojamientosP3;
+        private System.Windows.Forms.TextBox txtEjeP3;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.GroupBox gbResponsableActividades;
+        private System.Windows.Forms.DataGridView dgResponsableActividades;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaResponsable;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtContinuidadLineas;
+        private System.Windows.Forms.Label lbContinuidadLineas;
+        private System.Windows.Forms.TextBox txtIndicePolaridadP3;
+        private System.Windows.Forms.Label lbIndicePolaridadP3;
+        private System.Windows.Forms.TextBox txtFaseT;
+        private System.Windows.Forms.TextBox txtFaseS;
+        private System.Windows.Forms.TextBox txtFaseR;
+        private System.Windows.Forms.Label lbFaseT;
+        private System.Windows.Forms.Label lbFaseS;
+        private System.Windows.Forms.Label lbFaseR;
+        private System.Windows.Forms.TextBox txtResistenciaAislamientoP3;
+        private System.Windows.Forms.Label lbResistenciaAislamientoP3;
+        private System.Windows.Forms.Button btnSiguienteGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }

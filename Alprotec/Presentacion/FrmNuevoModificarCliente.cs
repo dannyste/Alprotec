@@ -349,5 +349,10 @@ namespace Presentacion
             cbCiudad.SelectedIndex = 0;
             dgvContactos.Rows.Clear();
         }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

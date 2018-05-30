@@ -235,5 +235,10 @@ namespace Presentacion
                 MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void gbCriteriosBusqueda_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

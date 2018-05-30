@@ -17,6 +17,8 @@ namespace Presentacion
     {
         public FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo;
 
+        private FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+
         public bool busqueda = false;
 
         private bool error = false;
@@ -32,6 +34,13 @@ namespace Presentacion
         {
             InitializeComponent();
             this.frmNuevaModificarRecepcionEquipo = frmNuevaModificarRecepcionEquipo;
+            this.busqueda = busqueda;
+        }
+
+        public FrmEquipos(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda)
+        {
+            InitializeComponent();
+            this.frmNuevoModificarDatosTecnicosMotorElectricoTrifasico = frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
             this.busqueda = busqueda;
         }
 
@@ -64,8 +73,14 @@ namespace Presentacion
                 EquipoDTO equipoDTO = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
                 if (!error)
                 {
-                    frmNuevaModificarRecepcionEquipo.establecerEquipo = equipoDTO.equipo;
-                    frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
+                    if (frmNuevaModificarRecepcionEquipo != null)
+                    {
+                        frmNuevaModificarRecepcionEquipo.establecerEquipo(equipoDTO.equipo);
+                    }
+                    else if (frmNuevoModificarDatosTecnicosMotorElectricoTrifasico != null)
+                    {
+                        frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.establecerEquipo(equipoDTO.equipo);
+                    }
                     this.Close();
                 }
                 else
