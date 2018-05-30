@@ -166,6 +166,12 @@
     <Compile Include="FrmNuevaModificarRecepcionEquipo.Designer.cs">
       <DependentUpon>FrmNuevaModificarRecepcionEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNuevoModificarProtocoloPruebasElectricasMotoresElectricosTrifasicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoModificarProtocoloPruebasElectricasMotoresElectricosTrifasicos.Designer.cs">
+      <DependentUpon>FrmNuevoModificarProtocoloPruebasElectricasMotoresElectricosTrifasicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNuevoModificarTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     </Compile>
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProtocoloPruebasElectricasMotoresElectricosTrifasicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProtocoloPruebasElectricasMotoresElectricosTrifasicos.Designer.cs">
+      <DependentUpon>FrmProtocoloPruebasElectricasMotoresElectricosTrifasicos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRecepcionEquipos.cs">
       <SubType>Form</SubType>

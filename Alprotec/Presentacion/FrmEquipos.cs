@@ -61,10 +61,10 @@ namespace Presentacion
             if (e.RowIndex >= 0 && busqueda)
             {
                 long idEquipo = Convert.ToInt64(dgvEquipos.Rows[e.RowIndex].Cells["Id"].Value);
-                Equipo equipo = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
+                EquipoDTO equipoDTO = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
                 if (!error)
                 {
-                    frmNuevaModificarRecepcionEquipo.establecerEquipo = equipo;
+                    frmNuevaModificarRecepcionEquipo.establecerEquipo = equipoDTO.equipo;
                     frmNuevaModificarRecepcionEquipo.llenarTxtEquipo();
                     this.Close();
                 }
@@ -86,36 +86,12 @@ namespace Presentacion
             if (dgvEquipos.Rows.Count > 0)
             {
                 long idEquipo = Convert.ToInt64(dgvEquipos.Rows[dgvEquipos.CurrentCell.RowIndex].Cells["Id"].Value);
-                Equipo equipo = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
+                EquipoDTO equipoDTO = EquipoBL.obtenerEquipo(idEquipo, ref error, ref mensaje);
                 if (!error)
                 {
-                    Cliente cliente = ClienteBL.obtenerCliente(equipo.idCliente, ref error, ref mensaje);
-                    if (!error)
-                    {
-                        Catalogo modelo = CatalogoBL.obtenerCatalogo(equipo.idModeloCatalogo, ref error, ref mensaje);
-                        if (!error)
-                        {
-                            Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(modelo.idPadre), ref error, ref mensaje);
-                            if (!error)
-                            {
-                                FrmNuevoModificarEquipo frmNuevoModificarEquipo = new FrmNuevoModificarEquipo(this, "M");
-                                frmNuevoModificarEquipo.modificarEquipo(equipo, cliente, marca, modelo);
-                                frmNuevoModificarEquipo.ShowDialog();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else 
-                    {
-                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    FrmNuevoModificarEquipo frmNuevoModificarEquipo = new FrmNuevoModificarEquipo(this, "M");
+                    frmNuevoModificarEquipo.modificarEquipo(equipoDTO.equipo, equipoDTO.cliente, equipoDTO.marca, equipoDTO.modelo);
+                    frmNuevoModificarEquipo.ShowDialog();
                 }
                 else
                 {

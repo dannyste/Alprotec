@@ -21,10 +21,10 @@ namespace Datos
                     if (opcion == 1)
                     {
                         var query = (
-                                        from re in db.RecepcionEquipo
+                                        from recepcionEquipo in db.RecepcionEquipo
                                         select new
                                         {
-                                            Id = re.idRecepcionEquipo,
+                                            Id = recepcionEquipo.idRecepcionEquipo,
                                         }
                                     ).ToList();
                         return query;
@@ -32,10 +32,10 @@ namespace Datos
                     if (opcion == 2)
                     {
                         var query = (
-                                        from re in db.RecepcionEquipo
+                                        from recepcionEquipo in db.RecepcionEquipo
                                         select new
                                         {
-                                            Id = re.idRecepcionEquipo,
+                                            Id = recepcionEquipo.idRecepcionEquipo,
                                         }
                                     ).ToList();
                         return query;
@@ -43,10 +43,10 @@ namespace Datos
                     else
                     {
                         var query = (
-                                        from re in db.RecepcionEquipo
+                                        from recepcionEquipo in db.RecepcionEquipo
                                         select new
                                         {
-                                            Id = re.idRecepcionEquipo,
+                                            Id = recepcionEquipo.idRecepcionEquipo,
                                         }
                                     ).ToList();
                         return query;
@@ -69,9 +69,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from re in db.RecepcionEquipo
-                                    where re.idRecepcionEquipo == idRecepcionEquipo
-                                    select re
+                                    from recepcionEquipo in db.RecepcionEquipo
+                                    where recepcionEquipo.idRecepcionEquipo == idRecepcionEquipo
+                                    select recepcionEquipo
                                 ).First();
                     return query;
                 }

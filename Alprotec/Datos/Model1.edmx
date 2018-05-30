@@ -27,6 +27,7 @@
           <Property Name="valor" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idPadre" Type="bigint" />
           <Property Name="idTipoCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="fechaModificacion" Type="datetime" Nullable="false" />
@@ -45,6 +46,7 @@
           <Property Name="idClienteCatalogo" Type="bigint" Nullable="false" />
           <Property Name="idDocumentoCatalog" Type="bigint" Nullable="false" />
           <Property Name="idCiudadCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="modificadoPor" Type="bigint" Nullable="false" />
@@ -62,6 +64,7 @@
           <Property Name="correoElectronico" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="observaciones" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="idCliente" Type="bigint" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="modificadoPor" Type="bigint" Nullable="false" />
@@ -109,6 +112,7 @@
           <Property Name="factorServicio" Type="nvarchar" MaxLength="50" />
           <Property Name="idCliente" Type="bigint" Nullable="false" />
           <Property Name="idModeloCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="modificadoPor" Type="bigint" Nullable="false" />
@@ -206,6 +210,7 @@
           <Property Name="diagnosticoFallas" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="idCliente" Type="bigint" Nullable="false" />
           <Property Name="idEquipo" Type="bigint" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="modificadoPor" Type="bigint" Nullable="false" />
@@ -241,6 +246,7 @@
           <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="movil" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
           <Property Name="modificadoPor" Type="bigint" Nullable="false" />
@@ -514,6 +520,7 @@
           <Property Name="valor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idPadre" Type="Int64" />
           <Property Name="idTipoCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
@@ -539,6 +546,7 @@
           <Property Name="idClienteCatalogo" Type="Int64" Nullable="false" />
           <Property Name="idDocumentoCatalog" Type="Int64" Nullable="false" />
           <Property Name="idCiudadCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
@@ -562,6 +570,7 @@
           <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="observaciones" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="idCliente" Type="Int64" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
@@ -610,6 +619,7 @@
           <Property Name="factorServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idCliente" Type="Int64" Nullable="false" />
           <Property Name="idModeloCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
@@ -709,6 +719,7 @@
           <Property Name="diagnosticoFallas" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="idCliente" Type="Int64" Nullable="false" />
           <Property Name="idEquipo" Type="Int64" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
@@ -746,6 +757,7 @@
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="movil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
@@ -910,6 +922,7 @@
                 <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idTipoCatalogo" ColumnName="idTipoCatalogo" />
                 <ScalarProperty Name="idPadre" ColumnName="idPadre" />
                 <ScalarProperty Name="valor" ColumnName="valor" />
@@ -924,6 +937,7 @@
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idCiudadCatalogo" ColumnName="idCiudadCatalogo" />
                 <ScalarProperty Name="idDocumentoCatalog" ColumnName="idDocumentoCatalog" />
                 <ScalarProperty Name="idClienteCatalogo" ColumnName="idClienteCatalogo" />
@@ -943,6 +957,7 @@
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="observaciones" ColumnName="observaciones" />
                 <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
@@ -985,6 +1000,7 @@
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idModeloCatalogo" ColumnName="idModeloCatalogo" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="factorServicio" ColumnName="factorServicio" />
@@ -1066,6 +1082,7 @@
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="diagnosticoFallas" ColumnName="diagnosticoFallas" />
@@ -1135,6 +1152,7 @@
                 <ScalarProperty Name="modificadoPor" ColumnName="modificadoPor" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="movil" ColumnName="movil" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />

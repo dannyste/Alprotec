@@ -52,6 +52,7 @@ namespace Entidad
         public string diagnosticoFallas { get; set; }
         public long idCliente { get; set; }
         public long idEquipo { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }

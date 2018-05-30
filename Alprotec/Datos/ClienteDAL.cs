@@ -10,55 +10,24 @@ namespace Datos
 {
     public class ClienteDAL
     {
-        public IEnumerable filtrarClientes(int opcion, long idClienteCatalogo, String filtro, ref bool error, ref String mensaje)
+        public IEnumerable filtrarClientes(String numeroDocumento, long idDocumento, String nombreCliente, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    if (opcion == 1)
-                    {
                         var query = (
-                                        from c in db.Cliente
-                                        where (c.idDocumentoCatalog == 7L && c.numeroDocumento.Contains(filtro)) && (idClienteCatalogo != 0L ? c.idClienteCatalogo == idClienteCatalogo : (c.idClienteCatalogo == 5L || c.idClienteCatalogo == 6L))
+                                        from cliente in db.Cliente
+                                        where cliente.numeroDocumento.Contains(numeroDocumento) && (cliente.idDocumentoCatalog == idDocumento || idDocumento == 0) && cliente.nombre.Contains(nombreCliente) && cliente.estado
                                         select new
                                         {
-                                            Id = c.idCliente,
-                                            NoDocumento = c.numeroDocumento,
-                                            Nombre = c.nombre,
+                                            Id = cliente.idCliente,
+                                            NoDocumento = cliente.numeroDocumento,
+                                            Nombre = cliente.nombre,
                                         }
                                     ).ToList();
                         return query;
-                    }
-                    if (opcion == 2)
-                    {
-                        var query = (
-                                        from c in db.Cliente
-                                        where (c.idDocumentoCatalog == 9L && c.numeroDocumento.Contains(filtro)) && (idClienteCatalogo != 0L ? c.idClienteCatalogo == idClienteCatalogo : (c.idClienteCatalogo == 5L || c.idClienteCatalogo == 6L))
-                                        select new
-                                        {
-                                            Id = c.idCliente,
-                                            NoDocumento = c.numeroDocumento,
-                                            Nombre = c.nombre,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    else
-                    {
-                        var query = (
-                                        from c in db.Cliente
-                                        where c.nombre.Contains(filtro) && (idClienteCatalogo != 0L ? c.idClienteCatalogo == idClienteCatalogo : (c.idClienteCatalogo == 5L || c.idClienteCatalogo == 6L))
-                                        select new
-                                        {
-                                            Id = c.idCliente,
-                                            NoDocumento = c.numeroDocumento,
-                                            Nombre = c.nombre,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -69,19 +38,27 @@ namespace Datos
             }
         }
 
-        public Cliente obtenerCliente(long idCliente, ref bool error, ref String mensaje)
+        public ClienteDTO obtenerCliente(long idCliente, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    var query = (
-                                    from c in db.Cliente
-                                    where c.idCliente == idCliente
-                                    select c
+                    ClienteDTO clienteDTO = (
+                                    from cliente in db.Cliente
+                                    where cliente.idCliente == idCliente && cliente.estado
+                                    select new ClienteDTO 
+                                    {
+                                        cliente = cliente,
+                                        contactos = (
+                                                        from contacto in db.Contacto
+                                                        where cliente.idCliente == contacto.idCliente && contacto.estado
+                                                        select contacto
+                                                    ).ToList(),
+                                    }
                                 ).First();
-                    return query;
+                    return clienteDTO;
                 }
                 catch (Exception ex)
                 {
@@ -188,12 +165,12 @@ namespace Datos
             {
                 try
                 {
-                    var cliente = (
-                                    from c in db.Cliente
-                                    where c.idCliente == idCliente
-                                    select c
-                                  ).Single();
-                    db.Cliente.Remove(cliente);
+                    var actualizarCliente = (
+                                                from cliente in db.Cliente
+                                                where cliente.idCliente == idCliente
+                                                select cliente
+                                            ).Single();
+                    actualizarCliente.estado = false;
                     db.SaveChanges();
                     mensaje = "Cliente eliminado exitosamente.";
                 }

@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="CatalogoBL.cs" />
     <Compile Include="ClienteBL.cs" />
-    <Compile Include="ContactoBL.cs" />
     <Compile Include="EquipoBL.cs" />
     <Compile Include="FormularioBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

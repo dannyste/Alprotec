@@ -49,33 +49,19 @@ namespace Presentacion
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
-            llenarCbCliente();
+            llenarCbDocumento();
             actualizarDgvClientes();
         }
 
-        private void rb_CheckedChanged(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
         {
-            if (rbCedulaIdentidad.Checked)
-            {
-                opcion = 1;
-            }
-            else if (rbRUC.Checked)
-            {
-                opcion = 2;
-            }
-            else 
-            {
-                opcion = 3;
-            }
+            txtNumeroDocumento.Text = String.Empty;
+            cbDocumento.SelectedValue = 0L;
+            txtCliente.Text = String.Empty;
             actualizarDgvClientes();
         }
 
-        private void cbCliente_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            actualizarDgvClientes();
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvClientes();
         }
@@ -85,18 +71,18 @@ namespace Presentacion
             if (e.RowIndex >= 0 && busqueda)
             {
                 long idCliente = Convert.ToInt64(dgvClientes.Rows[e.RowIndex].Cells["Id"].Value);
-                Cliente cliente = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
+                ClienteDTO clienteDTO = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
                 if (!error)
                 {
                     if (frmNuevoModificarEquipo != null)
                     {
-                        frmNuevoModificarEquipo.establecerCliente = cliente;
+                        frmNuevoModificarEquipo.establecerCliente = clienteDTO.cliente;
                         frmNuevoModificarEquipo.llenarTxtCliente();
                         this.Close();
                     }
                     else
                     {
-                        frmNuevaModificarRecepcionEquipo.establecerCliente = cliente;
+                        frmNuevaModificarRecepcionEquipo.establecerCliente = clienteDTO.cliente;
                         frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
                         this.Close();
                     }
@@ -119,24 +105,16 @@ namespace Presentacion
             if (dgvClientes.Rows.Count > 0)
             {
                 long idCliente = Convert.ToInt64(dgvClientes.Rows[dgvClientes.CurrentCell.RowIndex].Cells["Id"].Value);
-                Cliente cliente = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
+                ClienteDTO clienteDTO = ClienteBL.obtenerCliente(idCliente, ref error, ref mensaje);
                 if (!error)
                 {
-                    List<Contacto> contactos = ContactoBL.obtenerContactos(idCliente, ref error, ref mensaje);
-                    if (!error)
-                    {
-                        FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "M");
-                        frmNuevoModificarCliente.llenarCbCliente();
-                        frmNuevoModificarCliente.llenarCbDocumento();
-                        frmNuevoModificarCliente.llenarCbCiudad();
-                        frmNuevoModificarCliente.modificarCliente(cliente);
-                        frmNuevoModificarCliente.modificarContactos(contactos);
-                        frmNuevoModificarCliente.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "M");
+                    frmNuevoModificarCliente.llenarCbCliente();
+                    frmNuevoModificarCliente.llenarCbDocumento();
+                    frmNuevoModificarCliente.llenarCbCiudad();
+                    frmNuevoModificarCliente.modificarCliente(clienteDTO.cliente);
+                    frmNuevoModificarCliente.modificarContactos(clienteDTO.contactos);
+                    frmNuevoModificarCliente.ShowDialog();
                 }
                 else
                 {
@@ -209,7 +187,7 @@ namespace Presentacion
                     frmReportes.crvReportes.ReportSource = crClientes;
                     frmReportes.ShowDialog();
                 }
-                catch (Exception ex) 
+                catch (Exception exception) 
                 {
                     MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -225,28 +203,28 @@ namespace Presentacion
             this.Close();
         }
 
-        private void llenarCbCliente()
+        public void llenarCbDocumento()
         {
-            List<Catalogo> clientes = CatalogoBL.obtenerTipoCatalogo((long)Constantes.Catalogo.TipoCliente, ref error, ref mensaje);
+            List<Catalogo> documentos = CatalogoBL.obtenerTipoCatalogo(5L, ref error, ref mensaje);
             if (!error)
             {
                 Catalogo catalogo = new Catalogo();
                 catalogo.idCatalogo = 0L;
-                catalogo.valor = "Todos";
-                clientes.Insert(0, catalogo);
-                cbCliente.DataSource = clientes;
-                cbCliente.DisplayMember = "valor";
-                cbCliente.ValueMember = "idCatalogo";
+                catalogo.valor = "Seleccione un documento";
+                documentos.Insert(0, catalogo);
+                cbDocumento.DataSource = documentos;
+                cbDocumento.DisplayMember = "valor";
+                cbDocumento.ValueMember = "idCatalogo";
             }
             else
             {
-                MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void actualizarDgvClientes()
         {
-            IEnumerable dataSource = ClienteBL.filtrarClientes(opcion, Convert.ToInt64(cbCliente.SelectedValue), txtBuscar.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = ClienteBL.filtrarClientes(txtNumeroDocumento.Text.Trim(), Convert.ToInt64(cbDocumento.SelectedValue), txtCliente.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvClientes.DataSource = dataSource;

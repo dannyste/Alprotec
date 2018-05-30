@@ -51,6 +51,7 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClienteDTO.cs" />
     <Compile Include="Contacto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -63,6 +64,7 @@
     <Compile Include="Equipo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EquipoDTO.cs" />
     <Compile Include="Formulario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -87,6 +89,7 @@
     <Compile Include="RecepcionEquipo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionEquipoDTO.cs" />
     <Compile Include="Rodamiento.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

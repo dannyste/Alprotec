@@ -32,6 +32,7 @@
             this.lbCliente = new System.Windows.Forms.Label();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
+            this.nudPotencia = new System.Windows.Forms.NumericUpDown();
             this.cbUd = new System.Windows.Forms.ComboBox();
             this.lbUnidadMedida = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
@@ -45,11 +46,10 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.nudPotencia = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.gbCriteriosBusqueda.SuspendLayout();
-            this.pAcciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPotencia)).BeginInit();
+            this.pAcciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCliente
@@ -107,6 +107,20 @@
             this.gbCriteriosBusqueda.TabIndex = 31;
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
+            // 
+            // nudPotencia
+            // 
+            this.nudPotencia.DecimalPlaces = 2;
+            this.nudPotencia.Location = new System.Drawing.Point(32, 87);
+            this.nudPotencia.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.nudPotencia.Name = "nudPotencia";
+            this.nudPotencia.Size = new System.Drawing.Size(89, 23);
+            this.nudPotencia.TabIndex = 50;
+            this.nudPotencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbUd
             // 
@@ -208,7 +222,6 @@
             this.btnModificar.Size = new System.Drawing.Size(50, 50);
             this.btnModificar.TabIndex = 29;
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
@@ -254,20 +267,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // nudPotencia
-            // 
-            this.nudPotencia.DecimalPlaces = 2;
-            this.nudPotencia.Location = new System.Drawing.Point(32, 87);
-            this.nudPotencia.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.nudPotencia.Name = "nudPotencia";
-            this.nudPotencia.Size = new System.Drawing.Size(89, 23);
-            this.nudPotencia.TabIndex = 50;
-            this.nudPotencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // FrmEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -286,8 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.gbCriteriosBusqueda.ResumeLayout(false);
             this.gbCriteriosBusqueda.PerformLayout();
-            this.pAcciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudPotencia)).EndInit();
+            this.pAcciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

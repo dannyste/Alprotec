@@ -27,6 +27,7 @@ namespace Entidad
         public string valor { get; set; }
         public Nullable<long> idPadre { get; set; }
         public long idTipoCatalogo { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public System.DateTime fechaModificacion { get; set; }

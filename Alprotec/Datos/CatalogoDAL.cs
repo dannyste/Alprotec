@@ -19,12 +19,12 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Catalogo
-                                    where c.valor.Contains(filtro) && c.idTipoCatalogo == (long)Constantes.Catalogo.Marca
+                                    from marca in db.Catalogo
+                                    where marca.valor.Contains(filtro) && marca.idTipoCatalogo == (long)Constantes.Catalogo.Marca
                                     select new
                                     {
-                                        Id = c.idCatalogo,
-                                        Nombre = c.valor,
+                                        Id = marca.idCatalogo,
+                                        Nombre = marca.valor,
                                     }
                                 ).ToList();
                     return query;
@@ -46,14 +46,14 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Catalogo
-                                    join p in db.Catalogo on c.idPadre equals p.idCatalogo
-                                    where c.valor.Contains(filtro) && (idPadre != 0L ? c.idPadre == idPadre : (c.idPadre != 0L)) && c.idTipoCatalogo == (long)Constantes.Catalogo.Modelo
+                                    from modelo in db.Catalogo
+                                    join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
+                                    where modelo.valor.Contains(filtro) && (idPadre != 0L ? modelo.idPadre == idPadre : (modelo.idPadre != 0L)) && modelo.idTipoCatalogo == (long)Constantes.Catalogo.Modelo
                                     select new
                                     {
-                                        Id = c.idCatalogo,
-                                        Modelo = c.valor,
-                                        Marca = p.valor,
+                                        Id = modelo.idCatalogo,
+                                        Modelo = modelo.valor,
+                                        Marca = marca.valor,
                                     }
                                 ).ToList();
                     return query;
@@ -75,9 +75,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Catalogo
-                                    where c.idCatalogo == idCatalogo
-                                    select c
+                                    from catalogo in db.Catalogo
+                                    where catalogo.idCatalogo == idCatalogo
+                                    select catalogo
                                 ).Single();
                     return query;
                 }
@@ -98,9 +98,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Catalogo
-                                    where c.idTipoCatalogo == idTipoCatalogo
-                                    select c
+                                    from catalogo in db.Catalogo
+                                    where catalogo.idTipoCatalogo == idTipoCatalogo
+                                    select catalogo
                                 ).ToList();
                     return query;
                 }
@@ -142,7 +142,7 @@ namespace Datos
                                                 from c in db.Catalogo
                                                 where c.idCatalogo == catalogo.idCatalogo
                                                 select c
-                                            ).Single();
+                                             ).Single();
                     actualizarCatalogo.valor = catalogo.valor;
                     actualizarCatalogo.idPadre = catalogo.idPadre;
                     actualizarCatalogo.idTipoCatalogo = catalogo.idTipoCatalogo;
@@ -164,12 +164,12 @@ namespace Datos
             {
                 try
                 {
-                    var catalogo = (
-                                    from c in db.Catalogo
-                                    where c.idCatalogo == idCatalogo
-                                    select c
+                    var actualizarCatalogo = (
+                                    from catalogo in db.Catalogo
+                                    where catalogo.idCatalogo == idCatalogo
+                                    select catalogo
                                   ).Single();
-                    db.Catalogo.Remove(catalogo);
+                    actualizarCatalogo.estado = false;
                     db.SaveChanges();
                 }
                 catch (Exception ex)

@@ -11,13 +11,13 @@ namespace Negocio
 {
     public class ClienteBL
     {
-        public static IEnumerable filtrarClientes(int opcion, long idClienteCatalogo, String filtro, ref bool error, ref String mensaje)
+        public static IEnumerable filtrarClientes(String numeroDocumento, long idTipoDocumento, String nombreCliente, ref bool error, ref String mensaje)
         {
             ClienteDAL clienteDAL = new ClienteDAL();
-            return clienteDAL.filtrarClientes(opcion, idClienteCatalogo, filtro, ref error, ref mensaje);
+            return clienteDAL.filtrarClientes(numeroDocumento, idTipoDocumento, nombreCliente, ref error, ref mensaje);
         }
 
-        public static Cliente obtenerCliente(long idCliente, ref bool error, ref String mensaje)
+        public static ClienteDTO obtenerCliente(long idCliente, ref bool error, ref String mensaje)
         {
             ClienteDAL clienteDAL = new ClienteDAL();
             return clienteDAL.obtenerCliente(idCliente, ref error, ref mensaje);

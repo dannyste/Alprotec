@@ -30,6 +30,7 @@ namespace Entidad
         public string factorServicio { get; set; }
         public long idCliente { get; set; }
         public long idModeloCatalogo { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }

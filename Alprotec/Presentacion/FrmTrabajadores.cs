@@ -68,17 +68,9 @@ namespace Presentacion
                 Trabajador trabajador = TrabajadorBL.obtenerTrabajador(idTrabajador, ref error, ref mensaje);
                 if (!error)
                 {
-                    List<Contacto> contactos = ContactoBL.obtenerContactos(idTrabajador, ref error, ref mensaje);
-                    if (!error)
-                    {
-                        FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
-                        frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
-                        frmNuevoModificarTrabajador.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
+                    frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
+                    frmNuevoModificarTrabajador.ShowDialog();
                 }
                 else
                 {

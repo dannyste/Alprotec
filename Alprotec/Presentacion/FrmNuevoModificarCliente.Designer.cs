@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.cbTipoCliente = new System.Windows.Forms.ComboBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lbCodigo = new System.Windows.Forms.Label();
-            this.lbCliente = new System.Windows.Forms.Label();
+            this.lbTipoCliente = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lbDireccion = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
@@ -87,16 +87,16 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // cbCliente
+            // cbTipoCliente
             // 
-            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(24, 20);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(213, 23);
-            this.cbCliente.TabIndex = 1;
-            this.cbCliente.SelectionChangeCommitted += new System.EventHandler(this.cbCliente_SelectionChangeCommitted);
+            this.cbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.cbTipoCliente.FormattingEnabled = true;
+            this.cbTipoCliente.Location = new System.Drawing.Point(24, 20);
+            this.cbTipoCliente.Name = "cbTipoCliente";
+            this.cbTipoCliente.Size = new System.Drawing.Size(213, 23);
+            this.cbTipoCliente.TabIndex = 1;
+            this.cbTipoCliente.SelectionChangeCommitted += new System.EventHandler(this.cbCliente_SelectionChangeCommitted);
             // 
             // txtCodigo
             // 
@@ -119,15 +119,15 @@
             this.lbCodigo.TabIndex = 0;
             this.lbCodigo.Text = "Código";
             // 
-            // lbCliente
+            // lbTipoCliente
             // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbCliente.Location = new System.Drawing.Point(22, 2);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(51, 16);
-            this.lbCliente.TabIndex = 1;
-            this.lbCliente.Text = "Cliente";
+            this.lbTipoCliente.AutoSize = true;
+            this.lbTipoCliente.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbTipoCliente.Location = new System.Drawing.Point(22, 2);
+            this.lbTipoCliente.Name = "lbTipoCliente";
+            this.lbTipoCliente.Size = new System.Drawing.Size(97, 16);
+            this.lbTipoCliente.TabIndex = 1;
+            this.lbTipoCliente.Text = "Tipo de cliente";
             // 
             // txtDireccion
             // 
@@ -381,10 +381,10 @@
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lbDireccion);
             this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.cbCliente);
+            this.Controls.Add(this.cbTipoCliente);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lbCodigo);
-            this.Controls.Add(this.lbCliente);
+            this.Controls.Add(this.lbTipoCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Font = new System.Drawing.Font("Cambria", 10F);
@@ -405,10 +405,10 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.ComboBox cbTipoCliente;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lbCodigo;
-        private System.Windows.Forms.Label lbCliente;
+        private System.Windows.Forms.Label lbTipoCliente;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lbDireccion;
         private System.Windows.Forms.Label lbNombre;

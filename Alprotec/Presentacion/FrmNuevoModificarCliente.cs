@@ -50,11 +50,11 @@ namespace Presentacion
 
         private void cbCliente_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (Convert.ToUInt64(cbCliente.SelectedValue) == 0L)
+            if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 0L)
             {
                 txtCodigo.Text = String.Empty;
             }
-            else if (Convert.ToUInt64(cbCliente.SelectedValue) == 5L)
+            else if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 5L)
             {
                 generarCodigo();
             }
@@ -161,9 +161,9 @@ namespace Presentacion
                 catalogo.idCatalogo = 0L;
                 catalogo.valor = "Seleccione un cliente";
                 clientes.Insert(0, catalogo);
-                cbCliente.DataSource = clientes;
-                cbCliente.DisplayMember = "valor";
-                cbCliente.ValueMember = "idCatalogo";
+                cbTipoCliente.DataSource = clientes;
+                cbTipoCliente.DisplayMember = "valor";
+                cbTipoCliente.ValueMember = "idCatalogo";
             }
             else
             {
@@ -229,7 +229,7 @@ namespace Presentacion
             cliente.nombre = txtNombre.Text.Trim();
             cliente.direccion = txtDireccion.Text.Trim();
             cliente.telefono = txtTelefono.Text.Trim();
-            cliente.idClienteCatalogo = Convert.ToInt64(cbCliente.SelectedValue);
+            cliente.idClienteCatalogo = Convert.ToInt64(cbTipoCliente.SelectedValue);
             cliente.idDocumentoCatalog = Convert.ToInt64(cbDocumento.SelectedValue);
             cliente.idCiudadCatalogo = Convert.ToInt64(cbCiudad.SelectedValue);
             cliente.creadoPor = Globales.UsuarioGlobal.idUsuario;
@@ -264,7 +264,7 @@ namespace Presentacion
         public void modificarCliente(Cliente cliente)
         {
             this.cliente.idCliente = cliente.idCliente;
-            cbCliente.SelectedValue = cliente.idClienteCatalogo;
+            cbTipoCliente.SelectedValue = cliente.idClienteCatalogo;
             txtCodigo.Text = cliente.codigo;
             cbDocumento.SelectedValue = cliente.idDocumentoCatalog;
             txtNumeroDocumento.Text = cliente.numeroDocumento;
@@ -294,9 +294,9 @@ namespace Presentacion
         {
             bool resultado = true;
             epError.Clear();
-            if (Convert.ToInt64(cbCliente.SelectedValue) == 0L)
+            if (Convert.ToInt64(cbTipoCliente.SelectedValue) == 0L)
             {
-                epError.SetError(cbCliente, lbCliente.Text + " es requerido");
+                epError.SetError(cbTipoCliente, lbTipoCliente.Text + " es requerido");
                 resultado = false;
             }
             if (txtCodigo.Text == String.Empty)
@@ -339,7 +339,7 @@ namespace Presentacion
 
         public void limpiarCampos()
         {
-            cbCliente.SelectedIndex = 0;
+            cbTipoCliente.SelectedIndex = 0;
             txtCodigo.Text = String.Empty;
             cbDocumento.SelectedIndex = 0;
             txtNumeroDocumento.Text = String.Empty;

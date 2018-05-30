@@ -22,6 +22,7 @@ namespace Entidad
         public string correoElectronico { get; set; }
         public string observaciones { get; set; }
         public long idCliente { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }

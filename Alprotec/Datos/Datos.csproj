@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="CatalogoDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
-    <Compile Include="ContactoDAL.cs" />
     <Compile Include="EquipoDAL.cs" />
     <Compile Include="FormularioDAL.cs" />
     <Compile Include="Model1.Context.cs">

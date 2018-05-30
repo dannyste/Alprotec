@@ -30,6 +30,7 @@ namespace Entidad
         public long idClienteCatalogo { get; set; }
         public long idDocumentoCatalog { get; set; }
         public long idCiudadCatalogo { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }

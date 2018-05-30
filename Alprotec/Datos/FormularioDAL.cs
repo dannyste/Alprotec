@@ -18,9 +18,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Formulario
-                                    where c.codigo == codigo
-                                    select c
+                                    from formulario in db.Formulario
+                                    where formulario.codigo == codigo
+                                    select formulario
                                 ).Single();
                     return query;
                 }

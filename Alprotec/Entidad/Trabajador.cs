@@ -21,6 +21,7 @@ namespace Entidad
         public string telefono { get; set; }
         public string movil { get; set; }
         public string direccion { get; set; }
+        public bool estado { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
         public long modificadoPor { get; set; }

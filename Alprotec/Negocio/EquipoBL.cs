@@ -11,13 +11,13 @@ namespace Negocio
 {
     public class EquipoBL
     {
-        public static IEnumerable filtrarEquipos(String cliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
+        public static IEnumerable filtrarEquipos(String nombreCliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
         {
             EquipoDAL equipoDAL = new EquipoDAL();
-            return equipoDAL.filtrarEquipos(cliente, potenciaHP, potenciakW, idMarca, ref error, ref mensaje);
+            return equipoDAL.filtrarEquipos(nombreCliente, potenciaHP, potenciakW, idMarca, ref error, ref mensaje);
         }
 
-        public static Equipo obtenerEquipo(long idEquipo, ref bool error, ref String mensaje)
+        public static EquipoDTO obtenerEquipo(long idEquipo, ref bool error, ref String mensaje)
         {
             EquipoDAL equipoDAL = new EquipoDAL();
             return equipoDAL.obtenerEquipo(idEquipo, ref error, ref mensaje);

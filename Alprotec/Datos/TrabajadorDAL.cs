@@ -20,14 +20,14 @@ namespace Datos
                     if (opcion == 1)
                     {
                         var query = (
-                                        from t in db.Trabajador
-                                        where t.cedulaIdentidad.Contains(filtro)
+                                        from trabajador in db.Trabajador
+                                        where trabajador.cedulaIdentidad.Contains(filtro)
                                         select new
                                         {
-                                            Id = t.idTrabajador,
-                                            Cedula = t.cedulaIdentidad,
-                                            Nombre = t.nombre,
-                                            Cargo = t.cargo,
+                                            Id = trabajador.idTrabajador,
+                                            Cedula = trabajador.cedulaIdentidad,
+                                            Nombre = trabajador.nombre,
+                                            Cargo = trabajador.cargo,
                                         }
                                     ).ToList();
                         return query;
@@ -35,14 +35,14 @@ namespace Datos
                     if (opcion == 2)
                     {
                         var query = (
-                                        from t in db.Trabajador
-                                        where t.nombre.Contains(filtro)
+                                        from trabajador in db.Trabajador
+                                        where trabajador.nombre.Contains(filtro)
                                         select new
                                         {
-                                            Id = t.idTrabajador,
-                                            Cedula = t.cedulaIdentidad,
-                                            Nombre = t.nombre,
-                                            Cargo = t.cargo,
+                                            Id = trabajador.idTrabajador,
+                                            Cedula = trabajador.cedulaIdentidad,
+                                            Nombre = trabajador.nombre,
+                                            Cargo = trabajador.cargo,
                                         }
                                     ).ToList();
                         return query;
@@ -50,14 +50,14 @@ namespace Datos
                     else
                     {
                         var query = (
-                                        from t in db.Trabajador
-                                        where t.cargo.Contains(filtro)
+                                        from trabajador in db.Trabajador
+                                        where trabajador.cargo.Contains(filtro)
                                         select new
                                         {
-                                            Id = t.idTrabajador,
-                                            Cedula = t.cedulaIdentidad,
-                                            Nombre = t.nombre,
-                                            Cargo = t.cargo,
+                                            Id = trabajador.idTrabajador,
+                                            Cedula = trabajador.cedulaIdentidad,
+                                            Nombre = trabajador.nombre,
+                                            Cargo = trabajador.cargo,
                                         }
                                     ).ToList();
                         return query;
@@ -80,9 +80,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from t in db.Trabajador
-                                    where t.idTrabajador == idTrabajador
-                                    select t
+                                    from trabajador in db.Trabajador
+                                    where trabajador.idTrabajador == idTrabajador
+                                    select trabajador
                                 ).First();
                     return query;
                 }
@@ -152,12 +152,12 @@ namespace Datos
             {
                 try
                 {
-                    var trabajador = (
-                                    from t in db.Trabajador
-                                    where t.idTrabajador == idTrabajador
-                                    select t
-                                  ).Single();
-                    db.Trabajador.Remove(trabajador);
+                    var actualizarTrabajador = (
+                                                    from trabajador in db.Trabajador
+                                                    where trabajador.idTrabajador == idTrabajador
+                                                    select trabajador
+                                               ).Single();
+                    actualizarTrabajador.estado = false;
                     db.SaveChanges();
                     mensaje = "Trabajador eliminado exitosamente.";
                 }

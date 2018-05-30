@@ -11,7 +11,7 @@ namespace Datos
 {
     public class EquipoDAL
     {
-        public IEnumerable filtrarEquipos(String cliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
+        public IEnumerable filtrarEquipos(String nombreCliente, double potenciaHP, double potenciakW, long idMarca, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
@@ -19,18 +19,18 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from e in db.Equipo 
-                                    join c in db.Cliente on e.idEquipo equals c.idCliente
-                                    join modelo in db.Catalogo on e.idModeloCatalogo equals modelo.idCatalogo
+                                    from equipo in db.Equipo 
+                                    join cliente in db.Cliente on equipo.idEquipo equals cliente.idCliente
+                                    join modelo in db.Catalogo on equipo.idModeloCatalogo equals modelo.idCatalogo
                                     join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
-                                    where c.nombre.Contains(cliente) && ((e.potenciaHP == potenciaHP || potenciaHP == 0) || (e.potenciakW == potenciakW || potenciakW == 0)) && (marca.idCatalogo == idMarca || idMarca == 0)
+                                    where cliente.nombre.Contains(nombreCliente) && ((equipo.potenciaHP == potenciaHP || potenciaHP == 0) || (equipo.potenciakW == potenciakW || potenciakW == 0)) && (marca.idCatalogo == idMarca || idMarca == 0) && equipo.estado
                                     select new
                                     {
-                                        Id = e.idEquipo,
-                                        Cliente = c.nombre,
-                                        CodigoInterno = e.codigoInterno,
-                                        ClaseMaquina = e.claseMaquina,
-                                        NumeroSerie = e.numeroSerie,
+                                        Id = equipo.idEquipo,
+                                        Cliente = cliente.nombre,
+                                        CodigoInterno = equipo.codigoInterno,
+                                        ClaseMaquina = equipo.claseMaquina,
+                                        NumeroSerie = equipo.numeroSerie,
                                     }
                                 ).ToList();
                     return query;
@@ -44,21 +44,39 @@ namespace Datos
             }
         }
 
-        public Equipo obtenerEquipo(long idEquipo, ref bool error, ref String mensaje)
+        public EquipoDTO obtenerEquipo(long idEquipo, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    var query = (
-                                    from e in db.Equipo
-                                    join c in db.Cliente on e.idEquipo equals c.idCliente
-                                    join m in db.Catalogo on e.idModeloCatalogo equals m.idCatalogo
-                                    where e.idEquipo == idEquipo
-                                    select e
+                    EquipoDTO equipoDTO = (
+                                    from equipo in db.Equipo
+                                    where equipo.idEquipo == idEquipo && equipo.estado
+                                    select new EquipoDTO
+                                    {
+                                        equipo = equipo,
+                                        cliente = (
+                                                      from cliente in db.Cliente
+                                                      where equipo.idCliente == cliente.idCliente && cliente.estado
+                                                      select cliente
+                                                  ).First(),
+                                        modelo = (
+                                                    from modelo in db.Catalogo
+                                                    where equipo.idModeloCatalogo == modelo.idCatalogo && modelo.estado
+                                                    select modelo
+                                                 ).First(),
+
+                                        marca = (
+                                                    from modelo in db.Catalogo
+                                                    join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
+                                                    where marca.estado
+                                                    select marca
+                                                ).First(),
+                                    }
                                 ).First();
-                    return query;
+                    return equipoDTO;
                 }
                 catch (Exception ex)
                 {
@@ -134,12 +152,12 @@ namespace Datos
             {
                 try
                 {
-                    var equipo = (
-                                    from e in db.Equipo
-                                    where e.idEquipo == idEquipo
-                                    select e
-                                 ).Single();
-                    db.Equipo.Remove(equipo);
+                    var actualizarEquipo = (
+                                              from equipo in db.Equipo
+                                              where equipo.idEquipo == idEquipo
+                                              select equipo
+                                           ).Single();
+                    actualizarEquipo.estado = false;
                     db.SaveChanges();
                     mensaje = "Equipo eliminado exitosamente.";
                 }
