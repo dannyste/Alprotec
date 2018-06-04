@@ -42,25 +42,9 @@ namespace Presentacion
         {
             if (operacion == "N")
             {
-                llenarCbCliente();
+                llenarCbTipoCliente();
                 llenarCbDocumento();
                 llenarCbCiudad();
-            }
-        }
-
-        private void cbCliente_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 0L)
-            {
-                txtCodigo.Text = String.Empty;
-            }
-            else if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 5L)
-            {
-                generarCodigo();
-            }
-            else
-            {
-                txtCodigo.Text = "0.0.0";
             }
         }
 
@@ -152,14 +136,14 @@ namespace Presentacion
             this.Close();
         }
 
-        public void llenarCbCliente()
+        public void llenarCbTipoCliente()
         {
             List<Catalogo> clientes = CatalogoBL.obtenerTipoCatalogo(4L, ref error, ref mensaje);
             if (!error)
             {
                 Catalogo catalogo = new Catalogo();
                 catalogo.idCatalogo = 0L;
-                catalogo.valor = "Seleccione un cliente";
+                catalogo.valor = "Seleccione un tipo de cliente";
                 clientes.Insert(0, catalogo);
                 cbTipoCliente.DataSource = clientes;
                 cbTipoCliente.DisplayMember = "valor";
@@ -168,6 +152,22 @@ namespace Presentacion
             else
             {
                 MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbTipoCliente_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 0L)
+            {
+                txtCodigo.Text = String.Empty;
+            }
+            else if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 5L)
+            {
+                generarCodigo();
+            }
+            else
+            {
+                txtCodigo.Text = "0.0.0";
             }
         }
 
@@ -229,9 +229,10 @@ namespace Presentacion
             cliente.nombre = txtNombre.Text.Trim();
             cliente.direccion = txtDireccion.Text.Trim();
             cliente.telefono = txtTelefono.Text.Trim();
-            cliente.idClienteCatalogo = Convert.ToInt64(cbTipoCliente.SelectedValue);
+            cliente.idTipoClienteCatalogo = Convert.ToInt64(cbTipoCliente.SelectedValue);
             cliente.idDocumentoCatalog = Convert.ToInt64(cbDocumento.SelectedValue);
             cliente.idCiudadCatalogo = Convert.ToInt64(cbCiudad.SelectedValue);
+            cliente.estado = true;
             cliente.creadoPor = Globales.UsuarioGlobal.idUsuario;
             cliente.fechaCreacion = DateTime.Now;
             cliente.modificadoPor = Globales.UsuarioGlobal.idUsuario;
@@ -252,6 +253,7 @@ namespace Presentacion
                 contacto.movil = dgvContactos.Rows[fila].Cells["movil"].Value.ToString();
                 contacto.correoElectronico = dgvContactos.Rows[fila].Cells["correoElectronico"].Value.ToString();
                 contacto.observaciones = dgvContactos.Rows[fila].Cells["observaciones"].Value.ToString();
+                contacto.estado = true;
                 contacto.creadoPor = Globales.UsuarioGlobal.idUsuario;
                 contacto.fechaCreacion = DateTime.Now;
                 contacto.modificadoPor = Globales.UsuarioGlobal.idUsuario;
@@ -264,7 +266,7 @@ namespace Presentacion
         public void modificarCliente(Cliente cliente)
         {
             this.cliente.idCliente = cliente.idCliente;
-            cbTipoCliente.SelectedValue = cliente.idClienteCatalogo;
+            cbTipoCliente.SelectedValue = cliente.idTipoClienteCatalogo;
             txtCodigo.Text = cliente.codigo;
             cbDocumento.SelectedValue = cliente.idDocumentoCatalog;
             txtNumeroDocumento.Text = cliente.numeroDocumento;
@@ -348,11 +350,6 @@ namespace Presentacion
             txtTelefono.Text = String.Empty;
             cbCiudad.SelectedIndex = 0;
             dgvContactos.Rows.Clear();
-        }
-
-        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

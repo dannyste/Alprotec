@@ -165,6 +165,7 @@ namespace Presentacion
             equipo.factorServicio = txtFactorServicio.Text.Trim();
             equipo.idCliente = cliente.idCliente;
             equipo.idModeloCatalogo = modelo.idCatalogo;
+            equipo.estado = true;
             equipo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             equipo.fechaCreacion = DateTime.Now;
             equipo.modificadoPor = Globales.UsuarioGlobal.idUsuario;

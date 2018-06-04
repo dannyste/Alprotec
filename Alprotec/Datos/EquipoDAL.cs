@@ -52,30 +52,29 @@ namespace Datos
                 try
                 {
                     EquipoDTO equipoDTO = (
-                                    from equipo in db.Equipo
-                                    where equipo.idEquipo == idEquipo && equipo.estado
-                                    select new EquipoDTO
-                                    {
-                                        equipo = equipo,
-                                        cliente = (
-                                                      from cliente in db.Cliente
-                                                      where equipo.idCliente == cliente.idCliente && cliente.estado
-                                                      select cliente
-                                                  ).First(),
-                                        modelo = (
-                                                    from modelo in db.Catalogo
-                                                    where equipo.idModeloCatalogo == modelo.idCatalogo && modelo.estado
-                                                    select modelo
-                                                 ).First(),
-
-                                        marca = (
-                                                    from modelo in db.Catalogo
-                                                    join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
-                                                    where marca.estado
-                                                    select marca
-                                                ).First(),
-                                    }
-                                ).First();
+                                              from equipo in db.Equipo
+                                              where equipo.idEquipo == idEquipo && equipo.estado
+                                              select new EquipoDTO
+                                              {
+                                                  equipo = equipo,
+                                                  cliente = (
+                                                                from cliente in db.Cliente
+                                                                where equipo.idCliente == cliente.idCliente && cliente.estado
+                                                                select cliente
+                                                            ).FirstOrDefault(),
+                                                  modelo = (
+                                                               from modelo in db.Catalogo
+                                                               where equipo.idModeloCatalogo == modelo.idCatalogo
+                                                               select modelo
+                                                           ).FirstOrDefault(),
+                                                  marca = (
+                                                              from modelo in db.Catalogo
+                                                              join marca in db.Catalogo on modelo.idPadre equals marca.idCatalogo
+                                                              where equipo.idModeloCatalogo == modelo.idCatalogo
+                                                              select marca
+                                                          ).FirstOrDefault(),
+                                              }
+                                          ).Single();
                     return equipoDTO;
                 }
                 catch (Exception ex)

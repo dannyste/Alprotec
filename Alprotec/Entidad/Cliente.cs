@@ -27,7 +27,7 @@ namespace Entidad
         public string nombre { get; set; }
         public string direccion { get; set; }
         public string telefono { get; set; }
-        public long idClienteCatalogo { get; set; }
+        public long idTipoClienteCatalogo { get; set; }
         public long idDocumentoCatalog { get; set; }
         public long idCiudadCatalogo { get; set; }
         public bool estado { get; set; }

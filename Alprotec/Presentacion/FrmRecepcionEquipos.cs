@@ -40,7 +40,15 @@ namespace Presentacion
             actualizarDgvRecepcionEquipos();
         }
 
-        private void txtCliente_TextChanged(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
+        {
+            dtpFechaInicial.Value = DateTime.Now;
+            dtpFechaFinal.Value = DateTime.Now;
+            txtCliente.Text = String.Empty;
+            actualizarDgvRecepcionEquipos();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvRecepcionEquipos();
         }
@@ -49,11 +57,20 @@ namespace Presentacion
         {
             if (e.RowIndex >= 0 && busqueda)
             {
-                
-            }
-            else
-            {
-                MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                long idRecepcionEquipo = Convert.ToInt64(dgvRecepcionEquipos.Rows[e.RowIndex].Cells["Id"].Value);
+                RecepcionEquipoDTO recepcionEquipoDTO = RecepcionEquipoBL.obtenerRecepcionEquipo(idRecepcionEquipo, ref error, ref mensaje);
+                if (!error)
+                {
+                    if (frmNuevoModificarDatosTecnicosMotorElectricoTrifasico != null)
+                    {
+                        //frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.establecerRecepcionEquipo(recepcionEquipoDTO.recepcionEquipo);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -67,11 +84,22 @@ namespace Presentacion
         {
             if (dgvRecepcionEquipos.Rows.Count > 0)
             {
-
+                long idRecepcionEquipo = Convert.ToInt64(dgvRecepcionEquipos.Rows[dgvRecepcionEquipos.CurrentCell.RowIndex].Cells["Id"].Value);
+                RecepcionEquipoDTO recepcionEquipoDTO = RecepcionEquipoBL.obtenerRecepcionEquipo(idRecepcionEquipo, ref error, ref mensaje);
+                if (!error)
+                {
+                    FrmNuevaModificarRecepcionEquipo frmNuevaModificarRecepcionEquipo = new FrmNuevaModificarRecepcionEquipo(this, "M");
+                    frmNuevaModificarRecepcionEquipo.modificarRecepcionEquipo(recepcionEquipoDTO.recepcionEquipo, recepcionEquipoDTO.cliente, recepcionEquipoDTO.equipo);
+                    frmNuevaModificarRecepcionEquipo.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("No tiene ningún cliente.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No tiene ninguna recepción de equipo.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,7 +107,7 @@ namespace Presentacion
         {
             if (dgvRecepcionEquipos.Rows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("¿Desea eliminar este equipo?", "Alprotec", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Desea eliminar esta recepción de equipo?", "Alprotec", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     RecepcionEquipoBL.eliminarRecepcionEquipo(Convert.ToInt64(dgvRecepcionEquipos.Rows[dgvRecepcionEquipos.CurrentCell.RowIndex].Cells["Id"].Value), ref error, ref mensaje);
@@ -111,7 +139,7 @@ namespace Presentacion
 
         public void actualizarDgvRecepcionEquipos()
         {
-            IEnumerable dataSource = RecepcionEquipoBL.filtrarRecepcionEquipos(1, txtCliente.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = RecepcionEquipoBL.filtrarRecepcionEquipos(dtpFechaInicial.Value.Date, dtpFechaFinal.Value.Date.AddHours(24), txtCliente.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvRecepcionEquipos.DataSource = dataSource;

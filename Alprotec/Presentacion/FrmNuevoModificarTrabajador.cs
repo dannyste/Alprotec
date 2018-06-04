@@ -87,6 +87,7 @@ namespace Presentacion
             trabajador.telefono = txtTelefono.Text.Trim();
             trabajador.movil = txtMovil.Text.Trim();
             trabajador.direccion = txtDireccion.Text.Trim();
+            trabajador.estado = true;
             trabajador.creadoPor = Globales.UsuarioGlobal.idUsuario;
             trabajador.fechaCreacion = DateTime.Now;
             trabajador.modificadoPor = Globales.UsuarioGlobal.idUsuario;

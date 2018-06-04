@@ -96,7 +96,7 @@
             this.cbTipoCliente.Name = "cbTipoCliente";
             this.cbTipoCliente.Size = new System.Drawing.Size(213, 23);
             this.cbTipoCliente.TabIndex = 1;
-            this.cbTipoCliente.SelectionChangeCommitted += new System.EventHandler(this.cbCliente_SelectionChangeCommitted);
+            this.cbTipoCliente.SelectionChangeCommitted += new System.EventHandler(this.cbTipoCliente_SelectionChangeCommitted);
             // 
             // txtCodigo
             // 

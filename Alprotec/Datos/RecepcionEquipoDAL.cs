@@ -11,46 +11,26 @@ namespace Datos
 {
     public class RecepcionEquipoDAL
     {
-        public IEnumerable filtrarRecepcionEquipos(int opcion, String filtro, ref bool error, ref String mensaje)
+        public IEnumerable filtrarRecepcionEquipos(DateTime fechaInicial, DateTime fechaFinal, String nombreCliente, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    if (opcion == 1)
-                    {
-                        var query = (
-                                        from recepcionEquipo in db.RecepcionEquipo
-                                        select new
-                                        {
-                                            Id = recepcionEquipo.idRecepcionEquipo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    if (opcion == 2)
-                    {
-                        var query = (
-                                        from recepcionEquipo in db.RecepcionEquipo
-                                        select new
-                                        {
-                                            Id = recepcionEquipo.idRecepcionEquipo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    else
-                    {
-                        var query = (
-                                        from recepcionEquipo in db.RecepcionEquipo
-                                        select new
-                                        {
-                                            Id = recepcionEquipo.idRecepcionEquipo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
+                    var query = (
+                                    from recepcionEquipo in db.RecepcionEquipo
+                                    join cliente in db.Cliente on recepcionEquipo.idCliente equals cliente.idCliente
+                                    join equipo in db.Equipo on recepcionEquipo.idEquipo equals equipo.idEquipo
+                                    where recepcionEquipo.fechaCreacion >= fechaInicial && recepcionEquipo.fechaCreacion < fechaFinal && cliente.nombre.Contains(nombreCliente) && recepcionEquipo.estado
+                                    select new
+                                    {
+                                        Id = recepcionEquipo.idRecepcionEquipo,
+                                        Cliente = cliente.nombre,
+                                        Equipo = equipo.numeroSerie,
+                                    }
+                                ).ToList();
+                    return query;
                 }
                 catch (Exception ex)
                 {
@@ -61,19 +41,32 @@ namespace Datos
             }
         }
 
-        public RecepcionEquipo obtenerRecepcionEquipo(long idRecepcionEquipo, ref bool error, ref String mensaje)
+        public RecepcionEquipoDTO obtenerRecepcionEquipo(long idRecepcionEquipo, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    var query = (
-                                    from recepcionEquipo in db.RecepcionEquipo
-                                    where recepcionEquipo.idRecepcionEquipo == idRecepcionEquipo
-                                    select recepcionEquipo
-                                ).First();
-                    return query;
+                    RecepcionEquipoDTO recepcionEquipoDTO = (
+                                                                from recepcionEquipo in db.RecepcionEquipo
+                                                                where recepcionEquipo.idRecepcionEquipo == idRecepcionEquipo && recepcionEquipo.estado
+                                                                select new RecepcionEquipoDTO 
+                                                                { 
+                                                                    recepcionEquipo = recepcionEquipo,
+                                                                    cliente = (
+                                                                                  from cliente in db.Cliente
+                                                                                  where recepcionEquipo.idCliente == cliente.idCliente
+                                                                                  select cliente
+                                                                              ).FirstOrDefault(),
+                                                                    equipo = (
+                                                                                 from equipo in db.Equipo
+                                                                                 where recepcionEquipo.idCliente == equipo.idEquipo
+                                                                                 select equipo
+                                                                             ).FirstOrDefault(),
+                                                                }
+                                                            ).Single();
+                    return recepcionEquipoDTO;
                 }
                 catch (Exception ex)
                 {
@@ -149,6 +142,28 @@ namespace Datos
                     error = true;
                     mensaje = ex.Message;
                 }
+            }
+        }
+
+        public String secuenciaNumeroRecepcionEquipo(ref bool error, ref String mensaje)
+        {
+            error = false;
+            using (AlprotecdbEntities db = new AlprotecdbEntities())
+            {
+                try
+                {
+                    var numero = (
+                                    from recepcionEquipo in db.RecepcionEquipo
+                                    select recepcionEquipo.numero
+                                 ).DefaultIfEmpty().Max();
+                    return Convert.ToString(numero + 1);
+                }
+                catch (Exception ex)
+                {
+                    error = true;
+                    mensaje = ex.Message;
+                }
+                return null;
             }
         }
     }

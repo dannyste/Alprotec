@@ -43,7 +43,7 @@
           <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="idClienteCatalogo" Type="bigint" Nullable="false" />
+          <Property Name="idTipoClienteCatalogo" Type="bigint" Nullable="false" />
           <Property Name="idDocumentoCatalog" Type="bigint" Nullable="false" />
           <Property Name="idCiudadCatalogo" Type="bigint" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
@@ -127,7 +127,6 @@
           <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="aprobo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="numeroEdicion" Type="int" Nullable="false" />
-          <Property Name="secuencia" Type="int" Nullable="false" />
           <Property Name="creadoPor" Type="bigint" Nullable="false" />
           <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
@@ -302,18 +301,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_ClienteCatalogo">
-          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Catalogo">
-              <PropertyRef Name="idCatalogo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idClienteCatalogo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Cliente_DocumentoCatalogo">
           <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
@@ -323,6 +310,18 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="idDocumentoCatalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoClienteCatalogo">
+          <End Role="Catalogo" Type="Self.Catalogo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idTipoClienteCatalogo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -413,11 +412,11 @@
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_ClienteCatalogo" Association="Self.FK_Cliente_ClienteCatalogo">
+          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="Self.FK_Cliente_DocumentoCatalogo">
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="Self.FK_Cliente_DocumentoCatalogo">
+          <AssociationSet Name="FK_Cliente_TipoClienteCatalogo" Association="Self.FK_Cliente_TipoClienteCatalogo">
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
@@ -473,11 +472,11 @@
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_ClienteCatalogo" Association="AlprotecdbModel.FK_Cliente_ClienteCatalogo">
+          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="AlprotecdbModel.FK_Cliente_DocumentoCatalogo">
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_DocumentoCatalogo" Association="AlprotecdbModel.FK_Cliente_DocumentoCatalogo">
+          <AssociationSet Name="FK_Cliente_TipoClienteCatalogo" Association="AlprotecdbModel.FK_Cliente_TipoClienteCatalogo">
             <End Role="Catalogo" EntitySet="Catalogo" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
@@ -529,8 +528,8 @@
           <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Catalogo_Catalogo" FromRole="Catalogo1" ToRole="Catalogo" />
           <NavigationProperty Name="TipoCatalogo" Relationship="AlprotecdbModel.FK_Catalogo_TipoCatalogo" FromRole="Catalogo" ToRole="TipoCatalogo" />
           <NavigationProperty Name="Cliente" Relationship="AlprotecdbModel.FK_Cliente_CiudadCatalogo" FromRole="Catalogo" ToRole="Cliente" />
-          <NavigationProperty Name="Cliente1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Catalogo" ToRole="Cliente" />
-          <NavigationProperty Name="Cliente2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente1" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Catalogo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente2" Relationship="AlprotecdbModel.FK_Cliente_TipoClienteCatalogo" FromRole="Catalogo" ToRole="Cliente" />
           <NavigationProperty Name="Equipo" Relationship="AlprotecdbModel.FK_Equipo_Catalogo" FromRole="Catalogo" ToRole="Equipo" />
         </EntityType>
         <EntityType Name="Cliente">
@@ -543,7 +542,7 @@
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="idClienteCatalogo" Type="Int64" Nullable="false" />
+          <Property Name="idTipoClienteCatalogo" Type="Int64" Nullable="false" />
           <Property Name="idDocumentoCatalog" Type="Int64" Nullable="false" />
           <Property Name="idCiudadCatalogo" Type="Int64" Nullable="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
@@ -552,8 +551,8 @@
           <Property Name="modificadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Catalogo" Relationship="AlprotecdbModel.FK_Cliente_CiudadCatalogo" FromRole="Cliente" ToRole="Catalogo" />
-          <NavigationProperty Name="Catalogo1" Relationship="AlprotecdbModel.FK_Cliente_ClienteCatalogo" FromRole="Cliente" ToRole="Catalogo" />
-          <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Cliente" ToRole="Catalogo" />
+          <NavigationProperty Name="Catalogo1" Relationship="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" FromRole="Cliente" ToRole="Catalogo" />
+          <NavigationProperty Name="Catalogo2" Relationship="AlprotecdbModel.FK_Cliente_TipoClienteCatalogo" FromRole="Cliente" ToRole="Catalogo" />
           <NavigationProperty Name="Contacto" Relationship="AlprotecdbModel.FK_Contacto_Cliente" FromRole="Cliente" ToRole="Contacto" />
           <NavigationProperty Name="Equipo" Relationship="AlprotecdbModel.FK_Equipo_Cliente" FromRole="Cliente" ToRole="Equipo" />
           <NavigationProperty Name="RecepcionEquipo" Relationship="AlprotecdbModel.FK_RecepcionEquipo_Cliente" FromRole="Cliente" ToRole="RecepcionEquipo" />
@@ -636,7 +635,6 @@
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="aprobo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="numeroEdicion" Type="Int32" Nullable="false" />
-          <Property Name="secuencia" Type="Int32" Nullable="false" />
           <Property Name="creadoPor" Type="Int64" Nullable="false" />
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
@@ -813,18 +811,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cliente_ClienteCatalogo">
-          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
-          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Catalogo">
-              <PropertyRef Name="idCatalogo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idClienteCatalogo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Cliente_DocumentoCatalogo">
           <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
           <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
@@ -834,6 +820,18 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="idDocumentoCatalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_TipoClienteCatalogo">
+          <End Type="AlprotecdbModel.Catalogo" Role="Catalogo" Multiplicity="1" />
+          <End Type="AlprotecdbModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalogo">
+              <PropertyRef Name="idCatalogo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idTipoClienteCatalogo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -940,7 +938,7 @@
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idCiudadCatalogo" ColumnName="idCiudadCatalogo" />
                 <ScalarProperty Name="idDocumentoCatalog" ColumnName="idDocumentoCatalog" />
-                <ScalarProperty Name="idClienteCatalogo" ColumnName="idClienteCatalogo" />
+                <ScalarProperty Name="idTipoClienteCatalogo" ColumnName="idTipoClienteCatalogo" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -1025,7 +1023,6 @@
               <MappingFragment StoreEntitySet="Formulario">
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="creadoPor" ColumnName="creadoPor" />
-                <ScalarProperty Name="secuencia" ColumnName="secuencia" />
                 <ScalarProperty Name="numeroEdicion" ColumnName="numeroEdicion" />
                 <ScalarProperty Name="aprobo" ColumnName="aprobo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

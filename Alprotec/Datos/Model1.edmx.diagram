@@ -25,33 +25,60 @@
 <<<<<<< HEAD
         
         
-        <EntityTypeShape EntityType="AlprotecdbModel.Alojamiento" Width="1.5" PointX="8.705234777510741" PointY="14.44092137293933" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Bobinado" Width="1.5" PointX="2.8317547304703643" PointY="7.1238436583074947" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Catalogo" Width="1.5" PointX="10.251517322962879" PointY="30.540655254638128" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Cliente" Width="1.5" PointX="1.9027797905275503" PointY="11.081907471214379" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Contacto" Width="1.5" PointX="2.9371462273118767" PointY="2.8208568407319752" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Contrato" Width="1.5" PointX="4.3205733002724935" PointY="13.450460037891967" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Eje" Width="1.5" PointX="9.5545751217541159" PointY="7.7431483304794639" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Equipo" Width="1.5" PointX="5.87070760963052" PointY="15.491188667477662" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Formulario" Width="1.5" PointX="7.1158028091843253" PointY="19.568434530668164" />
-        <EntityTypeShape EntityType="AlprotecdbModel.InspeccionMedicion" Width="1.5" PointX="9.9019493190115071" PointY="19.076385924162523" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Proceso" Width="1.5" PointX="2.2084621108176474" PointY="16.513823591411963" />
-        <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaFinal" Width="1.5" PointX="9.26544483623721" PointY="10.832575847782463" />
-        <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaInicial" Width="1.5" PointX="8.2181642727079645" PointY="24.445635732470841" />
-        <EntityTypeShape EntityType="AlprotecdbModel.RecepcionEquipo" Width="1.5" PointX="10.48621569130859" PointY="10.125468214100911" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Rodamiento" Width="1.5" PointX="5.6434463978016032" PointY="17.288896613423198" />
-        <EntityTypeShape EntityType="AlprotecdbModel.TipoCatalogo" Width="1.5" PointX="6.2231539367805953" PointY="3.2058999255327043" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Trabajador" Width="1.5" PointX="6.8818955192723763" PointY="16.255942262828324" />
-        <EntityTypeShape EntityType="AlprotecdbModel.Usuario" Width="1.5" PointX="11.675982674432911" PointY="25.430901017706329" />
+        
+        <EntityTypeShape EntityType="AlprotecdbModel.Alojamiento" Width="1.5" PointX="0.54301905471040823" PointY="9.64371440263638" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Bobinado" Width="1.5" PointX="4.6469543281229937" PointY="11.053478037497717" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Catalogo" Width="1.5" PointX="1.2310984829585527" PointY="23.414496775443897" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Cliente" Width="1.5" PointX="8.2372002341957753" PointY="26.239280623495244" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Contacto" Width="1.5" PointX="8.28212267546082" PointY="10.838838895242121" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Contrato" Width="1.5" PointX="4.6084896291645663" PointY="26.289885995113238" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Eje" Width="1.5" PointX="0.37021772208168063" PointY="15.793932400547869" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Equipo" Width="1.5" PointX="2.3703885722767506" PointY="26.827533153271084" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Formulario" Width="1.5" PointX="7.9310594014502405" PointY="14.605756930357664" />
+        <EntityTypeShape EntityType="AlprotecdbModel.InspeccionMedicion" Width="1.5" PointX="7.1374466769105966" PointY="2.9461943520913807" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Proceso" Width="1.5" PointX="11.692489083713149" PointY="28.400906665437347" />
+        <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaFinal" Width="1.5" PointX="6.7931396583063242" PointY="17.428696163663965" />
+        <EntityTypeShape EntityType="AlprotecdbModel.PruebaElectricaInicial" Width="1.5" PointX="3.335088267612778" PointY="3.9927607644315626" />
+        <EntityTypeShape EntityType="AlprotecdbModel.RecepcionEquipo" Width="1.5" PointX="5.1931388588590259" PointY="28.693152292023019" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Rodamiento" Width="1.5" PointX="5.8108163130519985" PointY="2.8466634614610409" />
+        <EntityTypeShape EntityType="AlprotecdbModel.TipoCatalogo" Width="1.5" PointX="1.3567776611804858" PointY="23.697364460535983" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Trabajador" Width="1.5" PointX="5.278737189843663" PointY="14.413677475607804" />
+        <EntityTypeShape EntityType="AlprotecdbModel.Usuario" Width="1.5" PointX="10.00709597487333" PointY="3.4263430998783293" />
         <AssociationConnector Association="AlprotecdbModel.FK_Catalogo_Catalogo" />
         <AssociationConnector Association="AlprotecdbModel.FK_Catalogo_TipoCatalogo" />
         <AssociationConnector Association="AlprotecdbModel.FK_Cliente_CiudadCatalogo" />
-        <AssociationConnector Association="AlprotecdbModel.FK_Cliente_ClienteCatalogo" />
         <AssociationConnector Association="AlprotecdbModel.FK_Cliente_DocumentoCatalogo" />
+        <AssociationConnector Association="AlprotecdbModel.FK_Cliente_TipoClienteCatalogo" />
         <AssociationConnector Association="AlprotecdbModel.FK_Equipo_Catalogo" />
         <AssociationConnector Association="AlprotecdbModel.FK_Contacto_Cliente" />
         <AssociationConnector Association="AlprotecdbModel.FK_Equipo_Cliente" />
         <AssociationConnector Association="AlprotecdbModel.FK_RecepcionEquipo_Cliente" />
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

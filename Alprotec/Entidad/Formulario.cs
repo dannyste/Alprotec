@@ -19,7 +19,6 @@ namespace Entidad
         public string nombre { get; set; }
         public string aprobo { get; set; }
         public int numeroEdicion { get; set; }
-        public int secuencia { get; set; }
         public long creadoPor { get; set; }
         public System.DateTime fechaCreacion { get; set; }
     }

@@ -45,54 +45,71 @@ namespace Presentacion
 
         private void FrmNuevaModificarRecepcionEquipo_Load(object sender, EventArgs e)
         {
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[0].Cells["elemento"].Value = "Estator";
-            dgvEstadoElementosExternos.Rows[0].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[1].Cells["elemento"].Value = "Rotor";
-            dgvEstadoElementosExternos.Rows[1].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[2].Cells["elemento"].Value = "Posición de la caja de conexión - Izquierda";
-            dgvEstadoElementosExternos.Rows[2].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[3].Cells["elemento"].Value = "Posición de la caja de conexión - Derecha";
-            dgvEstadoElementosExternos.Rows[3].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[4].Cells["elemento"].Value = "Base de la caja de conexión";
-            dgvEstadoElementosExternos.Rows[4].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[5].Cells["elemento"].Value = "Ventilador";
-            dgvEstadoElementosExternos.Rows[5].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[6].Cells["elemento"].Value = "Tapa del ventilador";
-            dgvEstadoElementosExternos.Rows[6].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[7].Cells["elemento"].Value = "Tapa frontal";
-            dgvEstadoElementosExternos.Rows[7].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[8].Cells["elemento"].Value = "Tapa posterior";
-            dgvEstadoElementosExternos.Rows[8].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[9].Cells["elemento"].Value = "Polea";
-            dgvEstadoElementosExternos.Rows[9].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[10].Cells["elemento"].Value = "Acople";
-            dgvEstadoElementosExternos.Rows[10].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[11].Cells["elemento"].Value = "Base del motor";
-            dgvEstadoElementosExternos.Rows[11].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[12].Cells["elemento"].Value = "Capacitor de arranque";
-            dgvEstadoElementosExternos.Rows[12].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[13].Cells["elemento"].Value = "Capacitor permanente";
-            dgvEstadoElementosExternos.Rows[13].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[14].Cells["elemento"].Value = "Centrífugo";
-            dgvEstadoElementosExternos.Rows[14].Cells["estado"].Value = "Ninguno";
-            dgvEstadoElementosExternos.Rows.Add();
-            dgvEstadoElementosExternos.Rows[15].Cells["elemento"].Value = "Platinera";
-            dgvEstadoElementosExternos.Rows[15].Cells["estado"].Value = "Ninguno";
+            if (operacion == "N")
+            {
+                generarNumero();
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[0].Cells["elemento"].Value = "Estator";
+                dgvEstadoElementosExternos.Rows[0].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[1].Cells["elemento"].Value = "Rotor";
+                dgvEstadoElementosExternos.Rows[1].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[2].Cells["elemento"].Value = "Posición de la caja de conexión - Izquierda";
+                dgvEstadoElementosExternos.Rows[2].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[3].Cells["elemento"].Value = "Posición de la caja de conexión - Derecha";
+                dgvEstadoElementosExternos.Rows[3].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[4].Cells["elemento"].Value = "Base de la caja de conexión";
+                dgvEstadoElementosExternos.Rows[4].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[5].Cells["elemento"].Value = "Ventilador";
+                dgvEstadoElementosExternos.Rows[5].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[6].Cells["elemento"].Value = "Tapa del ventilador";
+                dgvEstadoElementosExternos.Rows[6].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[7].Cells["elemento"].Value = "Tapa frontal";
+                dgvEstadoElementosExternos.Rows[7].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[8].Cells["elemento"].Value = "Tapa posterior";
+                dgvEstadoElementosExternos.Rows[8].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[9].Cells["elemento"].Value = "Polea";
+                dgvEstadoElementosExternos.Rows[9].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[10].Cells["elemento"].Value = "Acople";
+                dgvEstadoElementosExternos.Rows[10].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[11].Cells["elemento"].Value = "Base del motor";
+                dgvEstadoElementosExternos.Rows[11].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[12].Cells["elemento"].Value = "Capacitor de arranque";
+                dgvEstadoElementosExternos.Rows[12].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[13].Cells["elemento"].Value = "Capacitor permanente";
+                dgvEstadoElementosExternos.Rows[13].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[14].Cells["elemento"].Value = "Centrífugo";
+                dgvEstadoElementosExternos.Rows[14].Cells["estado"].Value = "Ninguno";
+                dgvEstadoElementosExternos.Rows.Add();
+                dgvEstadoElementosExternos.Rows[15].Cells["elemento"].Value = "Platinera";
+                dgvEstadoElementosExternos.Rows[15].Cells["estado"].Value = "Ninguno";
+            }
+        }
+
+        public void generarNumero()
+        {
+            String numero = RecepcionEquipoBL.secuenciaNumeroRecepcionEquipo(ref error, ref mensaje);
+            if (!error)
+            {
+                txtNumero.Text = numero;
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -149,12 +166,10 @@ namespace Presentacion
             this.Close();
         }
 
-        public Cliente establecerCliente
+        public void establecerCliente(Cliente cliente)
         {
-            set 
-            {
-                this.cliente = value;
-            }
+            this.cliente = cliente;
+            txtCliente.Text = cliente.nombre;
         }
 
         public void llenarTxtCliente()
@@ -166,11 +181,6 @@ namespace Presentacion
         {
             this.equipo = equipo;
             txtEquipo.Text = equipo.codigoInterno;
-        }
-
-        public void llenarTxtEquipo()
-        {
-            
         }
 
         private RecepcionEquipo objetoRecepcionEquipo()
@@ -211,6 +221,7 @@ namespace Presentacion
             recepcionEquipo.diagnosticoFallas = txtDiagnosticoFallas.Text.Trim();
             recepcionEquipo.idCliente = cliente.idCliente;
             recepcionEquipo.idEquipo = equipo.idEquipo;
+            recepcionEquipo.estado = true;
             recepcionEquipo.creadoPor = Globales.UsuarioGlobal.idUsuario;
             recepcionEquipo.fechaCreacion = DateTime.Now;
             recepcionEquipo.modificadoPor = Globales.UsuarioGlobal.idUsuario;
@@ -220,7 +231,8 @@ namespace Presentacion
         
         public void modificarRecepcionEquipo(RecepcionEquipo recepcionEquipo, Cliente cliente, Equipo equipo)
         {
-            this.recepcionEquipo.idEquipo = recepcionEquipo.idEquipo;
+            this.recepcionEquipo.idRecepcionEquipo = recepcionEquipo.idRecepcionEquipo;
+            txtNumero.Text = Convert.ToString(recepcionEquipo.numero);
         }
         
         private bool validarCampos()

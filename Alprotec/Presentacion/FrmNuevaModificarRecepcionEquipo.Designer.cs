@@ -149,6 +149,7 @@
             this.txtNumero.Size = new System.Drawing.Size(213, 23);
             this.txtNumero.TabIndex = 15;
             this.txtNumero.TabStop = false;
+            this.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbNumero
             // 

@@ -80,10 +80,9 @@ namespace Presentacion
                         frmNuevoModificarEquipo.llenarTxtCliente();
                         this.Close();
                     }
-                    else
+                    else if (frmNuevaModificarRecepcionEquipo != null)
                     {
-                        frmNuevaModificarRecepcionEquipo.establecerCliente = clienteDTO.cliente;
-                        frmNuevaModificarRecepcionEquipo.llenarTxtCliente();
+                        frmNuevaModificarRecepcionEquipo.establecerCliente(clienteDTO.cliente);
                         this.Close();
                     }
                 }
@@ -109,7 +108,7 @@ namespace Presentacion
                 if (!error)
                 {
                     FrmNuevoModificarCliente frmNuevoModificarCliente = new FrmNuevoModificarCliente(this, "M");
-                    frmNuevoModificarCliente.llenarCbCliente();
+                    frmNuevoModificarCliente.llenarCbTipoCliente();
                     frmNuevoModificarCliente.llenarCbDocumento();
                     frmNuevoModificarCliente.llenarCbCiudad();
                     frmNuevoModificarCliente.modificarCliente(clienteDTO.cliente);

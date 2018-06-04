@@ -53,11 +53,11 @@ namespace Datos
                                         cliente = cliente,
                                         contactos = (
                                                         from contacto in db.Contacto
-                                                        where cliente.idCliente == contacto.idCliente && contacto.estado
+                                                        where cliente.idCliente == contacto.idCliente
                                                         select contacto
                                                     ).ToList(),
                                     }
-                                ).First();
+                                ).Single();
                     return clienteDTO;
                 }
                 catch (Exception ex)
@@ -111,7 +111,7 @@ namespace Datos
                     actualizarCliente.direccion = cliente.direccion;
                     actualizarCliente.telefono = cliente.telefono;
                     actualizarCliente.idCiudadCatalogo = cliente.idCiudadCatalogo;
-                    actualizarCliente.idClienteCatalogo = cliente.idClienteCatalogo;
+                    actualizarCliente.idTipoClienteCatalogo = cliente.idTipoClienteCatalogo;
                     actualizarCliente.modificadoPor = cliente.modificadoPor;
                     actualizarCliente.fechaModificacion = cliente.fechaModificacion;
                     db.SaveChanges();
@@ -190,9 +190,9 @@ namespace Datos
                 try
                 {
                     var query = (
-                                    from c in db.Cliente
-                                    where c.idClienteCatalogo == 5L
-                                    select c
+                                    from cliente in db.Cliente
+                                    where cliente.idTipoClienteCatalogo == 5L
+                                    select cliente
                                 ).Count();
                     return Convert.ToString(query + 1);
                 }
