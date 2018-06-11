@@ -172,11 +172,6 @@ namespace Presentacion
             txtCliente.Text = cliente.nombre;
         }
 
-        public void llenarTxtCliente()
-        {
-            txtCliente.Text = cliente.nombre;
-        }
-
         public void establecerEquipo(Equipo equipo)
         {
             this.equipo = equipo;
@@ -233,6 +228,44 @@ namespace Presentacion
         {
             this.recepcionEquipo.idRecepcionEquipo = recepcionEquipo.idRecepcionEquipo;
             txtNumero.Text = Convert.ToString(recepcionEquipo.numero);
+            this.cliente = cliente;
+            txtCliente.Text = cliente.nombre;
+            this.equipo = equipo;
+            txtEquipo.Text = equipo.numeroSerie;
+            dgvEstadoElementosExternos.Rows[0].Cells["existe"].Value = recepcionEquipo.existeEstator;
+            dgvEstadoElementosExternos.Rows[0].Cells["estado"].Value = recepcionEquipo.estadoEstator == 1 ? "Bueno" : recepcionEquipo.estadoEstator == 2 ? "Regular" : recepcionEquipo.estadoEstator == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[1].Cells["existe"].Value = recepcionEquipo.existeRotor;
+            dgvEstadoElementosExternos.Rows[1].Cells["estado"].Value = recepcionEquipo.estadoRotor == 1 ? "Bueno" : recepcionEquipo.estadoRotor == 2 ? "Regular" : recepcionEquipo.estadoRotor == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[2].Cells["existe"].Value = recepcionEquipo.posicionCajaConexion == 1 ? true : false;
+            dgvEstadoElementosExternos.Rows[2].Cells["estado"].Value = recepcionEquipo.posicionCajaConexion == 1 ? (recepcionEquipo.estadoCajaConexion == 1 ? "Bueno" : recepcionEquipo.estadoRotor == 2 ? "Regular" : recepcionEquipo.estadoRotor == 3 ? "Malo" : "Ninguno") : "Ninguno";
+            dgvEstadoElementosExternos.Rows[3].Cells["elemento"].Value = recepcionEquipo.posicionCajaConexion == 2 ? true : false;
+            dgvEstadoElementosExternos.Rows[3].Cells["estado"].Value = recepcionEquipo.posicionCajaConexion == 2 ? (recepcionEquipo.estadoCajaConexion == 1 ? "Bueno" : recepcionEquipo.estadoRotor == 2 ? "Regular" : recepcionEquipo.estadoRotor == 3 ? "Malo" : "Ninguno") : "Ninguno";
+            dgvEstadoElementosExternos.Rows[4].Cells["elemento"].Value = recepcionEquipo.existeBaseCajaConexion;
+            dgvEstadoElementosExternos.Rows[4].Cells["estado"].Value = recepcionEquipo.estadoBaseCajaConexion == 1 ? "Bueno" : recepcionEquipo.estadoBaseCajaConexion == 2 ? "Regular" : recepcionEquipo.estadoBaseCajaConexion == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[5].Cells["elemento"].Value = recepcionEquipo.existeVentilador;
+            dgvEstadoElementosExternos.Rows[5].Cells["estado"].Value = recepcionEquipo.estadoVentilador == 1 ? "Bueno" : recepcionEquipo.estadoVentilador == 2 ? "Regular" : recepcionEquipo.estadoVentilador == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[6].Cells["elemento"].Value = recepcionEquipo.existeTapaVentilador;
+            dgvEstadoElementosExternos.Rows[6].Cells["estado"].Value = recepcionEquipo.estadoTapaVentilador == 1 ? "Bueno" : recepcionEquipo.estadoTapaVentilador == 2 ? "Regular" : recepcionEquipo.estadoTapaVentilador == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[7].Cells["elemento"].Value = recepcionEquipo.existeTapaFrontal;
+            dgvEstadoElementosExternos.Rows[7].Cells["estado"].Value = recepcionEquipo.estadoTapaFrontal == 1 ? "Bueno" : recepcionEquipo.estadoTapaFrontal == 2 ? "Regular" : recepcionEquipo.estadoTapaFrontal == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[8].Cells["elemento"].Value = recepcionEquipo.existeTapaPosterior;
+            dgvEstadoElementosExternos.Rows[8].Cells["estado"].Value = recepcionEquipo.estadoTapaPosterior == 1 ? "Bueno" : recepcionEquipo.estadoTapaPosterior == 2 ? "Regular" : recepcionEquipo.estadoTapaPosterior == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[9].Cells["elemento"].Value = recepcionEquipo.existePolea;
+            dgvEstadoElementosExternos.Rows[9].Cells["estado"].Value = recepcionEquipo.estadoPolea == 1 ? "Bueno" : recepcionEquipo.estadoPolea == 2 ? "Regular" : recepcionEquipo.estadoPolea == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[10].Cells["elemento"].Value = recepcionEquipo.existeAcople;
+            dgvEstadoElementosExternos.Rows[10].Cells["estado"].Value = recepcionEquipo.estadoAcople == 1 ? "Bueno" : recepcionEquipo.estadoAcople == 2 ? "Regular" : recepcionEquipo.estadoAcople == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[11].Cells["elemento"].Value = recepcionEquipo.existeBaseMotor;
+            dgvEstadoElementosExternos.Rows[11].Cells["estado"].Value = recepcionEquipo.estadoBaseMotor == 1 ? "Bueno" : recepcionEquipo.estadoBaseMotor == 2 ? "Regular" : recepcionEquipo.estadoBaseMotor == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[12].Cells["elemento"].Value = recepcionEquipo.existeCapacitorArranque;
+            dgvEstadoElementosExternos.Rows[12].Cells["estado"].Value = recepcionEquipo.estadoCapacitorArranque == 1 ? "Bueno" : recepcionEquipo.estadoCapacitorArranque == 2 ? "Regular" : recepcionEquipo.estadoCapacitorArranque == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[13].Cells["elemento"].Value = recepcionEquipo.existeCapacitorPermanente;
+            dgvEstadoElementosExternos.Rows[13].Cells["estado"].Value = recepcionEquipo.estadoCapacitorPermanente == 1 ? "Bueno" : recepcionEquipo.estadoCapacitorPermanente == 2 ? "Regular" : recepcionEquipo.estadoCapacitorPermanente == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[14].Cells["elemento"].Value = recepcionEquipo.existeCentrifugo;
+            dgvEstadoElementosExternos.Rows[14].Cells["estado"].Value = recepcionEquipo.estadoCentrifugo == 1 ? "Bueno" : recepcionEquipo.estadoCentrifugo == 2 ? "Regular" : recepcionEquipo.estadoCentrifugo == 3 ? "Malo" : "Ninguno";
+            dgvEstadoElementosExternos.Rows[15].Cells["elemento"].Value = recepcionEquipo.existePlatinera;
+            dgvEstadoElementosExternos.Rows[15].Cells["estado"].Value = recepcionEquipo.estadoPlatinera == 1 ? "Bueno" : recepcionEquipo.estadoPlatinera == 2 ? "Regular" : recepcionEquipo.estadoPlatinera == 3 ? "Malo" : "Ninguno";
+            txtObservacionesCliente.Text = recepcionEquipo.observacionesCliente;
+            txtDiagnosticoFallas.Text = recepcionEquipo.diagnosticoFallas;
         }
         
         private bool validarCampos()

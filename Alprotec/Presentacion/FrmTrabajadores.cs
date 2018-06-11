@@ -15,28 +15,27 @@ namespace Presentacion
 {
     public partial class FrmTrabajadores : Form
     {
+        private FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
+
         public bool busqueda = false;
+
+        private String etiqueta;
 
         private bool error = false;
 
         private String mensaje = String.Empty;
-
-        private int opcion = 1;
-
-        private FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
-        private String tag;
 
         public FrmTrabajadores()
         {
             InitializeComponent();
         }
 
-        public FrmTrabajadores(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda, String tag)
+        public FrmTrabajadores(FrmNuevoModificarDatosTecnicosMotorElectricoTrifasico frmNuevoModificarDatosTecnicosMotorElectricoTrifasico, bool busqueda, String etiqueta)
         {
             InitializeComponent();
             this.frmNuevoModificarDatosTecnicosMotorElectricoTrifasico = frmNuevoModificarDatosTecnicosMotorElectricoTrifasico;
             this.busqueda = busqueda;
-            this.tag = tag;
+            this.etiqueta = etiqueta;
         }
 
         private void FrmTrabajadores_Load(object sender, EventArgs e)
@@ -44,36 +43,22 @@ namespace Presentacion
             actualizarDgvTrabajadores();
         }
 
-        private void rb_CheckedChanged(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
         {
-            if (rbCedulaIdentidad.Checked)
-            {
-                opcion = 1;
-            }
-            else if (rbNombre.Checked)
-            {
-                opcion = 2;
-            }
-            else
-            {
-                opcion = 3;
-            }
+            txtCedulaIdentidad.Text = String.Empty;
+            txtCargo.Text = String.Empty;
+            txtTrabajador.Text = String.Empty;
             actualizarDgvTrabajadores();
         }
 
-        private void cbTrabajador_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            actualizarDgvTrabajadores();
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvTrabajadores();
         }
 
         private void dgvTrabajadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && busqueda)
             {
                 long idTrabajador = Convert.ToInt64(dgvTrabajadores.Rows[e.RowIndex].Cells["Id"].Value);
                 Trabajador trabajador = TrabajadorBL.obtenerTrabajador(idTrabajador, ref error, ref mensaje);
@@ -81,14 +66,8 @@ namespace Presentacion
                 {
                     if (frmNuevoModificarDatosTecnicosMotorElectricoTrifasico != null)
                     {
-                        frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.llenarTrabajador(trabajador, tag);
+                        frmNuevoModificarDatosTecnicosMotorElectricoTrifasico.llenarTrabajador(trabajador, etiqueta);
                         this.Close();
-                    }
-                    else
-                    {
-                        FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
-                        frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
-                        frmNuevoModificarTrabajador.ShowDialog();
                     }
                 }
                 else
@@ -102,6 +81,29 @@ namespace Presentacion
         {
             FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "N");
             frmNuevoModificarTrabajador.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvTrabajadores.Rows.Count > 0)
+            {
+                long idTrabajador = Convert.ToInt64(dgvTrabajadores.Rows[dgvTrabajadores.CurrentCell.RowIndex].Cells["Id"].Value);
+                Trabajador trabajador = TrabajadorBL.obtenerTrabajador(idTrabajador, ref error, ref mensaje);
+                if (!error)
+                {
+                    FrmNuevoModificarTrabajador frmNuevoModificarTrabajador = new FrmNuevoModificarTrabajador(this, "M");
+                    frmNuevoModificarTrabajador.modificarTrabajador(trabajador);
+                    frmNuevoModificarTrabajador.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No tiene ningún trabajador.", "Alprotec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -172,7 +174,7 @@ namespace Presentacion
 
         public void actualizarDgvTrabajadores()
         {
-            IEnumerable dataSource = TrabajadorBL.filtrarTrabajadores(opcion, txtBuscar.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = TrabajadorBL.filtrarTrabajadores(txtCedulaIdentidad.Text.Trim(), txtCargo.Text.Trim(), txtTrabajador.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvTrabajadores.DataSource = dataSource;

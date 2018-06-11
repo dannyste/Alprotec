@@ -10,58 +10,25 @@ namespace Datos
 {
     public class TrabajadorDAL
     {
-        public IEnumerable filtrarTrabajadores(int opcion, String filtro, ref bool error, ref String mensaje)
+        public IEnumerable filtrarTrabajadores(String cedulaIdentidad, String cargo, String nombreTrabajador, ref bool error, ref String mensaje)
         {
             error = false;
             using (AlprotecdbEntities db = new AlprotecdbEntities())
             {
                 try
                 {
-                    if (opcion == 1)
-                    {
-                        var query = (
-                                        from trabajador in db.Trabajador
-                                        where trabajador.cedulaIdentidad.Contains(filtro)
-                                        select new
-                                        {
-                                            Id = trabajador.idTrabajador,
-                                            Cedula = trabajador.cedulaIdentidad,
-                                            Nombre = trabajador.nombre,
-                                            Cargo = trabajador.cargo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    if (opcion == 2)
-                    {
-                        var query = (
-                                        from trabajador in db.Trabajador
-                                        where trabajador.nombre.Contains(filtro)
-                                        select new
-                                        {
-                                            Id = trabajador.idTrabajador,
-                                            Cedula = trabajador.cedulaIdentidad,
-                                            Nombre = trabajador.nombre,
-                                            Cargo = trabajador.cargo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
-                    else
-                    {
-                        var query = (
-                                        from trabajador in db.Trabajador
-                                        where trabajador.cargo.Contains(filtro)
-                                        select new
-                                        {
-                                            Id = trabajador.idTrabajador,
-                                            Cedula = trabajador.cedulaIdentidad,
-                                            Nombre = trabajador.nombre,
-                                            Cargo = trabajador.cargo,
-                                        }
-                                    ).ToList();
-                        return query;
-                    }
+                    var query = (
+                                    from trabajador in db.Trabajador
+                                    where trabajador.cedulaIdentidad.Contains(cedulaIdentidad) && trabajador.cargo.Contains(cargo) && trabajador.nombre.Contains(nombreTrabajador)
+                                    select new
+                                    {
+                                        Id = trabajador.idTrabajador,
+                                        Cedula = trabajador.cedulaIdentidad,
+                                        Nombre = trabajador.nombre,
+                                        Cargo = trabajador.cargo,
+                                    }
+                                ).ToList();
+                    return query;
                 }
                 catch (Exception ex)
                 {

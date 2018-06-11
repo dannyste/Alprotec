@@ -30,16 +30,20 @@
         {
             this.dgvTrabajadores = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
-            this.rbCargo = new System.Windows.Forms.RadioButton();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.rbCedulaIdentidad = new System.Windows.Forms.RadioButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lbBuscar = new System.Windows.Forms.Label();
+            this.btnRestablecer = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtCedulaIdentidad = new System.Windows.Forms.TextBox();
+            this.lbCedulaIdentidad = new System.Windows.Forms.Label();
+            this.txtTrabajador = new System.Windows.Forms.TextBox();
+            this.lbTrabajador = new System.Windows.Forms.Label();
             this.pAcciones = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.lbCargo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).BeginInit();
             this.gbCriteriosBusqueda.SuspendLayout();
             this.pAcciones.SuspendLayout();
@@ -52,127 +56,142 @@
             this.dgvTrabajadores.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvTrabajadores.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTrabajadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrabajadores.Location = new System.Drawing.Point(22, 88);
+            this.dgvTrabajadores.Location = new System.Drawing.Point(22, 154);
             this.dgvTrabajadores.Name = "dgvTrabajadores";
             this.dgvTrabajadores.ReadOnly = true;
             this.dgvTrabajadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrabajadores.Size = new System.Drawing.Size(420, 203);
+            this.dgvTrabajadores.Size = new System.Drawing.Size(420, 240);
             this.dgvTrabajadores.TabIndex = 29;
             this.dgvTrabajadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrabajadores_CellDoubleClick);
             // 
             // gbCriteriosBusqueda
             // 
-            this.gbCriteriosBusqueda.Controls.Add(this.rbCargo);
-            this.gbCriteriosBusqueda.Controls.Add(this.rbNombre);
-            this.gbCriteriosBusqueda.Controls.Add(this.rbCedulaIdentidad);
-            this.gbCriteriosBusqueda.Controls.Add(this.txtBuscar);
-            this.gbCriteriosBusqueda.Controls.Add(this.lbBuscar);
-            this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 2);
+            this.gbCriteriosBusqueda.Controls.Add(this.txtCargo);
+            this.gbCriteriosBusqueda.Controls.Add(this.lbCargo);
+            this.gbCriteriosBusqueda.Controls.Add(this.btnRestablecer);
+            this.gbCriteriosBusqueda.Controls.Add(this.btnConsultar);
+            this.gbCriteriosBusqueda.Controls.Add(this.txtCedulaIdentidad);
+            this.gbCriteriosBusqueda.Controls.Add(this.lbCedulaIdentidad);
+            this.gbCriteriosBusqueda.Controls.Add(this.txtTrabajador);
+            this.gbCriteriosBusqueda.Controls.Add(this.lbTrabajador);
+            this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 3);
             this.gbCriteriosBusqueda.Name = "gbCriteriosBusqueda";
-            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 84);
-            this.gbCriteriosBusqueda.TabIndex = 30;
+            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 145);
+            this.gbCriteriosBusqueda.TabIndex = 29;
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
             // 
-            // rbCargo
+            // btnRestablecer
             // 
-            this.rbCargo.AutoSize = true;
-            this.rbCargo.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbCargo.Location = new System.Drawing.Point(326, 19);
-            this.rbCargo.Name = "rbCargo";
-            this.rbCargo.Size = new System.Drawing.Size(61, 20);
-            this.rbCargo.TabIndex = 26;
-            this.rbCargo.Text = "Cargo";
-            this.rbCargo.UseVisualStyleBackColor = true;
-            this.rbCargo.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.btnRestablecer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRestablecer.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnRestablecer.Location = new System.Drawing.Point(201, 115);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(90, 23);
+            this.btnRestablecer.TabIndex = 56;
+            this.btnRestablecer.Text = "Restablecer";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
-            // rbNombre
+            // btnConsultar
             // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbNombre.Location = new System.Drawing.Point(208, 19);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(76, 20);
-            this.rbNombre.TabIndex = 25;
-            this.rbNombre.Text = "Nombre";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            this.rbNombre.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnConsultar.Location = new System.Drawing.Point(297, 115);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(90, 23);
+            this.btnConsultar.TabIndex = 55;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // rbCedulaIdentidad
+            // txtCedulaIdentidad
             // 
-            this.rbCedulaIdentidad.AutoSize = true;
-            this.rbCedulaIdentidad.Checked = true;
-            this.rbCedulaIdentidad.Font = new System.Drawing.Font("Cambria", 10F);
-            this.rbCedulaIdentidad.Location = new System.Drawing.Point(33, 19);
-            this.rbCedulaIdentidad.Name = "rbCedulaIdentidad";
-            this.rbCedulaIdentidad.Size = new System.Drawing.Size(148, 20);
-            this.rbCedulaIdentidad.TabIndex = 24;
-            this.rbCedulaIdentidad.TabStop = true;
-            this.rbCedulaIdentidad.Text = "Cédula de identidad";
-            this.rbCedulaIdentidad.UseVisualStyleBackColor = true;
-            this.rbCedulaIdentidad.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.txtCedulaIdentidad.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCedulaIdentidad.Location = new System.Drawing.Point(32, 39);
+            this.txtCedulaIdentidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCedulaIdentidad.Name = "txtCedulaIdentidad";
+            this.txtCedulaIdentidad.Size = new System.Drawing.Size(174, 23);
+            this.txtCedulaIdentidad.TabIndex = 54;
             // 
-            // txtBuscar
+            // lbCedulaIdentidad
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtBuscar.Location = new System.Drawing.Point(33, 57);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(355, 23);
-            this.txtBuscar.TabIndex = 21;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.lbCedulaIdentidad.AutoSize = true;
+            this.lbCedulaIdentidad.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCedulaIdentidad.Location = new System.Drawing.Point(30, 21);
+            this.lbCedulaIdentidad.Name = "lbCedulaIdentidad";
+            this.lbCedulaIdentidad.Size = new System.Drawing.Size(130, 16);
+            this.lbCedulaIdentidad.TabIndex = 51;
+            this.lbCedulaIdentidad.Text = "Cédula de identidad";
             // 
-            // lbBuscar
+            // txtTrabajador
             // 
-            this.lbBuscar.AutoSize = true;
-            this.lbBuscar.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbBuscar.Location = new System.Drawing.Point(31, 39);
-            this.lbBuscar.Name = "lbBuscar";
-            this.lbBuscar.Size = new System.Drawing.Size(50, 16);
-            this.lbBuscar.TabIndex = 22;
-            this.lbBuscar.Text = "Buscar";
+            this.txtTrabajador.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtTrabajador.Location = new System.Drawing.Point(32, 86);
+            this.txtTrabajador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTrabajador.Name = "txtTrabajador";
+            this.txtTrabajador.Size = new System.Drawing.Size(355, 23);
+            this.txtTrabajador.TabIndex = 21;
+            // 
+            // lbTrabajador
+            // 
+            this.lbTrabajador.AutoSize = true;
+            this.lbTrabajador.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbTrabajador.Location = new System.Drawing.Point(30, 68);
+            this.lbTrabajador.Name = "lbTrabajador";
+            this.lbTrabajador.Size = new System.Drawing.Size(76, 16);
+            this.lbTrabajador.TabIndex = 22;
+            this.lbTrabajador.Text = "Trabajador";
             // 
             // pAcciones
             // 
+            this.pAcciones.Controls.Add(this.btnModificar);
             this.pAcciones.Controls.Add(this.btnSalir);
             this.pAcciones.Controls.Add(this.btnImprimir);
             this.pAcciones.Controls.Add(this.btnEliminar);
             this.pAcciones.Controls.Add(this.btnNuevo);
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
-            this.pAcciones.Location = new System.Drawing.Point(443, 10);
+            this.pAcciones.Location = new System.Drawing.Point(453, 49);
             this.pAcciones.Name = "pAcciones";
-            this.pAcciones.Size = new System.Drawing.Size(70, 281);
-            this.pAcciones.TabIndex = 38;
+            this.pAcciones.Size = new System.Drawing.Size(70, 309);
+            this.pAcciones.TabIndex = 30;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::Presentacion.Properties.Resources.modificar;
+            this.btnModificar.Location = new System.Drawing.Point(10, 69);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(50, 50);
+            this.btnModificar.TabIndex = 29;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Presentacion.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(10, 222);
+            this.btnSalir.Location = new System.Drawing.Point(10, 249);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(50, 50);
             this.btnSalir.TabIndex = 28;
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Presentacion.Properties.Resources.imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(10, 151);
+            this.btnImprimir.Location = new System.Drawing.Point(10, 189);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 27;
             this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(10, 80);
+            this.btnEliminar.Location = new System.Drawing.Point(10, 129);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -182,16 +201,34 @@
             this.btnNuevo.Size = new System.Drawing.Size(50, 50);
             this.btnNuevo.TabIndex = 25;
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtCargo.Location = new System.Drawing.Point(213, 39);
+            this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(174, 23);
+            this.txtCargo.TabIndex = 58;
+            // 
+            // lbCargo
+            // 
+            this.lbCargo.AutoSize = true;
+            this.lbCargo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbCargo.Location = new System.Drawing.Point(211, 21);
+            this.lbCargo.Name = "lbCargo";
+            this.lbCargo.Size = new System.Drawing.Size(43, 16);
+            this.lbCargo.TabIndex = 57;
+            this.lbCargo.Text = "Cargo";
             // 
             // FrmTrabajadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 294);
+            this.ClientSize = new System.Drawing.Size(533, 403);
             this.Controls.Add(this.pAcciones);
-            this.Controls.Add(this.dgvTrabajadores);
             this.Controls.Add(this.gbCriteriosBusqueda);
+            this.Controls.Add(this.dgvTrabajadores);
             this.Font = new System.Drawing.Font("Cambria", 10F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -211,15 +248,19 @@
 
         private System.Windows.Forms.DataGridView dgvTrabajadores;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
-        private System.Windows.Forms.RadioButton rbNombre;
-        private System.Windows.Forms.RadioButton rbCedulaIdentidad;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label lbBuscar;
-        private System.Windows.Forms.RadioButton rbCargo;
+        private System.Windows.Forms.Button btnRestablecer;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.TextBox txtCedulaIdentidad;
+        private System.Windows.Forms.Label lbCedulaIdentidad;
+        private System.Windows.Forms.TextBox txtTrabajador;
+        private System.Windows.Forms.Label lbTrabajador;
         private System.Windows.Forms.Panel pAcciones;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.Label lbCargo;
     }
 }

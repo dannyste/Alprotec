@@ -11,10 +11,10 @@ namespace Negocio
 {
     public class TrabajadorBL
     {
-        public static IEnumerable filtrarTrabajadores(int opcion, String filtro, ref bool error, ref String mensaje)
+        public static IEnumerable filtrarTrabajadores(String cedulaIdentidad, String cargo, String nombreTrabajador, ref bool error, ref String mensaje)
         {
             TrabajadorDAL trabajadorDAL = new TrabajadorDAL();
-            return trabajadorDAL.filtrarTrabajadores(opcion, filtro, ref error, ref mensaje);
+            return trabajadorDAL.filtrarTrabajadores(cedulaIdentidad, cargo, nombreTrabajador, ref error, ref mensaje);
         }
 
         public static Trabajador obtenerTrabajador(long idTrabajador, ref bool error, ref String mensaje)

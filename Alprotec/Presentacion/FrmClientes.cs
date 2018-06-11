@@ -26,8 +26,6 @@ namespace Presentacion
 
         private String mensaje = String.Empty;
 
-        private int opcion = 1;
-
         public FrmClientes()
         {
             InitializeComponent();
