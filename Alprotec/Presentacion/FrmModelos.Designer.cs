@@ -30,16 +30,18 @@
         {
             this.dgvModelos = new System.Windows.Forms.DataGridView();
             this.gbCriteriosBusqueda = new System.Windows.Forms.GroupBox();
-            this.cbMarca = new System.Windows.Forms.ComboBox();
-            this.lbMarca = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lbNombre = new System.Windows.Forms.Label();
             this.pAcciones = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnRestablecer = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.lbMarca = new System.Windows.Forms.Label();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.lbModelo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelos)).BeginInit();
             this.gbCriteriosBusqueda.SuspendLayout();
             this.pAcciones.SuspendLayout();
@@ -52,67 +54,28 @@
             this.dgvModelos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvModelos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModelos.Location = new System.Drawing.Point(22, 107);
+            this.dgvModelos.Location = new System.Drawing.Point(22, 154);
             this.dgvModelos.Name = "dgvModelos";
             this.dgvModelos.ReadOnly = true;
             this.dgvModelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModelos.Size = new System.Drawing.Size(420, 211);
+            this.dgvModelos.Size = new System.Drawing.Size(420, 240);
             this.dgvModelos.TabIndex = 35;
             this.dgvModelos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModelos_CellDoubleClick);
             // 
             // gbCriteriosBusqueda
             // 
+            this.gbCriteriosBusqueda.Controls.Add(this.btnRestablecer);
+            this.gbCriteriosBusqueda.Controls.Add(this.btnConsultar);
             this.gbCriteriosBusqueda.Controls.Add(this.cbMarca);
             this.gbCriteriosBusqueda.Controls.Add(this.lbMarca);
-            this.gbCriteriosBusqueda.Controls.Add(this.txtNombre);
-            this.gbCriteriosBusqueda.Controls.Add(this.lbNombre);
-            this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 2);
+            this.gbCriteriosBusqueda.Controls.Add(this.txtModelo);
+            this.gbCriteriosBusqueda.Controls.Add(this.lbModelo);
+            this.gbCriteriosBusqueda.Location = new System.Drawing.Point(22, 3);
             this.gbCriteriosBusqueda.Name = "gbCriteriosBusqueda";
-            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 103);
+            this.gbCriteriosBusqueda.Size = new System.Drawing.Size(420, 145);
             this.gbCriteriosBusqueda.TabIndex = 36;
             this.gbCriteriosBusqueda.TabStop = false;
             this.gbCriteriosBusqueda.Text = "Criterios de búsqueda";
-            // 
-            // cbMarca
-            // 
-            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(28, 35);
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(179, 23);
-            this.cbMarca.TabIndex = 31;
-            this.cbMarca.SelectionChangeCommitted += new System.EventHandler(this.cbMarca_SelectionChangeCommitted);
-            // 
-            // lbMarca
-            // 
-            this.lbMarca.AutoSize = true;
-            this.lbMarca.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbMarca.Location = new System.Drawing.Point(26, 17);
-            this.lbMarca.Name = "lbMarca";
-            this.lbMarca.Size = new System.Drawing.Size(45, 16);
-            this.lbMarca.TabIndex = 32;
-            this.lbMarca.Text = "Marca";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtNombre.Location = new System.Drawing.Point(28, 78);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(362, 23);
-            this.txtNombre.TabIndex = 21;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
-            // lbNombre
-            // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNombre.Location = new System.Drawing.Point(26, 60);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(58, 16);
-            this.lbNombre.TabIndex = 22;
-            this.lbNombre.Text = "Nombre";
             // 
             // pAcciones
             // 
@@ -122,7 +85,7 @@
             this.pAcciones.Controls.Add(this.btnEliminar);
             this.pAcciones.Controls.Add(this.btnNuevo);
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
-            this.pAcciones.Location = new System.Drawing.Point(443, 9);
+            this.pAcciones.Location = new System.Drawing.Point(453, 49);
             this.pAcciones.Name = "pAcciones";
             this.pAcciones.Size = new System.Drawing.Size(70, 309);
             this.pAcciones.TabIndex = 37;
@@ -135,7 +98,7 @@
             this.btnModificar.Size = new System.Drawing.Size(50, 50);
             this.btnModificar.TabIndex = 29;
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.Enter += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 
@@ -145,7 +108,7 @@
             this.btnSalir.Size = new System.Drawing.Size(50, 50);
             this.btnSalir.TabIndex = 28;
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Enter += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnImprimir
             // 
@@ -155,7 +118,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 27;
             this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimir.Enter += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnEliminar
             // 
@@ -165,7 +128,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(50, 50);
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Enter += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -175,13 +138,80 @@
             this.btnNuevo.Size = new System.Drawing.Size(50, 50);
             this.btnNuevo.TabIndex = 25;
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnNuevo.Enter += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnRestablecer
+            // 
+            this.btnRestablecer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRestablecer.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnRestablecer.Location = new System.Drawing.Point(201, 115);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(90, 23);
+            this.btnRestablecer.TabIndex = 64;
+            this.btnRestablecer.Text = "Restablecer";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnConsultar.Location = new System.Drawing.Point(297, 115);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(90, 23);
+            this.btnConsultar.TabIndex = 63;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Items.AddRange(new object[] {
+            "Seleccione",
+            "HP",
+            "kW"});
+            this.cbMarca.Location = new System.Drawing.Point(32, 39);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(175, 23);
+            this.cbMarca.TabIndex = 60;
+            // 
+            // lbMarca
+            // 
+            this.lbMarca.AutoSize = true;
+            this.lbMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbMarca.Location = new System.Drawing.Point(30, 21);
+            this.lbMarca.Name = "lbMarca";
+            this.lbMarca.Size = new System.Drawing.Size(45, 16);
+            this.lbMarca.TabIndex = 61;
+            this.lbMarca.Text = "Marca";
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtModelo.Location = new System.Drawing.Point(32, 86);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(355, 23);
+            this.txtModelo.TabIndex = 57;
+            // 
+            // lbModelo
+            // 
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbModelo.Location = new System.Drawing.Point(30, 68);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(52, 16);
+            this.lbModelo.TabIndex = 58;
+            this.lbModelo.Text = "Modelo";
             // 
             // FrmModelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 326);
+            this.ClientSize = new System.Drawing.Size(533, 403);
             this.Controls.Add(this.pAcciones);
             this.Controls.Add(this.dgvModelos);
             this.Controls.Add(this.gbCriteriosBusqueda);
@@ -204,15 +234,17 @@
 
         private System.Windows.Forms.DataGridView dgvModelos;
         private System.Windows.Forms.GroupBox gbCriteriosBusqueda;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.ComboBox cbMarca;
-        private System.Windows.Forms.Label lbMarca;
         private System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnRestablecer;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.Label lbMarca;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.Label lbModelo;
     }
 }

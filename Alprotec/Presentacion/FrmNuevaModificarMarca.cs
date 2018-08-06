@@ -108,13 +108,24 @@ namespace Presentacion
         private bool validarCampos()
         {
             bool resultado = true;
-            epError.Clear();
             if (txtNombre.Text == String.Empty)
             {
-                epError.SetError(txtNombre, lbNombre.Text + " es requerido");
+                lbNombre.ForeColor = Color.Red;
                 resultado = false;
             }
             return resultado;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == String.Empty)
+            {
+                lbNombre.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbNombre.ForeColor = Color.Black;
+            }
         }
 
         private void limpiarCampos()

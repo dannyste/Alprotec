@@ -40,7 +40,13 @@ namespace Presentacion
             actualizarDgvMarcas();
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
+        {
+            txtMarca.Text = String.Empty;
+            actualizarDgvMarcas();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvMarcas();
         }
@@ -53,8 +59,7 @@ namespace Presentacion
                 Catalogo catalogo = CatalogoBL.obtenerCatalogo(idCatalogo, ref error, ref mensaje);
                 if (!error)
                 {
-                    frmNuevoModificarEquipo.establecerMarca = catalogo;
-                    frmNuevoModificarEquipo.llenarTxtMarca();
+                    frmNuevoModificarEquipo.establecerMarca(catalogo);
                     this.Close();
                 }
                 else
@@ -125,7 +130,7 @@ namespace Presentacion
 
         public void actualizarDgvMarcas()
         {
-            IEnumerable dataSource = CatalogoBL.filtrarMarcas(txtNombre.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = CatalogoBL.filtrarMarcas(txtMarca.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvMarcas.DataSource = dataSource;

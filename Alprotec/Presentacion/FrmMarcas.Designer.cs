@@ -30,8 +30,10 @@
         {
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.gbCriterioBusqueda = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lbNombre = new System.Windows.Forms.Label();
+            this.btnRestablecer = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.lbMarca = new System.Windows.Forms.Label();
             this.pAcciones = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -50,44 +52,69 @@
             this.dgvMarcas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMarcas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(22, 69);
+            this.dgvMarcas.Location = new System.Drawing.Point(22, 107);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(420, 249);
+            this.dgvMarcas.Size = new System.Drawing.Size(420, 287);
             this.dgvMarcas.TabIndex = 29;
             this.dgvMarcas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellDoubleClick);
             // 
             // gbCriterioBusqueda
             // 
-            this.gbCriterioBusqueda.Controls.Add(this.txtNombre);
-            this.gbCriterioBusqueda.Controls.Add(this.lbNombre);
-            this.gbCriterioBusqueda.Location = new System.Drawing.Point(22, 2);
+            this.gbCriterioBusqueda.Controls.Add(this.btnRestablecer);
+            this.gbCriterioBusqueda.Controls.Add(this.btnConsultar);
+            this.gbCriterioBusqueda.Controls.Add(this.txtMarca);
+            this.gbCriterioBusqueda.Controls.Add(this.lbMarca);
+            this.gbCriterioBusqueda.Location = new System.Drawing.Point(22, 3);
             this.gbCriterioBusqueda.Name = "gbCriterioBusqueda";
-            this.gbCriterioBusqueda.Size = new System.Drawing.Size(420, 65);
+            this.gbCriterioBusqueda.Size = new System.Drawing.Size(420, 98);
             this.gbCriterioBusqueda.TabIndex = 30;
             this.gbCriterioBusqueda.TabStop = false;
             this.gbCriterioBusqueda.Text = "Criterio de búsqueda";
             // 
-            // txtNombre
+            // btnRestablecer
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtNombre.Location = new System.Drawing.Point(28, 36);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(362, 23);
-            this.txtNombre.TabIndex = 21;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.btnRestablecer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRestablecer.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnRestablecer.Location = new System.Drawing.Point(205, 68);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(90, 23);
+            this.btnRestablecer.TabIndex = 58;
+            this.btnRestablecer.Text = "Restablecer";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
-            // lbNombre
+            // btnConsultar
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNombre.Location = new System.Drawing.Point(26, 18);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(58, 16);
-            this.lbNombre.TabIndex = 22;
-            this.lbNombre.Text = "Nombre";
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.Font = new System.Drawing.Font("Cambria", 10F);
+            this.btnConsultar.Location = new System.Drawing.Point(301, 68);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(90, 23);
+            this.btnConsultar.TabIndex = 57;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtMarca.Location = new System.Drawing.Point(32, 39);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(359, 23);
+            this.txtMarca.TabIndex = 21;
+            // 
+            // lbMarca
+            // 
+            this.lbMarca.AutoSize = true;
+            this.lbMarca.Font = new System.Drawing.Font("Cambria", 10F);
+            this.lbMarca.Location = new System.Drawing.Point(30, 21);
+            this.lbMarca.Name = "lbMarca";
+            this.lbMarca.Size = new System.Drawing.Size(45, 16);
+            this.lbMarca.TabIndex = 22;
+            this.lbMarca.Text = "Marca";
             // 
             // pAcciones
             // 
@@ -97,7 +124,7 @@
             this.pAcciones.Controls.Add(this.btnEliminar);
             this.pAcciones.Controls.Add(this.btnNuevo);
             this.pAcciones.Font = new System.Drawing.Font("Cambria", 10F);
-            this.pAcciones.Location = new System.Drawing.Point(443, 9);
+            this.pAcciones.Location = new System.Drawing.Point(453, 49);
             this.pAcciones.Name = "pAcciones";
             this.pAcciones.Size = new System.Drawing.Size(70, 309);
             this.pAcciones.TabIndex = 31;
@@ -156,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 326);
+            this.ClientSize = new System.Drawing.Size(533, 403);
             this.Controls.Add(this.pAcciones);
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.gbCriterioBusqueda);
@@ -179,8 +206,10 @@
 
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.GroupBox gbCriterioBusqueda;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label lbMarca;
+        private System.Windows.Forms.Button btnRestablecer;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Panel pAcciones;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSalir;

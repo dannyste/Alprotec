@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,8 +42,6 @@
             this.lbCorreoElectronico = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lbObservaciones = new System.Windows.Forms.Label();
-            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -79,6 +76,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(213, 23);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lbNombre
             // 
@@ -86,9 +84,9 @@
             this.lbNombre.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbNombre.Location = new System.Drawing.Point(23, 3);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(58, 16);
+            this.lbNombre.Size = new System.Drawing.Size(64, 16);
             this.lbNombre.TabIndex = 1;
-            this.lbNombre.Text = "Nombre";
+            this.lbNombre.Text = "Nombre*";
             // 
             // txtTelefono
             // 
@@ -98,6 +96,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(213, 23);
             this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // lbTelefono
             // 
@@ -105,9 +104,9 @@
             this.lbTelefono.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbTelefono.Location = new System.Drawing.Point(23, 89);
             this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(59, 16);
+            this.lbTelefono.Size = new System.Drawing.Size(65, 16);
             this.lbTelefono.TabIndex = 3;
-            this.lbTelefono.Text = "Teléfono";
+            this.lbTelefono.Text = "Teléfono*";
             // 
             // txtCargo
             // 
@@ -117,6 +116,7 @@
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(213, 23);
             this.txtCargo.TabIndex = 2;
+            this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
             // 
             // lbCargo
             // 
@@ -124,9 +124,9 @@
             this.lbCargo.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbCargo.Location = new System.Drawing.Point(23, 46);
             this.lbCargo.Name = "lbCargo";
-            this.lbCargo.Size = new System.Drawing.Size(43, 16);
+            this.lbCargo.Size = new System.Drawing.Size(49, 16);
             this.lbCargo.TabIndex = 2;
-            this.lbCargo.Text = "Cargo";
+            this.lbCargo.Text = "Cargo*";
             // 
             // txtMovil
             // 
@@ -136,6 +136,7 @@
             this.txtMovil.Name = "txtMovil";
             this.txtMovil.Size = new System.Drawing.Size(213, 23);
             this.txtMovil.TabIndex = 4;
+            this.txtMovil.TextChanged += new System.EventHandler(this.txtMovil_TextChanged);
             // 
             // lbMovil
             // 
@@ -143,9 +144,9 @@
             this.lbMovil.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbMovil.Location = new System.Drawing.Point(23, 132);
             this.lbMovil.Name = "lbMovil";
-            this.lbMovil.Size = new System.Drawing.Size(41, 16);
+            this.lbMovil.Size = new System.Drawing.Size(47, 16);
             this.lbMovil.TabIndex = 4;
-            this.lbMovil.Text = "Móvil";
+            this.lbMovil.Text = "Móvil*";
             // 
             // txtCorreoElectronico
             // 
@@ -155,6 +156,7 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(213, 23);
             this.txtCorreoElectronico.TabIndex = 5;
+            this.txtCorreoElectronico.TextChanged += new System.EventHandler(this.txtCorreoElectronico_TextChanged);
             // 
             // lbCorreoElectronico
             // 
@@ -162,9 +164,9 @@
             this.lbCorreoElectronico.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbCorreoElectronico.Location = new System.Drawing.Point(23, 175);
             this.lbCorreoElectronico.Name = "lbCorreoElectronico";
-            this.lbCorreoElectronico.Size = new System.Drawing.Size(125, 16);
+            this.lbCorreoElectronico.Size = new System.Drawing.Size(131, 16);
             this.lbCorreoElectronico.TabIndex = 5;
-            this.lbCorreoElectronico.Text = "Corrreo electrónico";
+            this.lbCorreoElectronico.Text = "Corrreo electrónico*";
             // 
             // txtObservaciones
             // 
@@ -185,11 +187,6 @@
             this.lbObservaciones.Size = new System.Drawing.Size(96, 16);
             this.lbObservaciones.TabIndex = 6;
             this.lbObservaciones.Text = "Observaciones";
-            // 
-            // epError
-            // 
-            this.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epError.ContainerControl = this;
             // 
             // FrmNuevoModificarContacto
             // 
@@ -216,7 +213,6 @@
             this.Name = "FrmNuevoModificarContacto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo contacto";
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,6 +234,5 @@
         private System.Windows.Forms.Label lbCorreoElectronico;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lbObservaciones;
-        private System.Windows.Forms.ErrorProvider epError;
     }
 }

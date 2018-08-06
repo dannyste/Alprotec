@@ -44,12 +44,13 @@ namespace Presentacion
             actualizarDgvModelos();
         }
 
-        private void cbMarca_SelectionChangeCommitted(object sender, EventArgs e)
+        private void btnRestablecer_Click(object sender, EventArgs e)
         {
+            txtModelo.Text = String.Empty;
             actualizarDgvModelos();
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
             actualizarDgvModelos();
         }
@@ -65,10 +66,8 @@ namespace Presentacion
                     Catalogo marca = CatalogoBL.obtenerCatalogo(Convert.ToInt64(cbMarca.SelectedValue), ref error, ref mensaje);
                     if (!error)
                     {
-                        frmNuevoModificarEquipo.establecerMarca = marca;
-                        frmNuevoModificarEquipo.llenarTxtMarca();
-                        frmNuevoModificarEquipo.establecerModelo = modelo;
-                        frmNuevoModificarEquipo.llenarTxtModelo();
+                        frmNuevoModificarEquipo.establecerMarca(marca);
+                        frmNuevoModificarEquipo.establecerModelo(modelo);
                         this.Close();
                     }
                     else
@@ -165,7 +164,7 @@ namespace Presentacion
 
         public void actualizarDgvModelos()
         {
-            IEnumerable dataSource = CatalogoBL.filtrarModelos(Convert.ToInt64(cbMarca.SelectedValue), txtNombre.Text.Trim(), ref error, ref mensaje);
+            IEnumerable dataSource = CatalogoBL.filtrarModelos(Convert.ToInt64(cbMarca.SelectedValue), txtModelo.Text.Trim(), ref error, ref mensaje);
             if (!error)
             {
                 dgvModelos.DataSource = dataSource;

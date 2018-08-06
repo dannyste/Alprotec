@@ -110,42 +110,21 @@ namespace Presentacion
             this.Close();
         }
 
-        public Cliente establecerCliente
+        public void establecerCliente(Cliente cliente)
         {
-            set
-            {
-                this.cliente = value;
-            }
-        }
-
-        public void llenarTxtCliente()
-        {
+            this.cliente = cliente;
             txtCliente.Text = cliente.nombre;
         }
 
-        public Catalogo establecerMarca
+        public void establecerMarca(Catalogo marca)
         {
-            set
-            {
-                this.marca = value;
-            }
-        }
-
-        public void llenarTxtMarca()
-        {
+            this.marca = marca;
             txtMarca.Text = marca.valor;
         }
 
-        public Catalogo establecerModelo
+        public void establecerModelo(Catalogo modelo)
         {
-            set
-            {
-                this.modelo = value;
-            }
-        }
-
-        public void llenarTxtModelo()
-        {
+            this.modelo = modelo;
             txtModelo.Text = modelo.valor;
         }
         

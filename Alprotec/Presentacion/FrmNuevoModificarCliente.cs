@@ -48,6 +48,22 @@ namespace Presentacion
             }
         }
 
+        private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumericoSigno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+') && (e.KeyChar != '-') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             FrmNuevoModificarContacto frmNuevoModificarContacto = new FrmNuevoModificarContacto(this, "N", 0);
@@ -91,42 +107,35 @@ namespace Presentacion
         {
             if (validarCampos())
             {
-                if (dgvContactos.Rows.Count > 0)
+                switch (operacion)
                 {
-                    switch (operacion)
+                    case "N":
+                        ClienteBL.insertarCliente(objetoCliente(), objetosContactos(), ref error, ref mensaje);
+                        break;
+                    case "M":
+                        ClienteBL.actualizarCliente(objetoCliente(), objetosContactos(), ref error, ref mensaje);
+                        break;
+                }
+                if (!error)
+                {
+                    frmClientes.actualizarDgvClientes();
+                    DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
                     {
-                        case "N":
-                            ClienteBL.insertarCliente(objetoCliente(), objetosContactos(), ref error, ref mensaje);
-                            break;
-                        case "M":
-                            ClienteBL.actualizarCliente(objetoCliente(), objetosContactos(), ref error, ref mensaje);
-                            break;
-                    }
-                    if (!error)
-                    {
-                        frmClientes.actualizarDgvClientes();
-                        DialogResult result = MessageBox.Show(mensaje, "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (result == DialogResult.OK)
+                        switch (operacion)
                         {
-                            switch (operacion)
-                            {
-                                case "N":
-                                    limpiarCampos();
-                                    break;
-                                case "M":
-                                    this.Close();
-                                    break;
-                            }
+                            case "N":
+                                limpiarCampos();
+                                break;
+                            case "M":
+                                this.Close();
+                                break;
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe agregar al menos un contacto.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ocurrió un error.", "Remotran", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -157,11 +166,11 @@ namespace Presentacion
 
         private void cbTipoCliente_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 0L)
+            if (Convert.ToInt64(cbTipoCliente.SelectedValue) == 0L)
             {
                 txtCodigo.Text = String.Empty;
             }
-            else if (Convert.ToUInt64(cbTipoCliente.SelectedValue) == 5L)
+            else if (Convert.ToInt64(cbTipoCliente.SelectedValue) == 5L)
             {
                 generarCodigo();
             }
@@ -295,48 +304,143 @@ namespace Presentacion
         private bool validarCampos()
         {
             bool resultado = true;
-            epError.Clear();
             if (Convert.ToInt64(cbTipoCliente.SelectedValue) == 0L)
             {
-                epError.SetError(cbTipoCliente, lbTipoCliente.Text + " es requerido");
-                resultado = false;
-            }
-            if (txtCodigo.Text == String.Empty)
-            {
-                epError.SetError(txtCodigo, lbCodigo.Text + " es requerido");
+                lbTipoCliente.ForeColor = Color.Red;
                 resultado = false;
             }
             if (Convert.ToInt64(cbDocumento.SelectedValue) == 0L)
             {
-                epError.SetError(cbDocumento, lbDocumento.Text + " es requerido");
+                lbDocumento.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtNumeroDocumento.Text == String.Empty)
             {
-                epError.SetError(txtNumeroDocumento, lbNumeroDocumento.Text + " es requerido");
+                lbNumeroDocumento.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtNombre.Text == String.Empty)
             {
-                epError.SetError(txtNombre, lbNombre.Text + " es requerido");
+                lbNombre.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtDireccion.Text == String.Empty)
             {
-                epError.SetError(txtDireccion, lbDireccion.Text + " es requerido");
+                lbDireccion.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtTelefono.Text == String.Empty)
             {
-                epError.SetError(txtTelefono, lbTelefono.Text + " es requerido");
+                lbTelefono.ForeColor = Color.Red;
                 resultado = false;
             }
             if (Convert.ToInt64(cbCiudad.SelectedValue) == 0L)
             {
-                epError.SetError(cbCiudad, lbCiudad.Text + " es requerida");
+                lbCiudad.ForeColor = Color.Red;
+                resultado = false;
+            }
+            if (dgvContactos.Rows.Count == 0)
+            {
+                lbContactos.ForeColor = Color.Red;
                 resultado = false;
             }
             return resultado;
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text == String.Empty)
+            {
+                lbTipoCliente.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbTipoCliente.ForeColor = Color.Black;
+            }
+        }
+
+        private void cbDocumento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (Convert.ToInt64(cbDocumento.SelectedValue) == 0L)
+            {
+                lbDocumento.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbDocumento.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtNumeroDocumento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumeroDocumento.Text == String.Empty)
+            {
+                lbNumeroDocumento.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbNumeroDocumento.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == String.Empty)
+            {
+                lbNombre.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbNombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDireccion.Text == String.Empty)
+            {
+                lbDireccion.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbDireccion.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text == String.Empty)
+            {
+                lbTelefono.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbTelefono.ForeColor = Color.Black;
+            }
+        }
+
+        private void cbCiudad_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (Convert.ToInt64(cbCiudad.SelectedValue) == 0L)
+            {
+                lbCiudad.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbCiudad.ForeColor = Color.Black;
+            }
+        }
+
+        private void dgvContactos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvContactos.Rows.Count == 0)
+            {
+                lbContactos.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbContactos.ForeColor = Color.Black;
+            }
         }
 
         public void limpiarCampos()

@@ -73,38 +73,92 @@ namespace Presentacion
         private bool validarCampos()
         {
             bool resultado = true;
-            epError.Clear();
             if (txtNombre.Text == String.Empty)
             {
-                epError.SetError(txtNombre, lbNombre.Text + " es requerido");
+                lbNombre.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtCargo.Text == String.Empty)
             {
-                epError.SetError(txtCargo, lbCargo.Text + " es requerido");
+                lbCargo.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtTelefono.Text == String.Empty)
             {
-                epError.SetError(txtTelefono, lbTelefono.Text + " es requerido");
+                lbTelefono.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtMovil.Text == String.Empty)
             {
-                epError.SetError(txtMovil, lbMovil.Text + " es requerido");
+                lbMovil.ForeColor = Color.Red;
                 resultado = false;
             }
             if (txtCorreoElectronico.Text == String.Empty)
             {
-                epError.SetError(this.txtCorreoElectronico, lbCorreoElectronico.Text + " es requerido");
-                resultado = false;
-            }
-            if (txtObservaciones.Text == String.Empty)
-            {
-                epError.SetError(this.txtObservaciones, lbObservaciones.Text + " es requerido");
+                lbCorreoElectronico.ForeColor = Color.Red;
                 resultado = false;
             }
             return resultado;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == String.Empty)
+            {
+                lbNombre.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbNombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCargo.Text == String.Empty)
+            {
+                lbCargo.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbCargo.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text == String.Empty)
+            {
+                lbTelefono.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbTelefono.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtMovil_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMovil.Text == String.Empty)
+            {
+                lbMovil.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbMovil.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCorreoElectronico.Text == String.Empty)
+            {
+                lbCorreoElectronico.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbCorreoElectronico.ForeColor = Color.Black;
+            }
         }
 
         public void modificarContacto(Contacto contacto)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbTipoCliente = new System.Windows.Forms.ComboBox();
@@ -52,7 +51,6 @@
             this.correoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
-            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbDocumento = new System.Windows.Forms.Label();
             this.cbDocumento = new System.Windows.Forms.ComboBox();
             this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
@@ -60,7 +58,6 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -108,6 +105,7 @@
             this.txtCodigo.Size = new System.Drawing.Size(213, 23);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TabStop = false;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lbCodigo
             // 
@@ -125,9 +123,9 @@
             this.lbTipoCliente.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbTipoCliente.Location = new System.Drawing.Point(22, 2);
             this.lbTipoCliente.Name = "lbTipoCliente";
-            this.lbTipoCliente.Size = new System.Drawing.Size(97, 16);
+            this.lbTipoCliente.Size = new System.Drawing.Size(103, 16);
             this.lbTipoCliente.TabIndex = 1;
-            this.lbTipoCliente.Text = "Tipo de cliente";
+            this.lbTipoCliente.Text = "Tipo de cliente*";
             // 
             // txtDireccion
             // 
@@ -138,6 +136,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(213, 45);
             this.txtDireccion.TabIndex = 5;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // lbDireccion
             // 
@@ -145,9 +144,9 @@
             this.lbDireccion.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbDireccion.Location = new System.Drawing.Point(22, 217);
             this.lbDireccion.Name = "lbDireccion";
-            this.lbDireccion.Size = new System.Drawing.Size(65, 16);
+            this.lbDireccion.Size = new System.Drawing.Size(71, 16);
             this.lbDireccion.TabIndex = 5;
-            this.lbDireccion.Text = "Dirección";
+            this.lbDireccion.Text = "Dirección*";
             // 
             // lbNombre
             // 
@@ -155,9 +154,9 @@
             this.lbNombre.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbNombre.Location = new System.Drawing.Point(22, 174);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(58, 16);
+            this.lbNombre.Size = new System.Drawing.Size(64, 16);
             this.lbNombre.TabIndex = 4;
-            this.lbNombre.Text = "Nombre";
+            this.lbNombre.Text = "Nombre*";
             // 
             // txtNombre
             // 
@@ -167,6 +166,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(213, 23);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtTelefono
             // 
@@ -176,6 +176,8 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(213, 23);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumericoSigno_KeyPress);
             // 
             // lbTelefono
             // 
@@ -183,9 +185,9 @@
             this.lbTelefono.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbTelefono.Location = new System.Drawing.Point(22, 282);
             this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(59, 16);
+            this.lbTelefono.Size = new System.Drawing.Size(65, 16);
             this.lbTelefono.TabIndex = 6;
-            this.lbTelefono.Text = "Teléfono";
+            this.lbTelefono.Text = "Teléfono*";
             // 
             // lbContactos
             // 
@@ -193,9 +195,9 @@
             this.lbContactos.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbContactos.Location = new System.Drawing.Point(22, 368);
             this.lbContactos.Name = "lbContactos";
-            this.lbContactos.Size = new System.Drawing.Size(67, 16);
+            this.lbContactos.Size = new System.Drawing.Size(73, 16);
             this.lbContactos.TabIndex = 0;
-            this.lbContactos.Text = "Contactos";
+            this.lbContactos.Text = "Contactos*";
             // 
             // lbCiudad
             // 
@@ -203,9 +205,9 @@
             this.lbCiudad.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbCiudad.Location = new System.Drawing.Point(22, 325);
             this.lbCiudad.Name = "lbCiudad";
-            this.lbCiudad.Size = new System.Drawing.Size(51, 16);
+            this.lbCiudad.Size = new System.Drawing.Size(57, 16);
             this.lbCiudad.TabIndex = 7;
-            this.lbCiudad.Text = "Ciudad";
+            this.lbCiudad.Text = "Ciudad*";
             // 
             // dgvContactos
             // 
@@ -232,6 +234,7 @@
             this.dgvContactos.TabIndex = 0;
             this.dgvContactos.TabStop = false;
             this.dgvContactos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentDoubleClick);
+            this.dgvContactos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvContactos_RowsAdded);
             // 
             // id
             // 
@@ -291,11 +294,7 @@
             this.cbCiudad.Name = "cbCiudad";
             this.cbCiudad.Size = new System.Drawing.Size(213, 23);
             this.cbCiudad.TabIndex = 7;
-            // 
-            // epError
-            // 
-            this.epError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.epError.ContainerControl = this;
+            this.cbCiudad.SelectionChangeCommitted += new System.EventHandler(this.cbCiudad_SelectionChangeCommitted);
             // 
             // lbDocumento
             // 
@@ -303,9 +302,9 @@
             this.lbDocumento.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbDocumento.Location = new System.Drawing.Point(22, 88);
             this.lbDocumento.Name = "lbDocumento";
-            this.lbDocumento.Size = new System.Drawing.Size(77, 16);
+            this.lbDocumento.Size = new System.Drawing.Size(83, 16);
             this.lbDocumento.TabIndex = 2;
-            this.lbDocumento.Text = "Documento";
+            this.lbDocumento.Text = "Documento*";
             // 
             // cbDocumento
             // 
@@ -316,6 +315,7 @@
             this.cbDocumento.Name = "cbDocumento";
             this.cbDocumento.Size = new System.Drawing.Size(213, 23);
             this.cbDocumento.TabIndex = 2;
+            this.cbDocumento.SelectionChangeCommitted += new System.EventHandler(this.cbDocumento_SelectionChangeCommitted);
             // 
             // txtNumeroDocumento
             // 
@@ -325,6 +325,8 @@
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.Size = new System.Drawing.Size(213, 23);
             this.txtNumeroDocumento.TabIndex = 3;
+            this.txtNumeroDocumento.TextChanged += new System.EventHandler(this.txtNumeroDocumento_TextChanged);
+            this.txtNumeroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
             // lbNumeroDocumento
             // 
@@ -332,9 +334,9 @@
             this.lbNumeroDocumento.Font = new System.Drawing.Font("Cambria", 10F);
             this.lbNumeroDocumento.Location = new System.Drawing.Point(22, 131);
             this.lbNumeroDocumento.Name = "lbNumeroDocumento";
-            this.lbNumeroDocumento.Size = new System.Drawing.Size(151, 16);
+            this.lbNumeroDocumento.Size = new System.Drawing.Size(157, 16);
             this.lbNumeroDocumento.TabIndex = 3;
-            this.lbNumeroDocumento.Text = "Número del documento";
+            this.lbNumeroDocumento.Text = "Número del documento*";
             // 
             // btnAñadir
             // 
@@ -364,7 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 569);
+            this.ClientSize = new System.Drawing.Size(260, 569);
             this.Controls.Add(this.txtNumeroDocumento);
             this.Controls.Add(this.lbNumeroDocumento);
             this.Controls.Add(this.cbDocumento);
@@ -395,7 +397,6 @@
             this.Text = "Nuevo cliente";
             this.Load += new System.EventHandler(this.FrmNuevoModificaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +422,6 @@
         private System.Windows.Forms.Label lbCiudad;
         public System.Windows.Forms.DataGridView dgvContactos;
         private System.Windows.Forms.ComboBox cbCiudad;
-        private System.Windows.Forms.ErrorProvider epError;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargo;

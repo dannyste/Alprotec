@@ -134,7 +134,7 @@
             // txtNumeroDocumento
             // 
             this.txtNumeroDocumento.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(32, 39);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(213, 39);
             this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.Size = new System.Drawing.Size(174, 23);
@@ -149,7 +149,7 @@
             "Seleccione",
             "HP",
             "kW"});
-            this.cbDocumento.Location = new System.Drawing.Point(212, 39);
+            this.cbDocumento.Location = new System.Drawing.Point(32, 39);
             this.cbDocumento.Name = "cbDocumento";
             this.cbDocumento.Size = new System.Drawing.Size(175, 23);
             this.cbDocumento.TabIndex = 52;
@@ -158,7 +158,7 @@
             // 
             this.lbDocumento.AutoSize = true;
             this.lbDocumento.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbDocumento.Location = new System.Drawing.Point(210, 21);
+            this.lbDocumento.Location = new System.Drawing.Point(30, 21);
             this.lbDocumento.Name = "lbDocumento";
             this.lbDocumento.Size = new System.Drawing.Size(77, 16);
             this.lbDocumento.TabIndex = 53;
@@ -168,7 +168,7 @@
             // 
             this.lbNumeroDocumento.AutoSize = true;
             this.lbNumeroDocumento.Font = new System.Drawing.Font("Cambria", 10F);
-            this.lbNumeroDocumento.Location = new System.Drawing.Point(30, 21);
+            this.lbNumeroDocumento.Location = new System.Drawing.Point(211, 21);
             this.lbNumeroDocumento.Name = "lbNumeroDocumento";
             this.lbNumeroDocumento.Size = new System.Drawing.Size(151, 16);
             this.lbNumeroDocumento.TabIndex = 51;

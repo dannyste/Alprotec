@@ -74,8 +74,7 @@ namespace Presentacion
                 {
                     if (frmNuevoModificarEquipo != null)
                     {
-                        frmNuevoModificarEquipo.establecerCliente = clienteDTO.cliente;
-                        frmNuevoModificarEquipo.llenarTxtCliente();
+                        frmNuevoModificarEquipo.establecerCliente(clienteDTO.cliente);
                         this.Close();
                     }
                     else if (frmNuevaModificarRecepcionEquipo != null)
